@@ -1,0 +1,43 @@
+.renovationPageInfoAdvantages{
+    padding-top: 72px;
+    padding-bottom: 96px;
+    padding-left: 40px;
+    padding-right: 40px;
+    @media only screen and (max-width: 900px) {
+        padding: 16px;
+      }
+    .heading{
+        text-align: center;
+    }
+    .swiper{
+        height: 280px;
+    .slide{
+        max-width: 320px;
+    }
+}
+    .renovationPageInfoParentWrapper{
+        padding-top: 120px;
+        .wrapperClass{
+            margin-left: -40px;
+            display: flex;
+            justify-content: space-between;
+        
+            @media only screen and (max-width: 900px) {
+               margin-left: -16px;
+              }
+        }
+    }
+    .slides{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 256px;
+        .middleText{
+            margin-top: 16px;
+            margin-bottom: 32px;
+        }
+        .bottomText{
+            text-align: center;
+        }
+    }
+}

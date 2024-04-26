@@ -1,0 +1,33 @@
+.renovationPage {
+    display: flex;
+    padding-right: 112px;
+    padding-left: 112px;
+    padding-top: 88px;
+    justify-content: space-around;
+    @media only screen and (max-width: 1199px) {
+      
+      flex-direction: column-reverse;;
+      }
+      .renovationColumWrapper{
+        max-width: 100%;
+        width: 100%;
+        img{
+            width: 100%;
+        }
+        .renovationPageText{
+            display: flex;
+            align-items: center;
+            height: 100%;
+            .innerWrapper{
+                display: flex;
+                flex-direction: column;
+                gap: 50px;
+            }
+        }
+      }
+    @media only screen and (max-width: 768px) {
+        padding: 16px;
+      }
+ 
+
+}
