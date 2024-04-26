@@ -1,0 +1,44 @@
+'use client';
+
+import Image from "next/image";
+import styles from "./biznes.module.scss";
+import { getData } from "../api/Biznes";
+
+
+export default async function  Business() {
+    const data = await getData();
+
+
+  return (
+    <>
+      <section className={styles.forBusiness}>
+        <div className={styles.forBusinessTitleText}>
+          <h3 className={styles.mainHeading}>{data.acf.heading}</h3>
+          <p className={`big-text ${styles.mainParagraph}`}>{data.acf.under_heading}</p>
+        </div>
+      </section>
+
+      <section className={styles.businesContentWrapper}>
+        {data.acf?.asymetric.map((item) => (
+          <div className={styles.contentWrapper} key={item.photo.ID}>
+            <div className={styles.imageContent}>
+              <img
+                className={styles.image}
+                src={item.photo.url}
+                alt={item.title}
+              />
+            </div>
+            <div className={styles.textContent}>
+              <div className={styles.textContentInner}>
+                <h4 className={styles.textContentHeading}>{item.title}</h4>
+                <p className={`p-15 ${styles.textContentParagraph}`}>{item.paragraph}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </section>
+    </>
+  );
+}
+
+

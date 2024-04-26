@@ -1,6 +1,6 @@
 
 import Image from "next/image";
-import {getData}  from "../api/Opinie";
+import {getData}  from "../api/Renowacja";
 import styles from "./Renovation.module.scss";
 import Link from "next/link";
 import {AdsTop} from "./components/AdsTop";

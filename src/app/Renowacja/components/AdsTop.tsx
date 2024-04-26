@@ -7,7 +7,7 @@ import 'swiper/css/pagination';
 import { Pagination } from 'swiper/modules';
 import Image from "next/image";
 import styles from  './AdsTop.module.scss'
-import { getData } from "@/app/api/Opinie";
+import { getData } from "@/app/api/Renowacja";
 
 
 export async function  AdsTop ({ acf})  {

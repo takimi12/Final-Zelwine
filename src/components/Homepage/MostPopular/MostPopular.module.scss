@@ -1,0 +1,55 @@
+
+.mostPopular{
+    padding-left: 40px;
+    @media screen and (max-width: 600px) {
+        padding: 0px 16px;
+  }
+  
+  .swiper
+  {
+  display: flex;
+  flex-direction: column-reverse;
+  overflow: visible;
+  .wrapperClass{
+    margin-left: -40px;
+  }
+  .swiperTop
+  {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+    margin-right: 40px;
+  }
+   .swiperSlide {
+     max-width: 555px;
+    height: 455px;
+   
+    img {
+      width: 100%;
+  
+    
+  }
+  }
+  
+  .swiperSliderWrapper
+  {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     flex-direction: column;
+     background-color: #F4F5F5;
+     position: relative;
+    width: 555px;
+    height: 455px;
+  }
+  .swipperSliderHeading
+  {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 12px;
+  }
+  
+  
+  }
+  }

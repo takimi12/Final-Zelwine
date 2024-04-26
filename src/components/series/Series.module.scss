@@ -1,0 +1,31 @@
+.products{
+    margin-top: 80px;
+    padding: 0px 40px;
+    .topParent{
+        display: flex;
+        justify-content: space-between;
+    .arrowParent{
+        display: flex;
+    }
+    }
+    .product{
+        margin-top: 40px;
+
+        .swiperClass{
+            display: flex;
+            flex-direction: column-reverse;
+            gap: 20px;
+        }
+        .wrapperClass{
+      margin-left: -40px;
+
+      .slide{
+        margin-right: 20px!important;
+      }
+        }
+    }
+.image{
+    width: 100%!important;
+    margin-bottom: 12px;
+}
+    }

@@ -1,0 +1,90 @@
+.opinions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 100px;
+    padding: 100px 40px;
+    @media screen and (max-width: 900px) {
+        padding-right: 16px;
+        padding-left: 16px;
+        }
+
+    .mainHeading{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 92px;
+        img{
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        p {
+            font-weight: 800;
+            span{
+                font-weight: 800;
+                color: #000;
+            }
+        }
+    }
+    
+.mainWrapper{
+    margin: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
+    .starsWrapper{
+        padding-top: 20px;
+        padding-bottom: 10px;
+    }
+    .wrapperOpinionRight{
+        width: 50%;
+        @media screen and (max-width: 768px) {
+                width: 100%;
+                margin: auto;
+            }
+    img{
+        @media screen and (max-width: 768px) {
+            width: 100%;
+        }
+    }
+    }
+    .wrapperOpinion {
+        display: flex;
+        margin-bottom: 40px;
+        @media screen and (max-width: 768px) {
+           
+                display: flex;
+                margin-bottom: 40px;
+                flex-direction: column-reverse;
+                padding: 0px 16px;
+                max-width: 100%;
+                width: 100%;
+            }
+        .wrapperOpinionLeft{
+            width: 50%;
+            padding: 40px 40px 40px 0;
+            max-width: 637px;
+            width: 100%;
+            .middle{
+                margin-top: 20px;
+                margin-bottom: 40px;
+            }
+            @media screen and (max-width: 768px) {
+                    width: 100%;
+                    padding: 24px 0px 0px 0px;
+                   
+                }
+             .leftHeading{
+                margin: 10px 0px;
+            }
+            .p15{
+                margin-top: 10px;
+                margin-bottom: 30px;
+            }
+        }
+    }
+}
+}

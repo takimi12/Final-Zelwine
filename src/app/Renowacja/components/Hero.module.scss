@@ -1,9 +1,9 @@
 .renovationPage {
     display: flex;
-    padding-right: 112px;
-    padding-left: 112px;
     padding-top: 88px;
     justify-content: space-around;
+    min-height: 650px;
+    gap:40px;
     @media only screen and (max-width: 1199px) {
       
       flex-direction: column-reverse;;
@@ -11,6 +11,7 @@
       .renovationColumWrapper{
         max-width: 100%;
         width: 100%;
+        position: relative;
         img{
             width: 100%;
         }

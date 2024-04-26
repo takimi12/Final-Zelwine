@@ -54,7 +54,8 @@
            .foto {
               display: flex;
               flex-shrink: 0;
-              width: 280px;                    
+            min-width: 350px;
+            min-height: 280px;
               }
           }
       }

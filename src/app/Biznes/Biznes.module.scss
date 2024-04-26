@@ -1,0 +1,116 @@
+.HeroBusiness {
+    margin-bottom: 3.5rem;
+    width: 100%;
+    height: 192px;
+    position: relative;
+    max-width: 100%;
+}
+
+.HeroBusinessImageWrapper {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    color: transparent;
+    z-index: 0;
+}
+
+
+.forBusiness {
+    &TitleText {
+        max-width: 440px;
+        text-align: center;
+        width: 100%;
+        margin: auto;
+
+        .mainHeading {
+            padding-top: 64px;
+            padding-bottom: 20px;
+        }
+
+        .mainParagraph {
+            padding-bottom: 120px;
+
+       
+        }
+    }
+}
+
+.businesContentWrapper {
+    margin-bottom: 40px;
+    padding: 0px 40px;
+    @media screen and (max-width: 900px) {
+     padding: 0px 16px; 
+    }
+}
+
+.contentWrapper {
+    display: flex;
+    margin-bottom: 20px;
+    @media screen and (max-width: 900px) {
+        flex-direction: column;
+    }
+
+
+    .imageContent {
+        width: 50%;
+        @media screen and (max-width: 900px) {
+            width: 100%;
+        }
+
+  
+        .image {
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .textContent {
+        width: 50%;
+        @media screen and (max-width: 900px) {
+            width: 100%;
+        }
+
+
+        .textContentInner {
+            padding-left: 7.5%;
+            padding-right: 7.5%;
+            max-width: 440px;
+            @media screen and (max-width: 900px) {
+             padding: 0;
+             max-width: 100%;
+            }
+
+            .textContentHeading {
+                padding-top: 115px;
+                padding-bottom: 20px;
+                @media screen and (max-width: 900px) {
+                    padding:24px 0px; 
+                                  }
+
+            }
+            .textContentParagraph{
+                @media screen and (max-width: 900px) {
+                 padding-bottom: 88px; 
+                                  }
+            }
+        }
+    }
+}
+
+.contentWrapper:nth-child(even) {
+    flex-direction: row-reverse;
+    @media screen and (max-width: 900px) {
+     flex-direction: column;
+    }
+
+}
+
+.contentBusiness {
+    padding: 0px 40px;
+
+    
+}

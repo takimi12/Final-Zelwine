@@ -19,7 +19,6 @@ const Hero =({ acf} ) => {
               </div>
                 <button type="button" className="button-text-big">
                 {hero.button.title}
-                {hero.image.url}
                 </button>
             </div>
           </div>
