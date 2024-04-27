@@ -7,7 +7,7 @@ import 'swiper/css/pagination';
 import Image from 'next/image';
 import styles from './MostPopular.module.scss';
 import SwiperNav from '../../series/SwiperNav';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 
 function MostPopular({ data }) {
@@ -24,6 +24,13 @@ function MostPopular({ data }) {
     setIsAtBeginning(true);
     setIsAtEnd(false);
   };
+
+
+
+
+
+
+
 
 
   return (

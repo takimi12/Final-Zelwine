@@ -1,34 +1,19 @@
 export const getData = async () => {
-    const response = await fetch('https://grzejniki2.ergotree.pl/wp-json/wc/v3/products/categories?per_page=100', {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': 'Basic ' + btoa('ck_333c63c1676df66d84322191922b725ba3dc7f1e:cs_85c7bc717de01741a71ad8dc9152986569b62cec')
-        },
-      });
-      const result = await response.json();
+  const response = await fetch("https://grzejniki.ergotree.pl/wp-json/wc/v3/products/categories?per_page=100", {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': 'Basic ' + btoa('ck_9f79ec15e7fa0c63c24b397280863cac6487c380:cs_ebf833bec357c2ff7984afcb0a6ebc76784da3a6')
+    },
+  });
+
         if(!response.ok){
             throw new Error('Something went wrong', )
         }    
     
-    return  result
+    return  response.json()
   }
 
 
 
 
-
-//   try {
-//     const response = await fetch('https://grzejniki2.ergotree.pl/wp-json/wc/v3/products/categories?per_page=100', {
-//       method: 'GET',
-//       headers: {
-//         'Content-Type': 'application/json',
-//         'Authorization': 'Basic ' + btoa('ck_333c63c1676df66d84322191922b725ba3dc7f1e:cs_85c7bc717de01741a71ad8dc9152986569b62cec')
-//       },
-//     });
-//     const result = await response.json();
-//     // Filter categories where parent is equal to 0 and exclude "Bez kategorii"
-//     const filteredCategories = result.filter(category => category.parent === 0 && category.name !== "Bez kategorii");
-//   } catch (error) {
-//     console.error('Error fetching data:', error);
-//   }

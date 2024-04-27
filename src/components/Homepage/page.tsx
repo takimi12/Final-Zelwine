@@ -1,3 +1,4 @@
+
 import { getData } from "@/app/api/Homepage";
 import Hero from "./Hero/page";
 import Most from "./MostPopular/page";
@@ -7,9 +8,11 @@ import Box from "./Box/page";
 import RenovationSection from "./Renovation/page";
 import Opinion from "./Opinion/page";
 import Featured from "./Featured/page";
+import { useEffect, useState } from "react";
 
 
 export default async function  HomeLayout() {
+
 
 
     const data = await getData();

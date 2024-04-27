@@ -50,6 +50,7 @@
 .contentWrapper {
     display: flex;
     margin-bottom: 20px;
+ 
     @media screen and (max-width: 900px) {
         flex-direction: column;
     }
@@ -57,6 +58,8 @@
 
     .imageContent {
         width: 50%;
+        height: 502px;
+        position: relative;
         @media screen and (max-width: 900px) {
             width: 100%;
         }

@@ -1,7 +1,5 @@
-'use client';
-
 import Image from "next/image";
-import styles from "./biznes.module.scss";
+import styles from "./Biznes.module.scss";
 import { getData } from "../api/Biznes";
 
 
@@ -22,10 +20,11 @@ export default async function  Business() {
         {data.acf?.asymetric.map((item) => (
           <div className={styles.contentWrapper} key={item.photo.ID}>
             <div className={styles.imageContent}>
-              <img
+              <Image
                 className={styles.image}
                 src={item.photo.url}
                 alt={item.title}
+                fill
               />
             </div>
             <div className={styles.textContent}>
