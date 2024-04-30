@@ -1,6 +1,7 @@
 import Image from "next/image";
 import styles from "./Biznes.module.scss";
 import { getData } from "../api/Biznes";
+import background from "../../../public/static/Biznes/Header-section.jpg";
 
 
 export default async function  Business() {
@@ -9,6 +10,14 @@ export default async function  Business() {
 
   return (
     <>
+<section className={styles.background}>
+  <Image
+  src={background}
+    fill
+    alt="popraw"
+  />
+</section>
+
       <section className={styles.forBusiness}>
         <div className={styles.forBusinessTitleText}>
           <h3 className={styles.mainHeading}>{data.acf.heading}</h3>

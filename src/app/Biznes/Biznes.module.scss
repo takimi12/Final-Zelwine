@@ -1,23 +1,8 @@
-.HeroBusiness {
-    margin-bottom: 3.5rem;
+.background {
     width: 100%;
-    height: 192px;
+    height: 180px;
     position: relative;
-    max-width: 100%;
 }
-
-.HeroBusinessImageWrapper {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    color: transparent;
-    z-index: 0;
-}
-
 
 .forBusiness {
     &TitleText {
