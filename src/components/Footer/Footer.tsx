@@ -20,7 +20,7 @@ const Footer = () => {
           </div>
           <ul className={styles.list}>
             {categories.map((category, index) => (
-              <li key={index}><h6 className="h6-400-third">{category}</h6></li>
+              <li key={index}><h3 className="h6-400-third">{category}</h3></li>
             ))}
           </ul>
         </div>
@@ -31,7 +31,7 @@ const Footer = () => {
           </div>
           <ul className={styles.list}>
             {series.map((serie, index) => (
-              <li key={index}><h6 className="h6-400-third">{serie}</h6></li>
+              <li key={index}><h3 className="h6-400-third">{serie}</h3></li>
             ))}
           </ul>
         </div>
@@ -42,7 +42,7 @@ const Footer = () => {
           </div>
           <ul className={styles.list}>
             {menuItems.map((menuItem, index) => (
-              <li key={index}><h6 className="h6-400-third">{menuItem}</h6></li>
+              <li key={index}><h3 className="h6-400-third">{menuItem}</h3></li>
             ))}
           </ul>
         </div>
@@ -53,7 +53,7 @@ const Footer = () => {
           </div>
           <ul className={styles.list}>
             {socialMedia.map((media, index) => (
-              <li key={index}><h6 className="h6-400-third">{media}</h6></li>
+              <li key={index}><h3 className="h6-400-third">{media}</h3></li>
             ))}
           </ul>
         </div>

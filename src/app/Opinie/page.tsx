@@ -28,7 +28,7 @@ export default async function Opinie() {
             <div key={opinion.number_of_stars} className={styles.wrapperOpinion}>
               <div className={styles.wrapperOpinionLeft}>
                  <p> {opinion.number_of_stars}</p>
-                <h4>{opinion.title}</h4>
+                <h2>{opinion.title}</h2>
                 <p className={`${styles.middle} p15`}> {opinion.paragraph}</p>
                 <p className="p13"> {opinion.signature}<span className="span13"> {opinion.country}</span></p>
 
