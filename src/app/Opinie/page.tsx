@@ -8,13 +8,11 @@ export default async function Opinie() {
     
     const data = await getData();
   
-
-console.log(data)
   return (
     <>
       <section className={styles.opinions}>
           <div className={styles.mainHeading}>
-            <h6> {data.acf.header}</h6>
+            <h3> {data.acf.header}</h3>
             <Image
             width={100}
             height={100}
@@ -30,7 +28,7 @@ console.log(data)
             <div key={opinion.number_of_stars} className={styles.wrapperOpinion}>
               <div className={styles.wrapperOpinionLeft}>
                  <p> {opinion.number_of_stars}</p>
-                <h3>{opinion.title}</h3>
+                <h4>{opinion.title}</h4>
                 <p className={`${styles.middle} p15`}> {opinion.paragraph}</p>
                 <p className="p13"> {opinion.signature}<span className="span13"> {opinion.country}</span></p>
 
