@@ -25,7 +25,7 @@ export default async function  Contact() {
                 {data.acf.contacts.map((contact:any, index:any) => (
                   <div className={styles.contactDetailsSmall} key={index}>
                     <div className="Image">
-                      <img
+                      <Image
                         src={contact.icon.sizes.thumbnail}
                         alt="contact icon"
                         width={25}

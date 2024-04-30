@@ -27,7 +27,7 @@ const Hero = ({ acf }: { acf: any }) => {
             <Image
             fill
                 src={hero.image.url}
-                alt="Renovation Image"
+                alt="popraw"
                 className={styles.renovationImage}
                 
             />

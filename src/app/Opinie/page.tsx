@@ -15,10 +15,12 @@ export default async function Opinie() {
       <section className={styles.opinions}>
           <div className={styles.mainHeading}>
             <h3> {data.acf.header}</h3>
-            <img 
+            <Image
+            fill 
             width={100}
             height={100}
-            src={`${data.acf.header_stars.url}`}/>
+            src={`${data.acf.header_stars.url}`}
+            alt="popraw"/>
             <p className="p13brown">Średnia ocena: <span>{data.acf.under_stars}</span></p>
             
           </div>
@@ -36,7 +38,10 @@ export default async function Opinie() {
 
               </div>
               <div className={styles.wrapperOpinionRight}>
-              <img src={opinion.image.url}  />
+              <Image src={opinion.image.url} 
+              fill
+              alt="popraw"
+              />
               </div>
             </div>
           ))}

@@ -8,6 +8,7 @@ import 'swiper/css/pagination';
 import styles from './Series.module.scss';
 import Link from 'next/link';
 import SwiperNav from './SwiperNav';
+import Image from 'next/image';
 
 function Series() {
   const [categories, setCategories] = useState(null);
@@ -79,7 +80,7 @@ function Series() {
                 <SwiperSlide key={category.id} className={styles.slide}>
                   <Link href={`/Produkty/${category.id}`}>
                     {category.image && category.image.src && (
-                      <img
+                      <Image
                         src={category.image.src}
                         alt={category.image.alt}
                         className={styles.image}

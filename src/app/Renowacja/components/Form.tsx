@@ -79,7 +79,7 @@ const Form = () => {
   <button className={styles.customFileInputButton} type="button">
     <div className={styles.customFileInputButtonInner}>
       <span className={styles.customFileInputIcon}>
-    <Image src={Plus}  alt="plus"/>
+    <Image src={Plus}  alt="popraw" fill/>
           </span>
       <span className={`${styles.customFileInputText} body-small-smaller-second"` } >Dodaj zdjęcia</span>
     </div>

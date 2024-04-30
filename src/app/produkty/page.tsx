@@ -4,6 +4,7 @@ import Breadcrumbs from '@/components/breadcrumbs/breadcrumbs';
 import { getData } from '../api/Produkty';
 import styles from './Produkty.module.scss';
 import Link from 'next/link';
+import Image from 'next/image';
 
 
 export default async function Products({ params }: any) {
@@ -27,7 +28,7 @@ export default async function Products({ params }: any) {
           <div className={styles.productsWrapper} key={category.id}>
             <Link href={`/Produkty/${category.id}`}>
               {category.image && category.image.src && (
-                <img src={category.image.src} alt={category.image.alt} className={styles.categoryImage} />
+                <Image src={category.image.src} alt={category.image.alt} className={styles.categoryImage} />
               )}
               <p className='p15six'>{category.name}</p>
             </Link>
