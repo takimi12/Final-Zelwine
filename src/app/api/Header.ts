@@ -1,5 +1,5 @@
-export const getData = async () => {
-    const response = await fetch("http://grzejniki2.ergotree.pl/wp-json/custom/v1/navigation", {
+export const getHeaderData = async () => {
+    const response = await fetch("http://grzejniki.ergotree.pl/wp-json/custom/v1/navigation", {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',

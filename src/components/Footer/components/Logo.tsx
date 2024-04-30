@@ -9,7 +9,7 @@ const Logo = () => {
 
           <div className={styles.footerLogoParent}>
         <div className={styles.footerLogoInner}>
-          <Link href="/#">
+          <Link href="/#" aria-label="Popraw">
           <Logot />
             </Link>
             </div>

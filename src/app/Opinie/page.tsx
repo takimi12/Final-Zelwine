@@ -9,12 +9,12 @@ export default async function Opinie() {
     const data = await getData();
   
 
-
+console.log(data)
   return (
     <>
       <section className={styles.opinions}>
           <div className={styles.mainHeading}>
-            <h3> {data.acf.header}</h3>
+            <h6> {data.acf.header}</h6>
             <Image
             width={100}
             height={100}
@@ -30,7 +30,7 @@ export default async function Opinie() {
             <div key={opinion.number_of_stars} className={styles.wrapperOpinion}>
               <div className={styles.wrapperOpinionLeft}>
                  <p> {opinion.number_of_stars}</p>
-                <h6>{opinion.title}</h6>
+                <h3>{opinion.title}</h3>
                 <p className={`${styles.middle} p15`}> {opinion.paragraph}</p>
                 <p className="p13"> {opinion.signature}<span className="span13"> {opinion.country}</span></p>
 

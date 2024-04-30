@@ -4,7 +4,27 @@
 
 @import url('./reset.css');
 
+/* zmienne z kolorami z figmy colors.css*/
+:root{
+  --black: #000;
+  --black-300: #525555;
+  --breakpoint-mobile: 768px;
+}
 
 section{
   padding: 0px 40px;
+  color: var(--black-300);
+}
+
+.display1{
+  font-family:'Plus Jakarta Sans';
+  font-weight: 500;
+  font-size: 42px;
+  line-height: 48px;
+  color: var(--black);
+
+  @media screen and (min-width: var(--breakpoint-mobile)) {
+    font-size: 72px;
+    line-height: 83px;
+  }
 }
