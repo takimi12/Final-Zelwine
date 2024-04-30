@@ -12,7 +12,7 @@ export default async function Opinie() {
     <>
       <section className={styles.opinions}>
           <div className={styles.mainHeading}>
-            <h3> {data.acf.header}</h3>
+            <h1> {data.acf.header}</h1>
             <Image
             width={100}
             height={100}
