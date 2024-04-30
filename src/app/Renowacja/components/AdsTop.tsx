@@ -10,7 +10,7 @@ import styles from  './AdsTop.module.scss'
 import { getData } from "@/app/api/Renowacja";
 
 
-export async function AdsTop({ acf }: { acf: any }) {
+export const AdsTop: React.FC<{ acf: any }> = ({ acf }) => {
 
  
 

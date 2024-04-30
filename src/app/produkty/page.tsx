@@ -1,4 +1,4 @@
-'use client';
+
 
 import Breadcrumbs from '@/components/breadcrumbs/breadcrumbs';
 import { getData } from '../api/Produkty';

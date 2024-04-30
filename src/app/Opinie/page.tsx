@@ -16,7 +16,6 @@ export default async function Opinie() {
           <div className={styles.mainHeading}>
             <h3> {data.acf.header}</h3>
             <Image
-            fill 
             width={100}
             height={100}
             src={`${data.acf.header_stars.url}`}

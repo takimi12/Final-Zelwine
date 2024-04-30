@@ -44,7 +44,7 @@ const Header = () => {
 
   return (
     <>
-      {isMobile ? <MobileHeader categories={categories} /> : <DefaultHeader categories={categories} />}
+      {/* {isMobile ? <MobileHeader categories={categories} /> : <DefaultHeader categories={categories} />} */}
     </>
   );
 };
