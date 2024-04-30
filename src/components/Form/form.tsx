@@ -1,6 +1,6 @@
 'use client'
 import React, { useState } from "react";
-import styles from  "./Form.module.scss";
+import styles from  "./form.module.scss";
 import Plus from '../../../public/Renovation.svg'
 import Image from "next/image";
 
