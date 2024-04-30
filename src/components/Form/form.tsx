@@ -5,7 +5,7 @@ import Plus from '../../../public/Renovation.svg'
 import Image from "next/image";
 
 
-const ContactForm = ({formProp}) => {
+const ContactForm = ({formProp}: {formProp: any}) => {
   // Stan i funkcje walidacji początkowe
   const [name, setName] = useState("");
   const [surname, setSurname] = useState("");
@@ -24,19 +24,19 @@ const ContactForm = ({formProp}) => {
   const [messageTouched, setMessageTouched] = useState(false);
 
   // Funkcje obsługujące zmianę wartości pól
-  const handleNameChange = (e) => {
+  const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setName(e.target.value);
   };
 
-  const handleSurnameChange = (e) => {
+  const handleSurnameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSurname(e.target.value);
   };
 
-  const handleEmailChange = (e) => {
+  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);
   };
 
-  const handleTelephoneChange = (e) => {
+  const handleTelephoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const onlyDigits = e.target.value.replace(/\D/g, "");
   
     if (onlyDigits.length <= 9) {
@@ -44,7 +44,7 @@ const ContactForm = ({formProp}) => {
     }
   };
 
-  const handleMessageChange = (e) => {
+  const handleMessageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setMessage(e.target.value);
   };
 
@@ -91,7 +91,7 @@ const ContactForm = ({formProp}) => {
       setMessageError("");
     }
   };
-  const handleInputFocus = (inputName) => {
+  const handleInputFocus = (inputName: string) => {
     switch (inputName) {
       case "name":
         setNameTouched(true);
@@ -117,7 +117,7 @@ const ContactForm = ({formProp}) => {
         break;
     }
   };
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     // Wywołanie funkcji walidacji przed przesłaniem
@@ -244,7 +244,7 @@ const ContactForm = ({formProp}) => {
                 placeholder="Podaj ilość sztuk, ilość żeber oraz ich wymiary (długość, szerokość, wysokość w cm)"
                 draggable="false"
                 value={message}
-                onChange={handleMessageChange}
+                onChange={(e) => handleMessageChange}
                 onBlur={handleMessageBlur}
                 onFocus={() => handleInputFocus("message")}
               ></textarea>
@@ -274,7 +274,7 @@ const ContactForm = ({formProp}) => {
             </span>
           </div>
         </button>
-        <input className={styles.customFileInputHidden} type="file" multiple="" />
+        <input className={styles.customFileInputHidden} type="file" />
       </div>
     </div>
   </div>

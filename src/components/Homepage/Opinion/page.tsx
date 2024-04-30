@@ -11,7 +11,7 @@ import Image from "next/image";
 import styles from "./Opinion.module.scss";
 import Star from "../../../../public/static/Homepage/Opinion/star";
 
-const Clients = ({ data }) => {
+const Clients = ({ data }: { data: any[] }) => {
 
   const breakpoints = {
     200: {
@@ -56,7 +56,7 @@ const Clients = ({ data }) => {
         wrapperClass={styles.wrapperClass}
         breakpoints={breakpoints} 
         >
-          {data.map((opinion, index) => (
+            {data.map((opinion: any, index: number) => (
             <SwiperSlide key={index} className={styles.swiperSlide}>
               <div className={styles.clientOpinion}>
 

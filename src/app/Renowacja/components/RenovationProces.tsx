@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import styles from "./RenovationProces.module.scss";
 
-const RenovationProces = ({ proces }) => {
+const RenovationProces = ({ proces }: { proces: any }) => {
 
 
   return (
@@ -10,7 +10,7 @@ const RenovationProces = ({ proces }) => {
       <section className={styles.renovationPageInfo}>
         <h4 className={styles.heading}>{proces.title}</h4>
         <div className={styles.colWrapper}>
-          {proces.process_steps.map((step, index) => (
+            {proces.process_steps.map((step: any, index: number) => (
             <div className={styles.col6} key={index}>
               <div className={styles.foto}>
                 <Image className={styles.photoSection} 

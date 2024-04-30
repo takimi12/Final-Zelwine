@@ -9,7 +9,7 @@ import styles from './Series.module.scss';
 import Link from 'next/link';
 import SwiperNav from './SwiperNav';
 
-function Series({ lastSegment2, seriesProp, prop, lastSegment1 }) {
+function Series() {
   const [categories, setCategories] = useState(null);
   const [lastSegment, setLastSegment] = useState(null);
   const [isAtBeginning, setIsAtBeginning] = useState(true);
@@ -38,23 +38,16 @@ function Series({ lastSegment2, seriesProp, prop, lastSegment1 }) {
         });
         const result = await response.json();
 
-        const filteredCategories = result.filter(category => category.parent === 0 && category.name !== "Bez kategorii");
+        const filteredCategories = result.filter((category: any) => category.parent === 0 && category.name !== "Bez kategorii");
         setCategories(filteredCategories);
 
-        if (lastSegment2 !== undefined && lastSegment2 !== null) {
-          const filteredLastSegment = result.filter(category => category.id == lastSegment2);
-          setLastSegment(filteredLastSegment);
-
-          const filteredCategories = result.filter(category => category.parent == lastSegment2);
-          setCategories(filteredCategories);
-        }
       } catch (error) {
         // Handle error
       }
     };
 
     fetchData();
-  }, [lastSegment2]);
+  }, []);
 
   return (
     <>
@@ -77,46 +70,25 @@ function Series({ lastSegment2, seriesProp, prop, lastSegment1 }) {
               onReachBeginning={handleReachBeginning}
             >
               <div className={styles.topParent}>
-                {prop !== null && prop !== undefined ? (
-                  <h4>Kategorie Produktów</h4>
-                ) : (
-                  <>
-                    {lastSegment2 ? <h4>Pozostałe serie</h4> : <h4>Pozostałe Kategorie</h4>}
-                  </>
-                )}
+              
                 <div className={styles.arrowParent}>
                   <SwiperNav first={isAtBeginning} last={isAtEnd} />
                 </div>
               </div>
-              {lastSegment2 ? (
-  categories.map((category) => (
-    <SwiperSlide key={category.id} className={styles.slide}>
-      <Link href={`/Produkty/${category.parent}/${category.id}`}>
-        {category.image && category.image.src && (
-          <img
-            src={category.image.src}
-            alt={category.image.alt}
-            className={styles.image}
-          />
-        )}
-        <p className='p15sixx'>{category.name}</p>
-      </Link>
-    </SwiperSlide>
-  ))
-) :   categories.map((category) => (
-  <SwiperSlide key={category.id} className={styles.slide}>
-    <Link href={`/Produkty/${category.id}`}>
-      {category.image && category.image.src && (
-        <img
-          src={category.image.src}
-          alt={category.image.alt}
-          className={styles.image}
-        />
-      )}
-      <p className='p15sixx'>{category.name}</p>
-    </Link>
-  </SwiperSlide>
-))}
+              { (categories as any[]).map((category: any) => (
+                <SwiperSlide key={category.id} className={styles.slide}>
+                  <Link href={`/Produkty/${category.id}`}>
+                    {category.image && category.image.src && (
+                      <img
+                        src={category.image.src}
+                        alt={category.image.alt}
+                        className={styles.image}
+                      />
+                    )}
+                    <p className='p15sixx'>{category.name}</p>
+                  </Link>
+                </SwiperSlide>
+              ))}
             </Swiper>
           )}
         </div>

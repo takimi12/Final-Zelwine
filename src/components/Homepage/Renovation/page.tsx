@@ -3,7 +3,7 @@ import React from "react";
 import Image from "next/image";
 import styles from "./Renovation.module.scss";
 
-const RenovationSection = ({ data }) => {
+const RenovationSection = ({ data }: { data: any }) => {
 
   const mapData = () => {
     const mappedData = {

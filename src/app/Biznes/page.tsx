@@ -17,7 +17,7 @@ export default async function  Business() {
       </section>
 
       <section className={styles.businesContentWrapper}>
-        {data.acf?.asymetric.map((item) => (
+        {data.acf?.asymetric.map((item:any) => (
           <div className={styles.contentWrapper} key={item.photo.ID}>
             <div className={styles.imageContent}>
               <Image

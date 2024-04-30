@@ -1,0 +1,21 @@
+
+.box{
+    padding: 100px 40px;
+   
+    .customWrapper{
+        display: flex;
+        justify-content: space-between;
+        
+    }
+    
+    .boxParent{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+    .obrazek{
+        object-fit: cover;
+    }
+}
+}

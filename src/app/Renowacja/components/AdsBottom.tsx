@@ -8,7 +8,7 @@ import { Pagination } from 'swiper/modules';
 import Image from "next/image";
 import styles from  './AdsBottom.module.scss'
 
-const AdsBottom = ({ acf }) => {
+const AdsBottom = ({ acf }: { acf: any }) => {
   const breakpoints = {
     600: {
       slidesPerView: 1,
@@ -26,7 +26,7 @@ const AdsBottom = ({ acf }) => {
 
   const pagination = {
     clickable: true,
-    renderBullet: function (index, className) {
+    renderBullet: function (index:any, className:any) {
       return '<span class="' + className + '">  </span>';
     },
   };
@@ -47,7 +47,7 @@ const AdsBottom = ({ acf }) => {
        className={styles.swiper}
        breakpoints={breakpoints}
         >
-          {acf.benefits.benefits_repeater.map((benefit, index) => (
+          {acf.benefits.benefits_repeater.map((benefit:any, index:any) => (
             <SwiperSlide key={index}>
              <div className={styles.renovationPageInfoParent}>
           <div className={styles.slides}>

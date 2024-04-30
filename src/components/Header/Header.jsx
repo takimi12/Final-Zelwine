@@ -28,18 +28,18 @@ const Header = () => {
   }, []);
 
   useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 900);
-    };
+    // const handleResize = () => {
+    //   setIsMobile(window.innerWidth < 900);
+    // };
 
-    handleResize(); // Dodane, aby określić początkową wartość isMobile po załadowaniu strony
+    // handleResize(); // Dodane, aby określić początkową wartość isMobile po załadowaniu strony
 
-    window.addEventListener('resize', handleResize);
+    // window.addEventListener('resize', handleResize);
 
-    // Clean-up function
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
+    // // Clean-up function
+    // return () => {
+    //   window.removeEventListener('resize', handleResize);
+    // };
   }, []); // Pusta tablica oznacza, że useEffect zostanie uruchomiony tylko po zamontowaniu komponentu
 
   return (

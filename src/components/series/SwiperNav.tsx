@@ -7,7 +7,7 @@ import ArrowPrev from '../../../public/static/Homepage/MostPopular/ArrowPrev';
 import ArrowNext from '../../../public/static/Homepage/MostPopular/ArrowNext';
 
 
-const SwiperNav = ({first, last}) => {
+const SwiperNav = ({first, last}: {first: boolean, last: boolean}) => {
   const swiper = useSwiper();
 
 

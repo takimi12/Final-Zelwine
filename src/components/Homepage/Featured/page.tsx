@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./Featured.module.scss";
 import Link from "next/link";
 
-const Featured = ({ data }) => {
+const Featured = ({ data }: { data: any }) => {
 
 
   const sectionStyle = {

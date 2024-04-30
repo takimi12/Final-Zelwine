@@ -1,0 +1,47 @@
+.series{
+    padding: 64px 40px;
+    @media screen and (max-width: 1050px) {
+    
+     padding: 64px 16px;
+    }
+.parent{
+    display: flex;
+    justify-content: space-between;
+    @media screen and (max-width: 1050px) {
+    
+        flex-direction: column-reverse;
+    }
+        button {
+          width: 100%;
+          max-width: 100%;
+        }
+       }
+    .mainHeading{
+        margin-top: 6px;
+        margin-bottom: 36px;
+    }
+    .leftSection
+    {
+        max-width: 48%;
+        @media screen and (max-width: 1050px) {
+    
+            max-width: 100%;
+            
+            }
+    }
+    .rightSection{
+        max-width: 48%;
+        @media screen and (max-width: 1050px) {
+    
+        max-width: 100%;
+        }
+        .image{
+            margin-top: 10px;
+            @media screen and (max-width: 1050px) {
+    
+               width: 100%;
+               margin-bottom: 40px;
+                }
+        }
+    }
+}

@@ -8,10 +8,10 @@ import 'swiper/css/pagination';
 import { Pagination } from 'swiper/modules';
 import styles from './Box.module.scss';
 
-const FutureSection = ({ data }) => {
+const FutureSection = ({ data }: { data: Array<object> }) => {
   const pagination = {
     clickable: true,
-    renderBullet: function (index, className) {
+    renderBullet: function (index: number, className: string) {
       return '<span class="' + className + '">  </span>';
     },
   };
@@ -45,14 +45,14 @@ const FutureSection = ({ data }) => {
               <div className={styles.featureWrapper}>
                 <div className={styles.featureIcon}>
                   <Image
-                    src={feature.icon.url}
-                    alt={feature.icon.alt}
+                    src={(feature as { icon: { url: string; alt: string } }).icon.url}
+                    alt={(feature as { icon: { url: string; alt: string } }).icon.alt}
                     width={50}
                     height={50}
                   />
                 </div>
-                <p className={`${styles.featureTitle} p15six`}>{feature.title}</p>
-                <p className={`${styles.featureDescription} p15`}>{feature.description}</p>
+                <p className={`${styles.featureTitle} p15six`}>{(feature as { title: string }).title}</p>
+                <p className={`${styles.featureDescription} p15`}>{(feature as { description: string }).description}</p>
               </div>
             </div>
           </SwiperSlide>

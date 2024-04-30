@@ -10,7 +10,7 @@ import SwiperNav from '../../series/SwiperNav';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 
-function MostPopular({ data }) {
+function MostPopular({ data }: { data: any }) {
   const [isAtBeginning, setIsAtBeginning] = useState(true);
   const [isAtEnd, setIsAtEnd] = useState(false);
 
@@ -52,7 +52,7 @@ function MostPopular({ data }) {
           </div>
           </div>
 
-          {data.map((item, index) => (
+          {data.map((item: any, index: number) => (
             <SwiperSlide className={styles.swiperSlide} key={index}>
             <Link  href={`/product/${item.link_do_produktu.ID}`}>
    

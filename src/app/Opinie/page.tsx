@@ -25,7 +25,7 @@ export default async function Opinie() {
 
 
         <div className={styles.mainWrapper}>
-        {data?.acf?.opinions?.map((opinion) => (
+        {data?.acf?.opinions?.map((opinion:any) => (
             <div key={opinion.number_of_stars} className={styles.wrapperOpinion}>
               <div className={styles.wrapperOpinionLeft}>
                  <p> {opinion.number_of_stars}</p>

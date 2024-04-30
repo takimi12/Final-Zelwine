@@ -10,7 +10,7 @@ import styles from  './AdsTop.module.scss'
 import { getData } from "@/app/api/Renowacja";
 
 
-export async function  AdsTop ({ acf})  {
+export async function AdsTop({ acf }: { acf: any }) {
 
  
 
@@ -31,7 +31,7 @@ export async function  AdsTop ({ acf})  {
 
   const pagination = {
     clickable: true,
-    renderBullet: function (index, className) {
+    renderBullet: function (index: number, className: string) {
       return '<span class="' + className + '">  </span>';
     },
   };
@@ -52,7 +52,7 @@ export async function  AdsTop ({ acf})  {
           className={styles.swiper}
           breakpoints={breakpoints}
         >
-          {acf.simple_steps.steps.map((step, index) => (
+            {acf.simple_steps.steps.map((step: any, index: number) => (
             <SwiperSlide key={index} className={styles.slide}>
               <div className={styles.renovationPageInfoParent}>
                 <div className={styles.slides}>

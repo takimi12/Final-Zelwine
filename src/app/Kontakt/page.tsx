@@ -22,7 +22,7 @@ export default async function  Contact() {
               <>
                 <h2>{data.title.rendered}</h2>
 
-                {data.acf.contacts.map((contact, index) => (
+                {data.acf.contacts.map((contact:any, index:any) => (
                   <div className={styles.contactDetailsSmall} key={index}>
                     <div className="Image">
                       <img

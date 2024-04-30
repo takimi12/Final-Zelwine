@@ -24,7 +24,7 @@ export default async function  HomeLayout() {
     <>
         <Hero data={acf.hero} />
         <Most data={acf.most} />
-        <Series prop={prop} />
+        <Series  />
         <Inspiration data={acf.inspirations} />
       <Box data={acf.box} />
       <RenovationSection data={acf.image_with_text} />

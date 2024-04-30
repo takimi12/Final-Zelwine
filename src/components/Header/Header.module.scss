@@ -38,7 +38,7 @@
     padding: 15px 25px;
   }
    .mainWrapper{
-    padding: 20px 40px;
+    padding: 10px 40px;
     display: flex;
     align-items: center;
     transition: all 0.3s ease 0s;
@@ -207,7 +207,7 @@
     .headerMenu {
       position: absolute;
       top: 20%;
-      left: 50%;
+      left: 60%;
   
       .headerImageli {
         position: absolute;
@@ -247,10 +247,13 @@
     display: flex;
     flex-direction: column;
     visibility: hidden;
-    max-height: 257px;
     gap: 31px;
     flex-wrap: wrap;
-    padding: 40px;
+    margin-left: 40px;
+    margin-top: 40px;
+    max-height: 250px;
+    max-width: 300px;
+    width: 300px;
   }
   .active2 {
     visibility: visible !important;

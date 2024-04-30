@@ -4,7 +4,7 @@ import styles from "./Hero.module.scss";
 import Link from "next/link";
 
 
-const Hero =({ acf} ) => {
+const Hero = ({ acf }: { acf: any }) => {
   const { hero } = acf;
 
   return (
