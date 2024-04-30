@@ -50,17 +50,10 @@
                 margin: auto;
             }
     img{
-        @media screen and (max-width: 4000px) {
-            width: 330px!important;
-            height: 326px!important;
-        }
-        @media screen and (max-width: 768px) {
-            width: 100%;
-        }
-        @media screen and (max-width: 500px) {
             width: 326px!important;
             height: 325px!important;
-        }
+
+
     }
     }
     .wrapperOpinion {
