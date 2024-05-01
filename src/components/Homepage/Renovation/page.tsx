@@ -34,7 +34,7 @@ const RenovationSection = ({ data }: { data: any }) => {
           <div className={styles.renovationSectionTitle}>
             <p className="p138">{mappedData.small_title}</p>
           </div>
-          <h1 className={`${styles.renovationSectionHeading} h1big`}>{mappedData.title}</h1>
+          <h6 className={`${styles.renovationSectionHeading} h1big`}>{mappedData.title}</h6>
           <div className={styles.renovationSectionDescription}>
             <p className="p15">{mappedData.description}</p>
           </div>

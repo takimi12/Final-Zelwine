@@ -46,7 +46,7 @@ function MostPopular({ data }: { data: any }) {
           onReachBeginning={handleReachBeginning}
         >
           <div className={styles.swiperTop}>
-            <h4>Najczęściej wybierane</h4>
+            <h2>Najczęściej wybierane</h2>
           <div>
             <SwiperNav  first={isAtBeginning} last={isAtEnd}/> 
           </div>
@@ -66,8 +66,8 @@ fill
                 </div>
               </div>
               <div className={styles.swipperSliderHeading}>
-                <h6 className='h6-600'>{item.title}</h6>
-                <h6 className='h6-600'>{item.price}</h6>
+                <p className='h6-600'>{item.title}</p>
+                <p className='h6-600'>{item.price}</p>
               </div>
               </Link>
             </SwiperSlide>

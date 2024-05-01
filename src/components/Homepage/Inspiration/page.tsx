@@ -147,7 +147,7 @@ const SectionSwiper = ({ data }: { data: any }) => {
           onReachBeginning={handleReachBeginning}
         >
           <div className={styles.swiperTop}>
-            <h4 className="h4">Inspiracje</h4>
+            <h3 className="h4">Inspiracje</h3>
             <div className="arrowParent">
               <SwiperNav first={isAtBeginning} last={isAtEnd} />
             </div>
@@ -163,7 +163,7 @@ const SectionSwiper = ({ data }: { data: any }) => {
                 />
                 <div className={styles.hoverEffectDivInner}>
                   <Plus />
-                  <h5 className={styles.Look}>Zobacz</h5>
+                  <h3 className={styles.Look}>Zobacz</h3>
                 </div>
               </div>
             </SwiperSlide>
@@ -212,7 +212,7 @@ const SectionSwiper = ({ data }: { data: any }) => {
                           </button>
                         </div>
                       </div>
-                      <h5>{selectedImage.title} </h5>
+                      <h3>{selectedImage.title} </h3>
                       <p className="p-13">Count Column: {selectedImage.count_column}</p>
                       <p className="p-13">Height: {selectedImage.height}</p>
                       <div className={styles.bottomInfoSection}>
@@ -249,7 +249,7 @@ const SectionSwiper = ({ data }: { data: any }) => {
                       <div className={`${isConfigExpanded ? styles.mobileParentScroll : styles.mobileParent}`}>
                         <div className={styles.mobile}>
                           <div >
-                            <h5>{selectedImage.title} </h5>
+                            <h3>{selectedImage.title} </h3>
                             <p className="p-13">Count Column: {selectedImage.count_column}</p>
                             <p className="p-13">Height: {selectedImage.height}</p>
                           </div>

@@ -58,7 +58,7 @@ function Series({ series, series1 }: any) {
               onReachBeginning={handleReachBeginning}
             >
               <div className={styles.topParent}>
-                <h5>Kategorie produktów</h5>
+                <p>Kategorie produktów</p>
                 <div className={styles.arrowParent}>
                   <SwiperNav first={isAtBeginning} last={isAtEnd} />
                 </div>
@@ -99,7 +99,7 @@ function Series({ series, series1 }: any) {
               onReachBeginning={handleReachBeginning}
             >
               <div className={styles.topParent}>
-                <h5>Pozostałe Kategorie</h5>
+                <p>Pozostałe Kategorie</p>
                 <div className={styles.arrowParent}>
                   <SwiperNav first={isAtBeginning} last={isAtEnd} />
                 </div>
