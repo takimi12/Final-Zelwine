@@ -33,7 +33,7 @@ export default async function  Contact() {
                       />
                     </div>
                     <div className="details">
-                      <h6 className={styles.ContactParagraphDetails}>{contact.bold}</h6>
+                      <h3 className={styles.ContactParagraphDetails}>{contact.bold}</h3>
                       <p>{contact.grey}</p>
                     </div>
                   </div>
