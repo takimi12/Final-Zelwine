@@ -6,6 +6,7 @@ import Footer from "../components/Footer/Footer";
 import { getHeaderData } from "./api/Header";
 
 
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -19,11 +20,11 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   const categories=await getHeaderData()
-  return (
+    return (
     <html lang="en">
       <body className={inter.className}>
         <Header categories={categories} />
-        {children}
+        {children  }
       <Footer />
       </body>
     </html>

@@ -28,7 +28,12 @@ export default async function Products({ params }: any) {
           <div className={styles.productsWrapper} key={category.id}>
             <Link href={`/Produkty/${category.id}`}>
               {category.image && category.image.src && (
-                <Image src={category.image.src} alt={category.image.alt} className={styles.categoryImage} />
+                <Image 
+                src={category.image.src}
+                 alt={category.image.alt} 
+                 className={styles.categoryImage} 
+                width={440}
+                height={330}/>
               )}
               <p className='p15six'>{category.name}</p>
             </Link>

@@ -10,9 +10,9 @@ import Link from 'next/link';
 import SwiperNav from './SwiperNav';
 import Image from 'next/image';
 
-function Series() {
-  const [categories, setCategories] = useState(null);
-  const [lastSegment, setLastSegment] = useState(null);
+
+function Series({ series, series1 }: any) {
+
   const [isAtBeginning, setIsAtBeginning] = useState(true);
   const [isAtEnd, setIsAtEnd] = useState(false);
 
@@ -27,34 +27,21 @@ function Series() {
     setIsAtEnd(false);
   };
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch('https://grzejniki2.ergotree.pl/wp-json/wc/v3/products/categories?per_page=100', {
-          method: 'GET',
-          headers: {
-            'Content-Type': 'application/json',
-            'Authorization': 'Basic ' + btoa('ck_333c63c1676df66d84322191922b725ba3dc7f1e:cs_85c7bc717de01741a71ad8dc9152986569b62cec')
-          },
-        });
-        const result = await response.json();
+  let filteredCategories = [];
+  if (series) {
+    filteredCategories = series.filter((category: any) => category.parent === 0 && category.name !== "Bez kategorii");
+  }
 
-        const filteredCategories = result.filter((category: any) => category.parent === 0 && category.name !== "Bez kategorii");
-        setCategories(filteredCategories);
-
-      } catch (error) {
-        // Handle error
-      }
-    };
-
-    fetchData();
-  }, []);
+  let filteredCategories1 = [];
+  if (series1) {
+    filteredCategories1 = series1.filter((category: any) => category.parent === 0 && category.name !== "Bez kategorii");
+  }
 
   return (
     <>
       <section className={styles.products}>
         <div className={styles.product}>
-          {categories && (
+          {filteredCategories.length > 0 && (
             <Swiper
               spaceBetween={20}
               slidesPerView={4}
@@ -71,12 +58,12 @@ function Series() {
               onReachBeginning={handleReachBeginning}
             >
               <div className={styles.topParent}>
-              
+                <h5>Kategorie produktów</h5>
                 <div className={styles.arrowParent}>
                   <SwiperNav first={isAtBeginning} last={isAtEnd} />
                 </div>
               </div>
-              { (categories as any[]).map((category: any) => (
+              {filteredCategories.map((category: any) => (
                 <SwiperSlide key={category.id} className={styles.slide}>
                   <Link href={`/Produkty/${category.id}`}>
                     {category.image && category.image.src && (
@@ -84,6 +71,49 @@ function Series() {
                         src={category.image.src}
                         alt={category.image.alt}
                         className={styles.image}
+                        width={425}
+                        height={325}
+                      />
+                    )}
+                    <p className='p15sixx'>{category.name}</p>
+                  </Link>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          )}
+          
+          {filteredCategories1.length > 0 && (
+            <Swiper
+              spaceBetween={20}
+              slidesPerView={4}
+              slidesOffsetBefore={40}
+              className={styles.swiperClass}
+              wrapperClass={styles.wrapperClass}
+              breakpoints={{
+                640: { slidesPerView: 2, spaceBetween: 30 },
+                768: { slidesPerView: 2, spaceBetween: 40 },
+                991: { slidesPerView: 3, spaceBetween: 40 },
+                1199: { slidesPerView: 4, spaceBetween: 40 },
+              }}
+              onReachEnd={handleReachEnd}
+              onReachBeginning={handleReachBeginning}
+            >
+              <div className={styles.topParent}>
+                <h5>Pozostałe Kategorie</h5>
+                <div className={styles.arrowParent}>
+                  <SwiperNav first={isAtBeginning} last={isAtEnd} />
+                </div>
+              </div>
+              {filteredCategories1.map((category: any) => (
+                <SwiperSlide key={category.id} className={styles.slide}>
+                  <Link href={`/Produkty/${category.id}`}>
+                    {category.image && category.image.src && (
+                      <Image
+                        src={category.image.src}
+                        alt={category.image.alt}
+                        className={styles.image}
+                        width={425}
+                        height={325}
                       />
                     )}
                     <p className='p15sixx'>{category.name}</p>

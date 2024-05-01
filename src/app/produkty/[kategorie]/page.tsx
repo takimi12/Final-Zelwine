@@ -5,6 +5,7 @@ import { getData } from "@/app/api/Produkty";
 import Series from "@/components/series/Series";
 import Image from "next/image";
 import Breadcrumbs from "@/components/breadcrumbs/breadcrumbs";
+import { getDataSeries } from "@/app/api/Series";
 
 
 export default async function Subkategories({ params }: { params: { kategorie: string } }) {
@@ -14,6 +15,8 @@ export default async function Subkategories({ params }: { params: { kategorie: s
   const otherfilteredCategories = fetchData.filter((category:any) => category.id === parseInt(params.kategorie));
 
   const names = fetchData.find((category :any) => category.id == params.kategorie)?.name;
+
+  const series1 = await getDataSeries();
 
 
   return (
@@ -64,7 +67,7 @@ export default async function Subkategories({ params }: { params: { kategorie: s
         
       </section>
 
-      <Series />
+      <Series series1={series1}/>
     </>
   );
 }
