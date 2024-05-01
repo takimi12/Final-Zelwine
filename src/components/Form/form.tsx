@@ -163,7 +163,7 @@ const handleFilesChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         <form className="contact-form" onSubmit={handleSubmit}>
         {formProp ? null : (
   <div>
-    <h4 className={styles.contactHeading}>Wyceń renowację swoich grzejników!</h4>
+    <h5 className={styles.contactHeading}>Wyceń renowację swoich grzejników!</h5>
     {/* Dodaj tutaj inne elementy, jeśli są potrzebne */}
   </div>
 )}

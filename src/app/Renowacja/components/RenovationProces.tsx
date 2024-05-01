@@ -8,7 +8,7 @@ const RenovationProces = ({ proces }: { proces: any }) => {
   return (
     <>
       <section className={styles.renovationPageInfo}>
-        <h4 className={styles.heading}>{proces.title}</h4>
+        <h3 className={styles.heading}>{proces.title}</h3>
         <div className={styles.colWrapper}>
             {proces.process_steps.map((step: any, index: number) => (
             <div className={styles.col6} key={index}>
@@ -30,7 +30,7 @@ const RenovationProces = ({ proces }: { proces: any }) => {
               <div className={styles.text}>
                 <div className={styles.innerText}>
                   <p className="p138" >{step.step}</p>
-                  <h5>{step.step_title}</h5>
+                  <h4>{step.step_title}</h4>
                   <p className="p15" >{step.step_text}</p>
                 </div>
               </div>
