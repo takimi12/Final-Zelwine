@@ -1,5 +1,4 @@
 'use client';
-
 import React, { useState, useEffect, useRef } from "react";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -71,13 +70,28 @@ const SectionSwiper = ({ data }: { data: any }) => {
   const [isAtBeginning, setIsAtBeginning] = useState(true);
   const [isAtEnd, setIsAtEnd] = useState(false);
 
+  const [isAbove900, setIsAbove900] = useState(false);
+  const [isBelow900, setIsBelow900] = useState(false);
 
- 
+  useEffect(() => {
+    const handleResize = () => {
+      setIsAbove900(typeof window === 'object' && window.innerWidth > 899);
+      setIsBelow900(typeof window === 'object' && window.innerWidth <= 899);
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   const handleReachEnd = () => {
     setIsAtBeginning(false);
     setIsAtEnd(true);
   };
+
   const handleReachBeginning = () => {
     setIsAtBeginning(true);
     setIsAtEnd(false);
@@ -94,27 +108,9 @@ const SectionSwiper = ({ data }: { data: any }) => {
     setSelectedImage(null);
   };
 
-  const handlePopupClick = (event:any) => {
+  const handlePopupClick = (event: any) => {
     event.stopPropagation();
   };
-
-  const [isAbove900, setIsAbove900] = useState(window.innerWidth > 899);
-  const [isBelow900, setIsBelow900] = useState(window.innerWidth <= 899);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsAbove900(window.innerWidth > 899);
-      setIsBelow900(window.innerWidth <= 899);
-    };
-
-    handleResize();
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
 
   useEffect(() => {
     if (showPopup) {
@@ -132,15 +128,11 @@ const SectionSwiper = ({ data }: { data: any }) => {
     }
   }, [showPopup, isBottomSectionExpanded]);
 
-
   const [isConfigExpanded, setIsConfigExpanded] = useState(false);
 
   const handleSwitcherClick = () => {
     setIsConfigExpanded(!isConfigExpanded);
   };
-
-
-  
 
   return (
     <>
@@ -160,15 +152,15 @@ const SectionSwiper = ({ data }: { data: any }) => {
               <SwiperNav first={isAtBeginning} last={isAtEnd} />
             </div>
           </div>
-          {data.map((item:any, index:any) => (
+          {data.map((item: any, index: any) => (
             <SwiperSlide key={index} className={styles.slide}>
               <div className={styles.hoverEffectDiv} onClick={() => handleImageClick(item, index)}>
-              <Image
-                    src={item.image.url}
-                    alt={item.title}
-                    width={388}
-                    height={618}
-                  />
+                <Image
+                  src={item.image.url}
+                  alt={item.title}
+                  width={388}
+                  height={618}
+                />
                 <div className={styles.hoverEffectDivInner}>
                   <Plus />
                   <h5 className={styles.Look}>Zobacz</h5>
@@ -177,60 +169,53 @@ const SectionSwiper = ({ data }: { data: any }) => {
             </SwiperSlide>
           ))}
         </Swiper>
-{showPopup && (
-  <div ref={popupRef} className={styles.popupOverlay} onClick={closePopup}>
-    <div className={styles.popup} onClick={handlePopupClick}>
-      {selectedImage && (
-
-
-        <div className={styles.popupContent}>
-          <Swiper
-            spaceBetween={20}
-            slidesPerView={1}
-            loop={true}
-            slidesOffsetBefore={40}
-            className={`${isConfigExpanded ? styles.scroll : styles.swiper}`}
-            wrapperClass={styles.wrapperClass1}
-         
-          >
-            <div className={styles.arrowWrapper}>
-<div className={styles.arrowParent}>
-            <Prev   first={isAtBeginning} last={isAtEnd}/>
-            </div>
-            <div className={styles.arrowParent}>
-            <Next   first={isAtBeginning} last={isAtEnd} />
-            </div>
-            </div>
-            <SwiperSlide key={selectedSlideIndex} className={styles.slide1}>
-              <img
-                src={selectedImage.bigger_image.url}
-                alt={selectedImage.bigger_image.title}
-              />
-            </SwiperSlide>
-            <SwiperSlide key={selectedSlideIndex + 1} className={styles.slide1}>
-    <img
-      src={selectedImage.bigger_image.url}
-      alt={selectedImage.bigger_image.title}
-    />
-  </SwiperSlide>
-          </Swiper>
-          {isAbove900 && (
-          <div className={styles.info}>
-          <div className={styles.topInfoSection}>
-                      <div className="buttoninnerWrapper">
-              <button className={styles.closeButton} onClick={closePopup}>
-                X
-              </button>
-            </div>
-            </div>
-            <h5>{selectedImage.title} </h5>
-            <p className="p-13">Count Column: {selectedImage.count_column}</p>
-            <p className="p-13">Height: {selectedImage.height}</p>
-            
-                      
-
-
- <div className={styles.bottomInfoSection}>
+        {showPopup && (
+          <div ref={popupRef} className={styles.popupOverlay} onClick={closePopup}>
+            <div className={styles.popup} onClick={handlePopupClick}>
+              {selectedImage && (
+                <div className={styles.popupContent}>
+                  <Swiper
+                    spaceBetween={20}
+                    slidesPerView={1}
+                    loop={true}
+                    slidesOffsetBefore={40}
+                    className={`${isConfigExpanded ? styles.scroll : styles.swiper}`}
+                    wrapperClass={styles.wrapperClass1}
+                  >
+                    <div className={styles.arrowWrapper}>
+                      <div className={styles.arrowParent}>
+                        <Prev first={isAtBeginning} last={isAtEnd} />
+                      </div>
+                      <div className={styles.arrowParent}>
+                        <Next first={isAtBeginning} last={isAtEnd} />
+                      </div>
+                    </div>
+                    <SwiperSlide key={selectedSlideIndex} className={styles.slide1}>
+                      <img
+                        src={selectedImage.bigger_image.url}
+                        alt={selectedImage.bigger_image.title}
+                      />
+                    </SwiperSlide>
+                    <SwiperSlide key={selectedSlideIndex + 1} className={styles.slide1}>
+                      <img
+                        src={selectedImage.bigger_image.url}
+                        alt={selectedImage.bigger_image.title}
+                      />
+                    </SwiperSlide>
+                  </Swiper>
+                  {isAbove900 && (
+                    <div className={styles.info}>
+                      <div className={styles.topInfoSection}>
+                        <div className="buttoninnerWrapper">
+                          <button className={styles.closeButton} onClick={closePopup}>
+                            X
+                          </button>
+                        </div>
+                      </div>
+                      <h5>{selectedImage.title} </h5>
+                      <p className="p-13">Count Column: {selectedImage.count_column}</p>
+                      <p className="p-13">Height: {selectedImage.height}</p>
+                      <div className={styles.bottomInfoSection}>
                         <p className={`p15six ${styles.firstParagraph}`}>Konfiguracja ze zdjęcia</p>
                         {selectedImage.config.map((configItem: ConfigType, index: number) => (
                           <div className="bottoInfosecttionText" key={index}>
@@ -252,69 +237,58 @@ const SectionSwiper = ({ data }: { data: any }) => {
                       <div>
                         <button><a href="#">Zobacz produkt</a></button>
                       </div>
-          </div>
-          )}
-  {isBelow900 && (
-    <>
-          <div className={styles.buttoninnerWrapper}>
-              <button className={styles.closeButton1} onClick={closePopup}>
-                X
-              </button>
+                    </div>
+                  )}
+                  {isBelow900 && (
+                    <>
+                      <div className={styles.buttoninnerWrapper}>
+                        <button className={styles.closeButton1} onClick={closePopup}>
+                          X
+                        </button>
+                      </div>
+                      <div className={`${isConfigExpanded ? styles.mobileParentScroll : styles.mobileParent}`}>
+                        <div className={styles.mobile}>
+                          <div >
+                            <h5>{selectedImage.title} </h5>
+                            <p className="p-13">Count Column: {selectedImage.count_column}</p>
+                            <p className="p-13">Height: {selectedImage.height}</p>
+                          </div>
+                          <div >
+                            <button><a href="#">Zobacz produkt</a></button>
+                          </div>
+                        </div>
+                        <div className={` ${styles.swipeContent}`}>
+                          <p className={`p15six ${styles.firstParagraph}`}>Konfiguracja ze zdjęcia</p>
+                          {selectedImage.config.map((configItem, index) => (
+                            <div className={styles.bottomInfosecttionText} key={index}>
+                              <div className={styles.photoWithText}>
+                                <div className={styles.photo}>
+                                  <img src={configItem.image.url} alt='alt'
+                                    width={100}
+                                    height={100}
+                                  />
+                                </div>
+                                <div className="text">
+                                  <p className="body-small-bigger-third">{configItem.subtitle}</p>
+                                  <p className="body-small-smaller-third">{configItem.value}</p>
+                                </div>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                      <div className={styles.mobileSwitcher} onClick={handleSwitcherClick}>
+                        <p className="p15">{isConfigExpanded ? "Zwiń" : "Konfiguracja ze zdjęcia"}
+                          {isConfigExpanded ? <span ><Arrow className={styles.rotate} /></span> : <span><Arrow /></span>}
+                        </p>
+                      </div>
+                    </>
+                  )}
+                </div>
+              )}
             </div>
-  <div             className={`${isConfigExpanded ? styles.mobileParentScroll : styles.mobileParent}`}>
-        <div className={styles.mobile}>
-    <div >
-      <h5>{selectedImage.title} </h5>
-            <p className="p-13">Count Column: {selectedImage.count_column}</p>
-            <p className="p-13">Height: {selectedImage.height}</p>
-    </div>
-
-   <div >
-   <button><a href="#">Zobacz produkt</a></button>
- </div>
-
-
- </div>
- <div className={` ${styles.swipeContent}`}>
-
-<p className={`p15six ${styles.firstParagraph}`}>Konfiguracja ze zdjęcia</p>
-                       {selectedImage.config.map((configItem, index) => (
-                         <div className={styles.bottomInfosecttionText} key={index}>
-                           <div className={styles.photoWithText}>
-                             <div className={styles.photo}>
-                               <img src={configItem.image.url} alt='alt'
-                                 width={100}
-                                 height={100}
-                               />
-                             </div>
-                             <div className="text">
-                               <p className="body-small-bigger-third">{configItem.subtitle}</p>
-                               <p className="body-small-smaller-third">{configItem.value}</p>
-                             </div>
-                           </div>
-                         </div>
-                       ))}
-               
-
- </div>
- </div>
-
-  <div className={styles.mobileSwitcher} onClick={handleSwitcherClick}>
-            <p className="p15">{isConfigExpanded ? "ZwiÅ" : "Konfiguracja ze zdjÄcia"}
-            {isConfigExpanded ? <span  ><Arrow className={styles.rotate}/></span> :  <span><Arrow /></span>}
-              </p>
           </div>
- </>
-   )}
-
-        </div>
-        
-      )}
-    </div>
-  </div>
-  
-)}
-
+        )}
       </section>
     </>
   );
