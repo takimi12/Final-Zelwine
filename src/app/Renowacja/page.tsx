@@ -7,7 +7,7 @@ import {AdsTop} from "./components/AdsTop";
 import AdsBottom from "./components/AdsBottom";
 import Hero from "./components/Hero";
 import RenovationProces from "./components/RenovationProces";
-import Form from "./components/Form";
+import Forms from "../../components/Form/form";
 
 
 export default async function Opinie() {
@@ -15,6 +15,7 @@ export default async function Opinie() {
   const data = await getData();
   const { acf  } = data;
 
+  let formProp = 0;
    
   return (
 <>
@@ -22,7 +23,8 @@ export default async function Opinie() {
 <AdsBottom acf={acf} />
 <AdsTop  acf={acf} />
 <RenovationProces proces={acf.process} />
-<Form />
+<Forms formProp={formProp} />
+
 </>
   );
   }

@@ -5,7 +5,7 @@
   
   .contactFormSection{
     padding: 50px 40px;
-    @media screen and (max-width: 900px) {
+    @media screen and (max-width: 769px) {
       padding: 0px 16px;
         }
   
@@ -140,10 +140,9 @@
       height: 150px;
       margin-right: 10px;
       margin-top: 10px;
+      padding: 10px;
   }
-   .textarea::placeholder {
-  padding: 10px;
-  }
+
   
   .formGroup{
     display: flex;
@@ -157,4 +156,33 @@
       flex-direction: column;
       width: 100%;
     }
+  }
+
+
+
+
+  .choseFile{
+
+    border: 0.0625rem solid #1D3C44;
+    background-color: transparent;
+    color: #1D3C44;
+    border-color: #AEB2B3;
+    max-width: 152px;
+    cursor:pointer;
+    position: relative;
+    margin-top: 8px;
+    margin-bottom: 40px;
+    .customFileInputButton{
+  width: 100%;
+  height: 60px;
+    }
+  .positionButton {
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  }
+  .inputHidden {
+    display: none;
+  }
   }

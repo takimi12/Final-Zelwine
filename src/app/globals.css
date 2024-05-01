@@ -11,6 +11,7 @@
   --breakpoint-mobile: 768px;
 }
 
+
 section{
   padding: 0px 40px;
   color: var(--black-300);
@@ -27,4 +28,9 @@ section{
     font-size: 72px;
     line-height: 83px;
   }
+}
+
+img, video {
+  max-width: 100%;
+  height: fit-content;
 }

@@ -10,7 +10,7 @@ const Hero = ({ acf }: { acf: any }) => {
   return (
     <>
       <section className={styles.renovationPage}>
-        <div className={styles.renovationColumWrapper}>
+      <div className={`${styles.renovationColumWrapper} ${styles.renovationColumnWrapper2}`}>
           <div className={styles.renovationPageText}>
             <div className={styles.innerWrapper}>
               <h1 className="h1big">{hero.title}</h1>
@@ -23,7 +23,7 @@ const Hero = ({ acf }: { acf: any }) => {
             </div>
           </div>
         </div>
-        <div className={styles.renovationColumWrapper}>
+        <div className={`${styles.renovationColumWrapper} ${styles.renovationColumnWrapper1}`}>
             <Image
             fill
                 src={hero.image.url}

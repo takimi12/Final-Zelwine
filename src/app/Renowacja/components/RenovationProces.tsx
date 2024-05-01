@@ -15,8 +15,16 @@ const RenovationProces = ({ proces }: { proces: any }) => {
               <div className={styles.foto}>
                 <Image className={styles.photoSection} 
                 src={step.process_image.url} 
-                alt="leeerob"
-                fill
+                alt="popraw"
+               width={325}
+               height={251}
+                />
+                <Image className={styles.photoSectionMobile} 
+                src={step.process_image.url} 
+                alt="popraw"
+              width={358}
+              height={268}
+
                 />
               </div>
               <div className={styles.text}>

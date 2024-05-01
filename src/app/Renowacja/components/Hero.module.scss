@@ -6,7 +6,8 @@
     gap:40px;
     @media only screen and (max-width: 1199px) {
       
-      flex-direction: column-reverse;;
+      flex-direction: column-reverse;
+      padding: 0;
       }
       .renovationColumWrapper{
         max-width: 100%;
@@ -26,9 +27,21 @@
             }
         }
       }
-    @media only screen and (max-width: 768px) {
-        padding: 16px;
+      .renovationColumnWrapper1{
+        @media only screen and (max-width: 1199px) {
+      
+          min-height: 650px;
       }
+    }
+      .renovationColumnWrapper2{
+        @media only screen and (max-width: 1199px) {
+      padding: 0px 40px;
+      }
+        @media only screen and (max-width: 768px) {
+      padding: 0px 16px;
+      }
+    }
+
  
 
 }

@@ -1,12 +1,22 @@
 'use client'
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import styles from  "./form.module.scss";
 import Plus from '../../../public/Renovation.svg'
 import Image from "next/image";
 
 
 const ContactForm = ({formProp}: {formProp: any}) => {
+  const inputRef = useRef<HTMLInputElement | null>(null);
+
+  const handleClick = () => {
+    inputRef.current?.click();
+  };
+
+
+
+
   // Stan i funkcje walidacji początkowe
+  const [attachedFiles, setAttachedFiles] = useState<File[]>([]);
   const [name, setName] = useState("");
   const [surname, setSurname] = useState("");
   const [email, setEmail] = useState("");
@@ -44,7 +54,7 @@ const ContactForm = ({formProp}: {formProp: any}) => {
     }
   };
 
-  const handleMessageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleMessageChange = (e:any) => {
     setMessage(e.target.value);
   };
 
@@ -117,6 +127,7 @@ const ContactForm = ({formProp}: {formProp: any}) => {
         break;
     }
   };
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -130,11 +141,21 @@ const ContactForm = ({formProp}: {formProp: any}) => {
     // Sprawdzenie, czy nie ma żadnych błędów walidacji
     if (!nameError && !surnameError && !emailError && !telephoneError && !messageError) {
       // Tutaj dodaj kod do przesłania formularza
-      console.log("Formularz przesłany poprawnie!");
+      console.log("Formularz przesłany poprawnie!", name, surname, email, telephone, message, attachedFiles);
     }
   };
 
-  
+
+
+// Funkcja obsługująca dodawanie załączonych plików
+const handleFilesChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const files = e.target.files;
+  if (files) {
+    const fileList = Array.from(files);
+    setAttachedFiles(fileList);
+  }
+};
+
 
   return (
     <>
@@ -168,6 +189,9 @@ const ContactForm = ({formProp}: {formProp: any}) => {
               </div>
               <span style={{ color: "red", height:"18px" }}>{nameError}</span>
             </div>
+
+
+
             <div className={`${styles.inputWrapper} ${surnameError ? "error" : ""}`}>
             
               <div className={`${styles.inputContainer} ${surnameError ? "error" : ""}`}>
@@ -244,7 +268,7 @@ const ContactForm = ({formProp}: {formProp: any}) => {
                 placeholder="Podaj ilość sztuk, ilość żeber oraz ich wymiary (długość, szerokość, wysokość w cm)"
                 draggable="false"
                 value={message}
-                onChange={(e) => handleMessageChange}
+                onChange={handleMessageChange}
                 onBlur={handleMessageBlur}
                 onFocus={() => handleInputFocus("message")}
               ></textarea>
@@ -257,29 +281,38 @@ const ContactForm = ({formProp}: {formProp: any}) => {
               <span style={{ color: "red" }}>{messageError}</span>
             </div>
       </div>
-      {formProp ? null : (
+      {formProp > 0 ? (
+  null
+) : (
   <div>
     <div className={`${styles.photoText} body-small-smaller-second`}>
       <p className="p13">Zdjęcia grzejników</p>
     </div>
-    <div className={styles.photoButton}>
-      <div className={styles.customFileInput}>
-        <button className={styles.customFileInputButton} type="button">
-          <div className={styles.customFileInputButtonInner}>
-            <span className={styles.customFileInputIcon}>
-              <Image src={Plus} alt="plus" />
-            </span>
-            <span className={`${styles.customFileInput} body-small-smaller-second`}>
-              Dodaj zdjęcia
-            </span>
-          </div>
-        </button>
-        <input className={styles.customFileInputHidden} type="file" />
-      </div>
+  
+    <div id="photoButton" onClick={handleClick} className={styles.choseFile}>
+      <button className={styles.customFileInputButton} type="button">
+        <div className={styles.positionButton}>
+          <Image 
+            src={Plus}  
+            alt="popraw" 
+            width={10}
+            height={10}
+          />
+          <span className={`${styles.customFileInputText} body-small-smaller-second`}>Dodaj zdjęcia</span>
+        </div>
+      </button>
+ <input
+  id="inputHidden"
+  ref={inputRef}
+  className={styles.inputHidden}
+  type="file"
+  placeholder="ddd"
+  multiple
+  onChange={handleFilesChange} // Przypisanie funkcji do zdarzenia onChange
+/>
     </div>
   </div>
 )}
-
     
           
 
