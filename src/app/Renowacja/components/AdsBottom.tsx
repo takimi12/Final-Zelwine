@@ -35,7 +35,7 @@ const AdsBottom = ({ acf }: { acf: any }) => {
   return (
 
 <section className={styles.renovationPageInfoAdvantages}>
-<h3 className={styles.heading}>{acf.benefits.benefits_heading}</h3>
+<h2 className={styles.heading}>{acf.benefits.benefits_heading}</h2>
 <div className={styles.renovationPageInfoParentWrapper}>
 <Swiper
        spaceBetween={20}

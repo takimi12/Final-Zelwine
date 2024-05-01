@@ -40,7 +40,7 @@ export const AdsTop: React.FC<{ acf: any }> = ({ acf }) => {
     <section className={styles.renovationPageInfoAdvantages}>
       <div>
       </div>
-      <h3 className={styles.heading}>{acf.simple_steps.heading}</h3>
+      <h2 className={styles.heading}>{acf.simple_steps.heading}</h2>
       <div className={styles.renovationPageInfoParentWrapper}>
         <Swiper
           spaceBetween={20}
