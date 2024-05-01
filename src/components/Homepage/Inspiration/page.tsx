@@ -139,6 +139,9 @@ const SectionSwiper = ({ data }: { data: any }) => {
     setIsConfigExpanded(!isConfigExpanded);
   };
 
+
+  
+
   return (
     <>
       <section className={styles.swiperSectionInspiration}>
@@ -192,10 +195,10 @@ const SectionSwiper = ({ data }: { data: any }) => {
           >
             <div className={styles.arrowWrapper}>
 <div className={styles.arrowParent}>
-            <Prev     />
+            <Prev   first={isAtBeginning} last={isAtEnd}/>
             </div>
             <div className={styles.arrowParent}>
-            <Next  />
+            <Next   first={isAtBeginning} last={isAtEnd} />
             </div>
             </div>
             <SwiperSlide key={selectedSlideIndex} className={styles.slide1}>
