@@ -28,7 +28,17 @@ function MostPopular({ data }: { data: any }) {
 
 
 
-
+  const breakpoints = {
+    400: {
+      slidesPerView: 1,
+    },
+  800: {
+      slidesPerView: 2,
+    },
+    1200: {
+      slidesPerView: 3,
+    },
+  };
 
 
 
@@ -37,13 +47,14 @@ function MostPopular({ data }: { data: any }) {
     <section className={styles.mostPopular}>
       <div className='SwiperSliderParent'>
         <Swiper
-          spaceBetween={20}
-          slidesPerView='auto'
-          slidesOffsetBefore={40}
           className={styles.swiper}
           wrapperClass={styles.wrapperClass}
           onReachEnd={handleReachEnd}
           onReachBeginning={handleReachBeginning}
+          spaceBetween={20}
+          slidesPerView={4}
+          slidesOffsetBefore={40}
+          breakpoints={breakpoints} // Dodaj breakpoints do Swipera
         >
           <div className={styles.swiperTop}>
             <h2>Najczęściej wybierane</h2>
@@ -55,16 +66,17 @@ function MostPopular({ data }: { data: any }) {
           {data.map((item: any, index: number) => (
             <SwiperSlide className={styles.swiperSlide} key={index}>
             <Link  href={`/product/${item.link_do_produktu.ID}`}>
-   
-              <div className={styles.swiperSliderWrapper}>
-                <div className={styles.swipersSliderImage}>
+<div className={styles.imageWraper}> 
+
                 <Image
   src={item.image.url}
   alt={item.title}
-fill
+ fill
+ objectFit='cover'
+className={styles.imageLarge}
 />
-                </div>
-              </div>
+</div>
+
               <div className={styles.swipperSliderHeading}>
                 <p className='h6-600'>{item.title}</p>
                 <p className='h6-600'>{item.price}</p>
@@ -80,3 +92,5 @@ fill
 }
 
 export default MostPopular;
+
+

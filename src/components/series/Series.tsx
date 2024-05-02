@@ -67,17 +67,28 @@ function Series({ series, series1 }: any) {
                 <SwiperSlide key={category.id} className={styles.slide}>
                   <Link href={`/Produkty/${category.id}`}>
                     {category.image && category.image.src && (
+                      <div className={styles.imageWraper}> 
                       <Image
                         src={category.image.src}
                         alt={category.image.alt}
                         className={styles.image}
-                        width={425}
-                        height={325}
+                        fill
+                        objectFit='cover'
                       />
+                      </div>
                     )}
+              
+                    <div className={styles.swipperSliderHeading}>
                     <p className='p15sixx'>{category.name}</p>
+              </div>
                   </Link>
                 </SwiperSlide>
+
+
+
+
+
+
               ))}
             </Swiper>
           )}

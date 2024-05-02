@@ -20,7 +20,7 @@ const FutureSection = ({ data }: { data: Array<object> }) => {
     400: {
       slidesPerView: 1,
     },
-  800: {
+  600: {
       slidesPerView: 2,
     },
     1200: {

@@ -49,6 +49,7 @@ const RenovationSection = ({ data }: { data: any }) => {
             src={mappedData.image.url}
             alt={mappedData.image.alt}
             fill
+            objectFit="cover"
           />
         </div>
       </div>

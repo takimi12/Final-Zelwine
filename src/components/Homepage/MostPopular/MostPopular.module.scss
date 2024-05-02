@@ -1,7 +1,9 @@
 
 .mostPopular{
     padding-left: 40px;
-    @media screen and (max-width: 600px) {
+    overflow: hidden;
+    padding-bottom: 50px;
+    @media screen and (max-width: 768px) {
         padding: 0px 16px;
   }
   
@@ -13,6 +15,23 @@
   .wrapperClass{
     margin-left: -40px;
   }
+  .swiperSlide{
+    width: 555px!important;
+   
+    @media screen and (max-width: 768px) {
+      width: 300px!important; 
+
+}
+    .imageWraper{
+      width: 555px!important;
+      height: 416px;
+      position: relative;
+      @media screen and (max-width: 768px) {
+        width: 300px!important; 
+        height: 224px;
+  }
+    }
+  }
   .swiperTop
   {
     display: flex;
@@ -21,35 +40,15 @@
     margin-bottom: 50px;
     margin-right: 40px;
   }
-   .swiperSlide {
-     max-width: 555px;
-    height: 455px;
-   
-    img {
-      width: 100%;
-  
-    
-  }
+
   }
   
-  .swiperSliderWrapper
-  {
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     flex-direction: column;
-     background-color: #F4F5F5;
-     position: relative;
-    width: 555px;
-    height: 455px;
-  }
   .swipperSliderHeading
   {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 12px;
+    margin-top: 20px;
+  } 
   }
   
+
+
   
-  }
-  }

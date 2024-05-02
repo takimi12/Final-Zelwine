@@ -1,71 +1,69 @@
-// Renovation.module.scss
 .renovationSection {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 80px 40px;
-    @media screen and (max-width: 600px) {
-        .renovationSection {
-          padding: 80px 16px;
-        }
-      }
-      
-  
-    .renovationSectionContent {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 100%;
-      padding: 0 40px;
-      @media screen and (max-width: 1050px) {
-        .renovationSectionContent {
-          flex-direction: column-reverse;
-          padding: 0;
-      
-        }
-    }
-      .renovationSectionText {
-        max-width: 50%;
-        display: flex;
-        flex-direction: column;
-        gap: 40px;
-        
-  @media screen and (max-width: 1050px) {
-
-
-    .renovationSectionText {
-      max-width: 100%;
-    }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 40px;
+  @media screen and (max-width: 768px) {
+    padding: 80px 16px;
   }
-  
-        .renovationSectionTitle {
-          font-size: 24px;
-          font-weight: bold;
-          margin-bottom: 10px;
-        }
-  
-        .renovationSectionHeading {
-          margin-bottom: 20px;
-        }
-      }
-    }
-  
-    .renovationSectionImage {
-      max-width: 50%;
-    position: relative;
-    min-height: 455px;
-    min-width: 555px;
-      @media screen and (max-width: 1050px) {
+}
 
-        .renovationSectionImage {
-          max-width: 100%;
-          width: 100%;
-          margin-bottom: 40px;
-        }
-      }
-    }
+@media screen and (max-width: 600px) {
+  .renovationSection {
+    padding: 80px 16px;
   }
+}
+
+.renovationSectionContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 40px;
+
+@media screen and (max-width: 1200px) {
+
+  flex-direction: column-reverse;
+  padding: 0;
+
+}
+}
 
 
+.renovationSectionText {
+  max-width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  @media screen and (max-width: 1200px) {
+
+    width: 100%;
+    max-width: 100%;
+    margin-top: 40px;
   
-  
+  }
+}
+
+
+
+
+.renovationSectionTitle {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.renovationSectionHeading {
+  margin-bottom: 20px;
+}
+
+.renovationSectionImage {
+  max-width: 50%;
+  position: relative;
+  min-height: 455px;
+  min-width: 555px;
+  @media screen and (max-width: 1200px) {
+   width: 100%;
+   max-width: 100%;
+    }
+}

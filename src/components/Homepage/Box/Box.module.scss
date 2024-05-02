@@ -1,14 +1,23 @@
 .futureSection {
     display: flex;
     max-width: 100%;
-    padding: 100px 0px;
+    padding: 100px 40px;
     overflow: hidden;
     position: relative;
     @media screen and (max-width: 1200px) {
           padding: 100px 40px;
     }
+    @media screen and (max-width: 768px) {
+      padding: 0px 16px;
+    }
     .swiper{
         height: 280px;
+        margin-left: -40px;
+        width: 100%;
+        .swiperSlide{
+          width: 256px!important;
+          height: 181px;
+        }
     }
     .feature {
         text-align: center;

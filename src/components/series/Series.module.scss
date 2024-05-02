@@ -1,6 +1,10 @@
 .products{
     margin-top: 80px;
     padding: 0px 40px;
+    overflow: hidden;
+    @media screen and (max-width: 768px) {
+        padding: 0px 16px;
+  }
     .topParent{
         display: flex;
         justify-content: space-between;
@@ -22,11 +26,22 @@
 
       .slide{
         margin-right: 20px!important;
+        width: 325px!important;
+           .imageWraper{
+            width: 325px!important;
+            height: 225px;
+            position: relative;
+            margin-bottom: 20px;
+            @media screen and (max-width: 768px) {
+              width: 250px!important; 
+              height: 250px;
+        }
+          }
       }
         }
     }
 .image{
-    width: 100%!important;
+
     margin-bottom: 12px;
 }
     }
