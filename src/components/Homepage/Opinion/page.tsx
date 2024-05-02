@@ -66,10 +66,10 @@ const Clients = ({ data }: { data: any[] }) => {
                   <p className="p15">{opinion.content}</p>
  
                   <div className={styles.sign}>
-                    <h6 className="h6-300">
+                    <h5 className="h6-300">
                       {opinion.name}{" "}
                       <span className="bodySmallSmaller">{`from ${opinion.from}`}</span>
-                    </h6>
+                    </h5>
                   </div>
                 </div>
               </div>
