@@ -17,7 +17,7 @@ function Breadcrumbs({ name, breadcrumbs1, breadcrumbs2, kategoria }: { name: st
         <Next />
       </span>
       <p className={`p13 ${styles.color}`}>
-        <Link className={styles.color} href="/Produkty">
+        <Link className={styles.color} href="/produkty">
           Produkty
         </Link>
       </p>
@@ -29,7 +29,7 @@ function Breadcrumbs({ name, breadcrumbs1, breadcrumbs2, kategoria }: { name: st
             <Next />
           </span>
           <p className={`p13 ${styles.color}`}>
-            <Link className={styles.color} href="/Produkty">
+            <Link className={styles.color} href="/produkty">
               {name}
             </Link>
           </p>
@@ -41,7 +41,7 @@ function Breadcrumbs({ name, breadcrumbs1, breadcrumbs2, kategoria }: { name: st
             <Next />
           </span>
           <p className={`p13 ${styles.color}`}>
-          <Link href={`/Produkty/${kategoria}`} className={styles.color}>
+          <Link href={`/produkty/${kategoria}`} className={styles.color}>
               {breadcrumbs1}
             </Link>
           </p>
