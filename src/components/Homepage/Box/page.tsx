@@ -37,6 +37,7 @@ const FutureSection = ({ data }: { data: Array<object> }) => {
         spaceBetween={20}
         slidesPerView={3}
         slidesOffsetBefore={40}
+        wrapperClass={styles.wrapperClass}
         breakpoints={breakpoints} // Dodaj breakpoints do Swipera
       >
         {data.map((feature, index) => (

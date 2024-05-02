@@ -1,5 +1,5 @@
 .swiperSectionInspiration {
-    overflow: visible;
+    overflow: hidden;
     margin-bottom: 40px;
     margin-top: 60px;
     @media screen and (max-width: 768px) {
@@ -200,6 +200,7 @@ transition: 0.5s;
         padding: 0;
         max-width: 75%;
         margin: 0;
+        overflow: hidden;
 
         @media screen and (max-width: 900px) {
          max-width: 100%;
