@@ -33,7 +33,7 @@ const Clients = ({ data }: { data: any[] }) => {
     <section className={styles.clients}>
       <div className={styles.top}>
         <div className={styles.left}>
-          <h6 >Opinie klientów</h6>
+          <h4 >Opinie klientów</h4>
           <div className={styles.left1}
           >
           <p className={`${styles.left1} p13brown `}>  Średnia ocena<span className="bodySmallBigger">4.9</span>
