@@ -8,6 +8,9 @@ const Hero = ({ data }: { data: any[] }) => {
     return null;
   }
 
+
+
+
   // Dynamiczne style
   const heroStyle = {
     backgroundImage: `url("${data[0].image.url}")`,
@@ -22,7 +25,7 @@ const Hero = ({ data }: { data: any[] }) => {
             <div className={styles.textCenterSetting}>
               <span className="eyebrowheader">{heroItem.small_title}</span>
               <h1 className={styles.displaySecond}>{heroItem.title}</h1>
-              <Link href={heroItem.link.url}>
+              <Link href="/product">
               <button
                 className="button h6-500"              >
                 {heroItem.link.title}
