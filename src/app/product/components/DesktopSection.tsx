@@ -4,6 +4,9 @@ import styles from './Produkt.module.scss';
 import Link from "next/link";
 import { getData } from "@/app/api/Homepage";
 
+import Telephone from "../../../../public/static/ProductPage/telephonepage.jsx";
+import Car from '../../../../public/static/ProductPage/Car.jsx';
+import Post from '../../../../public/static/ProductPage/post.jsx';
 
 
 interface Product {
@@ -123,17 +126,17 @@ export default async function ProductPageSingle({res}: {res: any}) {
                 </div>
 
                 <div className={styles.time}>
-                  {/* <Car /> */}
+                  <Car />
                   <p className="p15">Dostawa: 6 - 8 tygodni</p>
                 </div>
 
                 <div className={styles.wrapperDelivery}>
                   <div className={styles.delivery}>
-                    {/* <Telephone /> */}
+                    <Telephone />
                     <p className="p15">123123123</p>
                   </div>
                   <div className={styles.delivery}>
-                    {/* <Post /> */}
+                    <Post />
                     <p className="p15">test@test.pl</p>
                   </div>
                 </div>
