@@ -76,13 +76,13 @@ interface MetaData {
                         ))}
                       <div className={styles.pageNumber}>
                         <div className={currentSlide === 0 ? `${styles.unactive}` : ''}>
-                          <Prev />
+                          <Prev first='' last='' />
                         </div>
                         <div className={styles.slideInfo}>
                           <p>{` ${currentSlide + 1} / ${totalSlides}`}</p>
                         </div>
                         <div className={currentSlide === totalSlides - 1 ? `${styles.unactive}` : ''}>
-                          <Next />
+                          <Next first='' last=''/>
                         </div>
                       </div>
                     </Swiper>
