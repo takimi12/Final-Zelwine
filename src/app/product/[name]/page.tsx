@@ -7,13 +7,13 @@ import DesktopSection from "../components/DesktopSection";
 import MobileSection from "../components/MobileSection";
 
 
-export default async function ProductPageSingle({ params }: { params: { nazwa: number } }): Promise<JSX.Element> {
+export default async function ProductPageSingle({ params }: { params: { name: number } }): Promise<JSX.Element> {
 
 
   const data = await getData();
   const { acf } = data;
-  const res =params.nazwa 
-  let lastSegment = params.nazwa;
+  const res =params.name 
+  let lastSegment = params.name;
 
 
   const responsemobile = await getProducts(res);

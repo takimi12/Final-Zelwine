@@ -1,6 +1,6 @@
 import React from 'react';
 import Layout from './layout';
-import ProduktPage from './[nazwa]/page';
+import ProduktPage from './[name]/page';
 
 const Produkt = () => {
  
