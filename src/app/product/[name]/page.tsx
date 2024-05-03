@@ -7,7 +7,7 @@ import DesktopSection from "../components/DesktopSection";
 import MobileSection from "../components/MobileSection";
 
 
-export default async function ProductPageSingle({ params }: { params: { name: number } }): Promise<JSX.Element> {
+export default async function ProductPageSingle({ params }: { params: { name: any } }) {
 
 
   const data = await getData();
