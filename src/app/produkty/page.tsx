@@ -1,7 +1,7 @@
 
 
 import Breadcrumbs from '@/components/breadcrumbs/breadcrumbs';
-import { getData } from '../api/Produkty';
+import { getDataProducts } from '../api/Produkty';
 import styles from './Produkty.module.scss';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -11,7 +11,7 @@ export default async function Products({ params }: any) {
 
 
   
-  const fetchData = await getData();
+  const fetchData = await getDataProducts();
   const filteredCategories = fetchData.filter((category: any) => category.parent === 0 && category.name !== "Bez kategorii");
 
 

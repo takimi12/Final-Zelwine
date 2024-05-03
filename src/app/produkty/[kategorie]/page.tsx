@@ -1,7 +1,7 @@
 
 import Link from "next/link";
 import styles from "./kategorie.module.scss";
-import { getData } from "@/app/api/Produkty";
+import { getDataProducts } from "@/app/api/Produkty";
 import Series from "@/components/series/Series";
 import Image from "next/image";
 import Breadcrumbs from "@/components/breadcrumbs/breadcrumbs";
@@ -10,13 +10,20 @@ import { getDataSeries } from "@/app/api/Series";
 
 export default async function Subkategories({ params }: { params: { kategorie: string } }) {
 
-  const fetchData = await getData();
+  const fetchData = await getDataProducts();
   const filteredCategories = fetchData.filter((category :any) => category.parent == params.kategorie);
-  const otherfilteredCategories = fetchData.filter((category:any) => category.id === parseInt(params.kategorie));
+  const excludedIds = [16, 17, 34];
+  const otherfilteredCategories = fetchData.filter((category:any) => {
+      return category.id == params.kategorie && !excludedIds.includes(category.id);
+  });
 
   const names = fetchData.find((category :any) => category.id == params.kategorie)?.name;
 
   const series1 = await getDataSeries();
+  
+
+ 
+
 
 
   return (
@@ -30,7 +37,7 @@ export default async function Subkategories({ params }: { params: { kategorie: s
          {filteredCategories.length > 0 && (
           <>
             {filteredCategories.map((category: any) => (
-              <Link href={`/Produkty/${params.kategorie}/${category.id}`} key={category.id}>
+              <Link href={`/produkty/${params.kategorie}/${category.id}`} key={category.id}>
                 <div className={styles.productsWrapper}>
                   <div className={styles.imageWrapper}>
                     <Image
@@ -49,7 +56,7 @@ export default async function Subkategories({ params }: { params: { kategorie: s
         {otherfilteredCategories.length > 0 && (
           <>
             {otherfilteredCategories.map((category:any) => (
-              <Link href={`/Produkty/${params.kategorie}/${category.id}`} key={category.id}>
+              <Link href={`/produkty/${params.kategorie}/${category.id}`} key={category.id}>
                 <div className={styles.productsWrapper}>
                   <div className={styles.imageWrapper}>
                     <Image

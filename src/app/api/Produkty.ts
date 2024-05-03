@@ -1,4 +1,4 @@
-export const getData = async () => {
+export const getDataProducts = async () => {
   const response = await fetch("https://grzejniki.ergotree.pl/wp-json/wc/v3/products/categories?per_page=100", {
     method: 'GET',
     headers: {

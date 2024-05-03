@@ -12,6 +12,12 @@
       }
 }
 
+.productSectionDesktop{
+  @media screen and (max-width: 768px) {
+    display: none;    
+  }
+}
+
 .leftSection{
   max-width: 55%;
   width: 100%;
@@ -29,9 +35,7 @@
   max-width: 35%;
   width: 100%;
 
-  @media screen and (max-width: 1999px) {
-    max-width: 100%;
-   }
+
   .sticky{
     position: sticky;
     top: 100px;

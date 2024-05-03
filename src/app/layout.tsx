@@ -4,7 +4,7 @@ import "./globals.css";
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 import { getHeaderData } from "./api/Header";
-
+import { getDataSeries } from "./api/Series";
 
 
 const inter = Inter({ subsets: ["latin"] });
