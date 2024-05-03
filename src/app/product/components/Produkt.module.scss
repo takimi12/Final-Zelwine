@@ -34,7 +34,9 @@
 .rightSection{
   max-width: 35%;
   width: 100%;
-
+  @media screen and (max-width: 1199px) {
+    max-width: 100%;
+   }
 
   .sticky{
     position: sticky;

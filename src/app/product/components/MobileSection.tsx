@@ -113,7 +113,7 @@ interface MetaData {
                               </div>
                             ))}
                           </div>
-                          <h4>{getMetaValue(responsemobile.meta_data, 'dopis_przy_cenie')}</h4>
+                          <h3>{getMetaValue(responsemobile.meta_data, 'dopis_przy_cenie')}</h3>
   
                           <div className={styles.buttonWrapper}>
                             <Link href="/Kontakt">

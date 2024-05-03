@@ -23,7 +23,7 @@ export default async function ProductPageSingle({ params }: { params: { name: an
       <MobileSection  responsemobile={responsemobile} />
       <Box data={acf.box} />
       <Advantages  params={lastSegment}/>
-      <Series  filtereddataSeries="" />
+      {/* <Series  filtereddataSeries="" /> */}
 
     </>
   );
