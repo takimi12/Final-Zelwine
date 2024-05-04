@@ -28,7 +28,7 @@ interface MetaData {
   
     useEffect(() => {
       const handleResize = () => {
-        setIsMobile(window.innerWidth < 768);
+        setIsMobile(window.innerWidth < 769);
       };
   
       window.addEventListener('resize', handleResize);
@@ -51,7 +51,7 @@ interface MetaData {
   
     return (
       <>
-        <section className={styles.productSection}>
+      <section className={` ${styles.productSectionMobile}`}>
           {responsemobile && (
             <>
               {isMobile ? (

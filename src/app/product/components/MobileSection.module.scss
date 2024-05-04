@@ -1,16 +1,11 @@
-.productSection{
-    @media screen and (max-width: 768px) {
+.productSectionMobile{
+    @media screen and (max-width: 767px) {
       padding: 0px 16px;
-      overflow: hidden;
       padding-bottom: 90px;
         }
   }
   
-  .productSectionDesktop{
-    @media screen and (max-width: 768px) {
-      display: none;    
-    }
-  }
+
   
   .leftSection{
     @media screen and (max-width: 1199px) {
