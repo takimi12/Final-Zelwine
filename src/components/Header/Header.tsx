@@ -1,11 +1,11 @@
 import DefaultHeader from './DesktopHeader';
 import MobileHeader from './MobileHeader';
 
-const Header = ({categories}) => {
+const Header = ({categories}: {categories: any[]}) => {
 
   return (
     <>
-      {/* {isMobile ? <MobileHeader categories={categories} /> : <DefaultHeader categories={categories} />} */}
+<DefaultHeader categories={categories} />
     </>
   );
 };
