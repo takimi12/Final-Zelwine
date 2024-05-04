@@ -134,7 +134,7 @@ function Series({ series, series1, filtereddataSeries, productSeriesProp}: any) 
               ))}
             </Swiper>
           )}
-          {filtereddataSeries.length  && (
+          {filtereddataSeries.length  > 0 && (
             <Swiper
               spaceBetween={20}
               slidesPerView={4}

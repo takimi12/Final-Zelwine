@@ -1,3 +1,4 @@
+'use client';
 
 import styles from "./subkategorie.module.scss";
 import Image from "next/image";
@@ -43,29 +44,55 @@ export default async function Subkategories({ params }: { params: { kategorie: s
     };
   });
 
+console.log(mapped);
+
   return (
     <>
       <Breadcrumbs name='' breadcrumbs1={breadcrumbs1} breadcrumbs2={breadcrumbs2} kategoria={params.kategorie} />
       
       <section className={styles.sectionProduct}>
-      {mapped && mapped.map((mappedCategory :any) => (
-        <div className={styles.settingWidth} key={mappedCategory.id}>
-          <Link 
-            href={`/product/${mappedCategory.id}`}
-            key={mappedCategory.name}
-          >
-            <div className={styles.categoryContainer}>
-              <div className={styles.categoryImage}>
-                <Image src={mappedCategory.images[0].src} alt={mappedCategory.images[0].alt} width={300} height={300} />
-              </div>
-              <div className={` ${styles.overlay}`}>
-                <Image src={mappedCategory.images[1].src} alt={mappedCategory.images[1].alt} width={300} height={300} />
-              </div>
-              <p className="p15six">{mappedCategory.name}</p>         
-            </div>
-          </Link>
+          {mapped
+.filter((mappedCategory: any) => mappedCategory.images.length > 0 && mappedCategory.name !== '')
+.map(({ id, name, images }: any) => (
+
+    <div className={styles.settingWidth} key={id}>
+      <Link href={`/product/${id}`} key={id}>
+        <div className={styles.categoryContainer}>
+          <div className={styles.categoryImage}>
+            <Image src={images[0]?.src} alt={images[0]?.alt} width={300} height={300} />
+          </div>
+          <div className={styles.overlay}>
+            <Image src={images[1]?.src} alt={images[1]?.alt} width={300} height={300} />
+          </div>
+          <p className="p15six">{name}</p>
         </div>
-      ))}
+      </Link>
+    </div>
+  ))}
+     {/* {mapped && mapped.map((mappedCategory :any) => (
+      {mappedCategory.images.length > 0 && mappedCategory.name !== '' && (
+<div className={styles.settingWidth} key={mappedCategory.id}>
+    <Link 
+      href={`/product/${mappedCategory.id}`}
+      key={mappedCategory.name}
+    >
+
+        <div className={styles.categoryContainer}>
+          <div className={styles.categoryImage}>
+            <Image src={mappedCategory.images[0]?.src} alt={mappedCategory.images[0]?.alt} width={300} height={300} />
+          </div>
+          <div className={` ${styles.overlay}`}>
+            <Image src={mappedCategory.images[1]?.src} alt={mappedCategory.images[1]?.alt} width={300} height={300} />
+          </div>
+          <p className="p15six">{mappedCategory.name}</p>         
+        </div>
+
+    </Link>
+  </div>
+  )}
+  ))}
+ */}
+
       </section>
 
         <Series filtereddataSeries={filtereddataSeries}  />
@@ -73,3 +100,5 @@ export default async function Subkategories({ params }: { params: { kategorie: s
     </>
   );
 };
+
+

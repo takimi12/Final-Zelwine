@@ -74,7 +74,7 @@ export default async function Subkategories({ params }: { params: { kategorie: s
         
       </section>
 
-      <Series series1={series1}/>
+      <Series series1={series1} filteredCategories="" filtereddataSeries=""/>
     </>
   );
 }

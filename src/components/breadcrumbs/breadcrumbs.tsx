@@ -1,9 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
-import Next from '../../../public/static/components/ArrowNext';
+import Next from '../../../public/static/breadcrumbs/Next';
 import styles from './breadcrumbs.module.scss';
-import { ReactSVG } from 'react-svg';
-import Image from 'next/image';
 
 function Breadcrumbs({ name, breadcrumbs1, breadcrumbs2, kategoria }: { name: string, breadcrumbs1: string, breadcrumbs2: string, kategoria: string }) {
   return (
@@ -22,7 +20,6 @@ function Breadcrumbs({ name, breadcrumbs1, breadcrumbs2, kategoria }: { name: st
         </Link>
       </p>
 
-      {/* Warunkowe renderowanie */}
       {name && (
         <>
           <span className={styles.breadcrumb}>

@@ -54,10 +54,11 @@
     margin-bottom: 50px;
   .wrapperHeight{
     display: flex;
-    gap: 30px;
+    flex-wrap: wrap;
+    gap: 8px;
     margin-top: 12px;
     .availableHeight{
-    padding: 15px 15px;
+    padding: 10px 10px;
     border: solid 1px #ddd;
   }
 }
