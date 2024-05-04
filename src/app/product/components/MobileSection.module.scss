@@ -1,6 +1,6 @@
 .productSectionMobile{
     @media screen and (max-width: 767px) {
-      padding: 0px 16px;
+      padding: 0px 0px;
       padding-bottom: 90px;
         }
   }
@@ -17,6 +17,7 @@
     }
   }
   .rightSection{ 
+    padding: 0px 16px;
     .sticky{
       position: sticky;
       top: 100px;
@@ -92,6 +93,7 @@
     display: flex;
     gap: 30px;
     justify-content: flex-end;
+    margin-right: 16px;
     
   }
   
