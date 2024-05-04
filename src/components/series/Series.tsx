@@ -66,7 +66,7 @@ function Series({ series, series1, filtereddataSeries, productSeriesProp}: any) 
               </div>
               {filteredCategories.map((category: any) => (
                 <SwiperSlide key={category.id} className={styles.slide}>
-                  <Link href={`/produkty/${category.id}`}>
+                  <Link href={`/Produkty/${category.id}`}>
                     {category.image && category.image.src && (
                       <div className={styles.imageWraper}> 
                       <Image
@@ -118,7 +118,7 @@ function Series({ series, series1, filtereddataSeries, productSeriesProp}: any) 
               </div>
               {filteredCategories1.map((category: any) => (
                 <SwiperSlide key={category.id} className={styles.slide}>
-                  <Link href={`/produkty/${category.id}`}>
+                  <Link href={`/Produkty/${category.id}`}>
                     {category.image && category.image.src && (
                       <Image
                         src={category.image.src}
@@ -158,7 +158,7 @@ function Series({ series, series1, filtereddataSeries, productSeriesProp}: any) 
               </div>
               {filtereddataSeries.map((category: any) => (
                 <SwiperSlide key={category.id} className={styles.slide}>
-                  <Link href={`/produkty/${category.id}`}>
+                  <Link href={`/Produkty/${category.id}`}>
                     {category.image && category.image.src && (
                       <Image
                         src={category.image.src}

@@ -9,8 +9,6 @@ import Kaloryfer from '../../../public/static/Header/Kaloryfer.jsx';
 
 const Header = ({ categories }: { categories: Array<any> }) => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [headerclass, setHeaderclass] = useState(0);
-
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,36 +33,45 @@ const Header = ({ categories }: { categories: Array<any> }) => {
   useEffect(() => {
     const currentPath = typeof window !== 'undefined' ? window.location.pathname : '';
     const segments = currentPath.split('/').filter(segment => segment !== '');
-
-    if (segments.includes('Produkty') || segments.includes('Renowacja') || segments.includes('Opinie') || segments.includes('Kontakt') || segments.includes('product')) {
-      setLogoImage(275);
-    }
     if (segments.includes('Produkty') && segments.length == 3) {
       setLogoImage(0);
     }
+
+
+
+    if (segments.includes('Renowacja') || segments.includes('Opinie') || segments.includes('Kontakt') || segments.includes('Product')  ||  (segments.includes('Produkty') && segments.length == 1) ||
+    (segments.includes('Produkty') && segments.length == 2)) {
+      setLogoImage(275);
+    }
+  
   }, [typeof window !== 'undefined' && window.location.pathname]);
 
   const filteredCategories = categories && categories.filter(category => category.title !== 'Kontakt');
   const kontaktCategory = categories && categories.find(category => category.title === 'Kontakt');
   const router = useRouter();
 
-  let headerParentClasses = `${styles.headerParent} ${isScrolled ? styles.scroll : ''}`;
+  let headerParentClasses = ` ${isScrolled ? styles.scroll : ''}`;
   let kontaktmainClass = `${styles.kontaktDesktop} ${isScrolled ? styles.kontaktDesktop1 : ''}`;
 
   const currentPath = typeof window !== 'undefined' ? window.location.pathname : '';
   const segments = currentPath.split('/').filter(segment => segment !== '');
 
-  if (segments.includes('Renowacja') || segments.includes('Opinie') || segments.includes('Kontakt') || segments.includes('product')) {
-    headerParentClasses = `${styles.headerParent1} `;
-  }
 
-  if (segments.includes('Produkty') && segments.length == 2) {
-    headerParentClasses = `${styles.headerParent1} `;
-  }
-
-  if (segments.includes('Produkty') && segments.length == 1) {
-    headerParentClasses = `${styles.headerParent1} `;
-  }
+  const [headerclass, setHeaderclass] = useState(0);
+  const [secondheader, setSecondHeader] = useState(0);
+  
+  useEffect(() => {
+    if (
+      segments.includes('Renowacja') ||
+      segments.includes('Opinie') ||
+      segments.includes('Kontakt') ||
+      segments.includes('Product') ||
+      (segments.includes('Produkty') && segments.length == 1) ||
+      (segments.includes('Produkty') && segments.length == 2)
+    ) {
+      setSecondHeader(1);
+    }
+  }, []);
 
   const MouseEnterElementMenu = (product_id: any) => {
     setElementMenu(product_id);
@@ -89,9 +96,12 @@ const Header = ({ categories }: { categories: Array<any> }) => {
     setElementMenu2(product_id);
   };
 
+
+
+  
   return (
     <>
-      <header onMouseLeave={MouseLeave} className={`${headerParentClasses} ${elementMenu == 275 ? styles.activeHeader : headerParentClasses}`}>
+      <header onMouseLeave={MouseLeave} className={`${secondheader === 0 ? styles.headerParent : styles.headerParent1} ${elementMenu == 275 ? styles.activeHeader : headerParentClasses}`}>
         <div className={(isScrolled ? styles.mainWrapper : styles.mainWrapperScroll)}>
           {logoImage || isScrolled || elementMenu == 275 ? (
             <Link href="/">
@@ -101,7 +111,9 @@ const Header = ({ categories }: { categories: Array<any> }) => {
             </Link>
           ) : (
             <div>
+              <Link href="/">
               <Logo />
+              </Link>
             </div>
           )}
           <div className={styles.header}>

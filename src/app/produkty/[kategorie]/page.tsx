@@ -37,7 +37,7 @@ export default async function Subkategories({ params }: { params: { kategorie: s
          {filteredCategories.length > 0 && (
           <>
             {filteredCategories.map((category: any) => (
-              <Link href={`/produkty/${params.kategorie}/${category.id}`} key={category.id}>
+              <Link href={`/Produkty/${params.kategorie}/${category.id}`} key={category.id}>
                 <div className={styles.productsWrapper}>
                   <div className={styles.imageWrapper}>
                     <Image
@@ -56,7 +56,7 @@ export default async function Subkategories({ params }: { params: { kategorie: s
         {otherfilteredCategories.length > 0 && (
           <>
             {otherfilteredCategories.map((category:any) => (
-              <Link href={`/produkty/${params.kategorie}/${category.id}`} key={category.id}>
+              <Link href={`/Produkty/${params.kategorie}/${category.id}`} key={category.id}>
                 <div className={styles.productsWrapper}>
                   <div className={styles.imageWrapper}>
                     <Image

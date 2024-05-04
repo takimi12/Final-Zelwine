@@ -26,7 +26,7 @@ export default async function Products({ params }: any) {
   <section className={styles.sectionProduct}>
         {filteredCategories.map((category:any) => (
           <div className={styles.productsWrapper} key={category.id}>
-            <Link href={`/produkty/${category.id}`}>
+            <Link href={`/Produkty/${category.id}`}>
               {category.image && category.image.src && (
                 <Image 
                 src={category.image.src}

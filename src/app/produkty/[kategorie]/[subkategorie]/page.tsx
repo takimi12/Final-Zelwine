@@ -1,4 +1,4 @@
-'use client';
+
 
 import styles from "./subkategorie.module.scss";
 import Image from "next/image";
@@ -56,7 +56,7 @@ console.log(mapped);
 .map(({ id, name, images }: any) => (
 
     <div className={styles.settingWidth} key={id}>
-      <Link href={`/product/${id}`} key={id}>
+      <Link href={`/Product/${id}`} key={id}>
         <div className={styles.categoryContainer}>
           <div className={styles.categoryImage}>
             <Image src={images[0]?.src} alt={images[0]?.alt} width={300} height={300} />
