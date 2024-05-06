@@ -1,16 +1,17 @@
-import * as React from "react"
-const Next = (props) => (
+import * as React from "react";
+const SVGComponent = (props) => (
   <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width={24}
-    height={25}
+    width={4}
+    height={7}
+    viewBox="0 0 4 7"
     fill="none"
+    xmlns="http://www.w3.org/2000/svg"
     {...props}
   >
     <path
+      d="M0.147461 5.795L2.43746 3.5L0.147461 1.205L0.852461 0.5L3.85246 3.5L0.852461 6.5L0.147461 5.795Z"
       fill="#252727"
-      d="m16.5 12.955-7.895 7.894L7.5 19.744l6.79-6.79L7.5 6.166 8.605 5.06l7.895 7.895Z"
     />
   </svg>
-)
-export default Next
+);
+export default SVGComponent;

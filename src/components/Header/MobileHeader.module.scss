@@ -4,6 +4,7 @@
   position: fixed;
   z-index: 100;
 width: 100%;
+top:0;
 }
 .inner{
    width: 100%;
@@ -154,9 +155,10 @@ width: 100%;
   z-index: 100;
 width: 100%;
 background-color: #fff;
+top:0;
 svg{
   path{
-    fill:#000;
+    fill:#244B55;
   }
 }
 }

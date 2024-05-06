@@ -44,12 +44,14 @@ export default async function Subkategories({ params }: { params: { kategorie: s
     };
   });
 
-console.log(mapped);
+
 
   return (
     <>
+    <section className={styles.breadcrumbs}>
       <Breadcrumbs name='' breadcrumbs1={breadcrumbs1} breadcrumbs2={breadcrumbs2} kategoria={params.kategorie} />
-      
+      <h4>{breadcrumbs2}</h4>
+      </section>
       <section className={styles.sectionProduct}>
           {mapped
 .filter((mappedCategory: any) => mappedCategory.images.length > 0 && mappedCategory.name !== '')

@@ -5,6 +5,7 @@ import styles from './breadcrumbs.module.scss';
 
 function Breadcrumbs({ name, breadcrumbs1, breadcrumbs2, kategoria }: { name: string, breadcrumbs1: string, breadcrumbs2: string, kategoria: string }) {
   return (
+
     <div className={styles.locations}>
       <p className={`p13 ${styles.color}`}>
         <Link className={styles.color} href="/">
@@ -57,6 +58,7 @@ function Breadcrumbs({ name, breadcrumbs1, breadcrumbs2, kategoria }: { name: st
         </>
       )}
     </div>
+
   );
 }
 
