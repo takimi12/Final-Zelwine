@@ -77,7 +77,7 @@ if (segments.includes('Produkty') && segments.length == 3 || segments.includes('
       <div className={`${headerParentClasses} ${scrolled ? styles.scroll : ''}`}>
         <div className={styles.inner}>
           <div className={styles.icons}>
-          <Link href='/'>
+          <Link href='/' aria-label="strona glowna">
             <Logo className={` ${scrolled ? styles.secondColor : ''}`} />
             </Link>
             <WhiteHamburger

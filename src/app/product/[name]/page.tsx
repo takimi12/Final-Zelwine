@@ -22,7 +22,7 @@ export default async function ProductPageSingle({ params }: { params: { name: an
       <DesktopSection  res={res} /> 
       <MobileSection  responsemobile={responsemobile} />
       <Box data={acf.box} />
-      <Advantages  params={lastSegment}/>
+      {/* <Advantages  params={lastSegment}/> */}
       {/* <Series  filtereddataSeries="" /> */}
 
     </>
