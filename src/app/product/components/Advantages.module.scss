@@ -4,6 +4,10 @@
     
      padding: 64px 16px;
     }
+    @media screen and (max-width: 1050px) {
+    
+     padding: 0px;
+    }
 .parent{
     display: flex;
     justify-content: space-between;
@@ -27,6 +31,9 @@
     
             max-width: 100%;
             
+            }
+        @media screen and (max-width: 768px) {
+            padding: 0px 16px;
             }
     }
     .rightSection{

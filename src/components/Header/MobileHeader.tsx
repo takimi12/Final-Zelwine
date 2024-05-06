@@ -147,6 +147,7 @@ if (segments.includes('Produkty') && segments.length == 3 || segments.includes('
             <SecondLogo />
             <Close
               onClick={handleProduktyClose}
+              JAK SIE BEDZIESZ WIECEJ USMIECHAC TO KIEDYS CI POWIEM
             />
           </div>
           <div className={styles.bottom}>

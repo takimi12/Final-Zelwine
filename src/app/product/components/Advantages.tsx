@@ -30,6 +30,7 @@ const response = await getProductsAds(params);
                                 className={styles.image}
                                 src={response.acf.Series.image.url}
                                 alt={response.acf.Series.image.alt}
+                                objectFit='cover'
                             fill
                             />
                         )}
