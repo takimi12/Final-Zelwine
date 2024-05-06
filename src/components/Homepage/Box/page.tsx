@@ -17,10 +17,10 @@ const FutureSection = ({ data }: { data: Array<object> }) => {
   };
 
   const breakpoints = {
-    400: {
-      slidesPerView: 1,
+    300: {
+      slidesPerView: 1, // Ustawiamy na jeden slajd poniżej 550px
     },
-  600: {
+    550: {
       slidesPerView: 2,
     },
     1200: {
@@ -35,7 +35,6 @@ const FutureSection = ({ data }: { data: Array<object> }) => {
         modules={[Pagination]}
         className={styles.swiper}
         spaceBetween={20}
-        slidesPerView={3}
         slidesOffsetBefore={40}
         wrapperClass={styles.wrapperClass}
         breakpoints={breakpoints} // Dodaj breakpoints do Swipera

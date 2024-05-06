@@ -12,15 +12,12 @@
     }
     .swiper{
         height: 280px;
-        margin-left: -40px;
         width: 100%;
         .wrapperClass{
           display: flex;
           justify-content: space-evenly;
-        }
-        .swiperSlide{
-          width: 256px!important;
-          height: 181px;
+          margin-left: -40px;
+      
         }
     }
     .feature {
@@ -39,6 +36,10 @@
             display: flex;
             flex-direction: column;
             gap: 30px;
+            @media screen and (max-width: 550px) {
+              max-width: 258px;
+              height: 181px;
+            }
             .featureIcon{
               display: flex;
               justify-content: center;
