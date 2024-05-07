@@ -1,5 +1,5 @@
 .productSectionMobile{
-    @media screen and (max-width: 767px) {
+    @media screen and (max-width: 768px) {
       padding: 0px 0px;
       padding-bottom: 90px;
         }
@@ -8,7 +8,7 @@
 
   
   .leftSection{
-    @media screen and (max-width: 1199px) {
+    @media screen and (max-width: 768px) {
       max-width: 100%;
      }
     img{
@@ -44,7 +44,7 @@
     }
     .buttonWrapper{
       margin:30px 0px;
-      @media screen and (max-width: 900px) {
+      @media screen and (max-width: 768px) {
    
         button {
           width: 100%;
