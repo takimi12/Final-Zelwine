@@ -1,9 +1,26 @@
-import React from 'react';
+'use client';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Next from '../../../public/static/breadcrumbs/Next';
 import styles from './breadcrumbs.module.scss';
 
 function Breadcrumbs({ name, breadcrumbs1, breadcrumbs2, kategoria }: { name: string, breadcrumbs1: string, breadcrumbs2: string, kategoria: string }) {
+
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 767);
+    };
+
+    handleResize(); // Initial check
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   return (
 
     <div className={styles.locations}>

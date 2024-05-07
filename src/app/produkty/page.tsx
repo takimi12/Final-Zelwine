@@ -21,9 +21,15 @@ export default async function Products({ params }: any) {
 
 <section className={styles.breadcrumbs}>
 <Breadcrumbs name="" breadcrumbs1="" breadcrumbs2="" kategoria="" />
-        <h4> Produkty </h4>
+      
       </section>
   <section className={styles.sectionProduct}>
+  <div className={styles.title}>
+  <h4> Produkty </h4>
+  </div>
+
+  <div className={styles.products}>
+
         {filteredCategories.map((category:any) => (
           <div className={styles.productsWrapper} key={category.id}>
             <Link href={`/Produkty/${category.id}`}>
@@ -39,6 +45,7 @@ export default async function Products({ params }: any) {
             </Link>
           </div>
         ))}
+        </div>
       </section>
     </>
   );

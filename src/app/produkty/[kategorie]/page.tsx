@@ -5,6 +5,7 @@ import { getDataProducts } from "@/app/api/Produkty";
 import Series from "@/components/series/Series";
 import Image from "next/image";
 import Breadcrumbs from "@/components/breadcrumbs/breadcrumbs";
+import BreadcrumbsMobile from "../../../components/breadcrumbs/breadcrumbMobile"
 import { getDataSeries } from "@/app/api/Series";
 
 
@@ -28,27 +29,41 @@ export default async function Subkategories({ params }: { params: { kategorie: s
 
   return (
     <>
-      <section>
-        <Breadcrumbs name={names} breadcrumbs1="" breadcrumbs2="" kategoria="" />
-        {names}
+      <section className={styles.breadcrumb}>
+     <div className={styles.breadcrumbDesktop}>
+        <Breadcrumbs  name={names} breadcrumbs1="" breadcrumbs2="" kategoria="" />
+       </div>
+       <div  className={styles.breadcrumbMobile}>
+        <BreadcrumbsMobile breadcrumbs1="" />
+        </div>
       </section>
 
       <section className={styles.sectionProduct}>
+        
+      <div className={styles.title}>
+  <h4> {names}</h4>
+  </div>
+
+  <div className={styles.products}>
          {filteredCategories.length > 0 && (
           <>
             {filteredCategories.map((category: any) => (
-              <Link href={`/Produkty/${params.kategorie}/${category.id}`} key={category.id}>
+              
+              <Link className={styles.anchor} href={`/Produkty/${params.kategorie}/${category.id}`} key={category.id}>
                 <div className={styles.productsWrapper}>
-                  <div className={styles.imageWrapper}>
                     <Image
                       src={category.image.src}
-                      fill
+                     width={670}
+                     height={502}
                       alt='ss'
+                  className={styles.imageDesktop}
                     />
+
                   </div>
                   <p className="p15six">{category.name}</p>
-                </div>
+ 
               </Link>
+          
             ))}
           </>
         )}
@@ -71,6 +86,7 @@ export default async function Subkategories({ params }: { params: { kategorie: s
             ))}
           </>
         )}
+        </div>
         
       </section>
 

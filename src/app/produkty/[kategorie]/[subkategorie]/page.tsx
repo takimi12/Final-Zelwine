@@ -6,11 +6,13 @@ import Link from "next/link";
 import { getData } from "@/app/api/Subkategorie";
 import {getDataProducts} from "@/app/api/Produkty";
 import Breadcrumbs from "@/components/breadcrumbs/breadcrumbs";
+import BreadcrumbsMobile from "../../../../components/breadcrumbs/breadcrumbMobile";
 import Series from "@/components/series/Series";
 
 export default async function Subkategories({ params }: { params: { kategorie: string; subkategorie: string } }) {
+  
+  
   const fetchData = await getData();
-
   const dataSeries = await getDataProducts();
 
 
@@ -49,10 +51,23 @@ export default async function Subkategories({ params }: { params: { kategorie: s
   return (
     <>
     <section className={styles.breadcrumbs}>
+    
+    <div className={styles.breadcrumbDesktop}>
       <Breadcrumbs name='' breadcrumbs1={breadcrumbs1} breadcrumbs2={breadcrumbs2} kategoria={params.kategorie} />
-      <h4>{breadcrumbs2}</h4>
+    </div>
+      <div  className={styles.breadcrumbMobile}>
+        <BreadcrumbsMobile breadcrumbs1={breadcrumbs1} breadscrumb2={params.kategorie}  />
+        </div>
+      
+      
+
+      
+      
+      
       </section>
       <section className={styles.sectionProduct}>
+
+      <h4>{breadcrumbs2}</h4>
           {mapped
 .filter((mappedCategory: any) => mappedCategory.images.length > 0 && mappedCategory.name !== '')
 .map(({ id, name, images }: any) => (

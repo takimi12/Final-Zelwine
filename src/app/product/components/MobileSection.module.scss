@@ -109,20 +109,3 @@
     visibility: visible;
   }
 
-
-
-  .wrapperClass{
-
-    @media screen and (max-width: 660px) {
-      height: 480px!important;
-     }
-    @media screen and (max-width: 560px) {
-      height: 380px!important;
-     }
-    @media screen and (max-width: 460px) {
-      height: 320px!important;
-     }
-    @media screen and (max-width: 400px) {
-      height: 300px!important;
-     }
-  }

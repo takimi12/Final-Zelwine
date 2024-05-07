@@ -1,40 +1,61 @@
-.breadcrumbs{
+.breadcrumb{
     padding: 0px 40px;
-    margin-bottom: 80px;
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 900px) {
     padding: 0px 16px;
-      }
+       }
+       .breadcrumbMobile {
+        display: none;
+        @media screen and (max-width: 768px) {
+          display: block;
+             }
+       }
+       .breadcrumbDesktop {
+        display: block;
+        @media screen and (max-width: 768px) {
+          display: none;
+             }
+       }
   }
   
   .sectionProduct{
       padding: 0px 40px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      @media screen and (max-width: 768px) {
+      @media screen and (max-width: 900px) {
         padding: 0px 16px;
+          }
+      .products{
+        display: flex;
+        flex-wrap: wrap;
+      justify-content: space-between;
+      
+        @media screen and (max-width: 767px) {
+         flex-direction: column;
+         flex-wrap: nowrap;
+         justify-content: start;
+            }
+        
+      }
+          .anchor{
+            max-width: 48%;
+            margin-bottom: 64px;
+            .imageDesktop{
+              @media screen and (max-width: 767px) {
+                width: 100%;
+            }
+            }
+
+            @media screen and (max-width: 767px) {
+        max-width: 100%;
+                 }
           }
       .title{
         padding: 0;
-        margin-bottom: 80px;
+        margin-bottom: 30px;
     
         }
     
     }
     
-    .productsWrapper{
-      max-width: 48%;
-      width: 100%;
-      @media screen and (max-width: 991px) {
-      max-width: 100%;
-      margin-bottom: 40px;
-      }
-      .imageWrapper{
-        width: 670px;
-        height: 502px;
-        position: relative;
-      }
-    }
+
   
     .categoryImage{
       object-fit: cover;

@@ -58,12 +58,15 @@
 }
 
 .renovationSectionImage {
-  max-width: 50%;
+width: 100%;
   position: relative;
   min-height: 455px;
-  min-width: 555px;
+
   @media screen and (max-width: 1200px) {
    width: 100%;
    max-width: 100%;
+    }
+  @media screen and (max-width: 768px) {
+    min-height: 290px;
     }
 }

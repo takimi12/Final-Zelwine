@@ -8,7 +8,7 @@ const Header = ({categories}: {categories: any[]}) => {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 900);
+      setIsMobile(window.innerWidth < 901);
     };
 
     handleResize(); // Dodane, aby określić początkową wartość isMobile po załadowaniu strony
@@ -22,6 +22,7 @@ const Header = ({categories}: {categories: any[]}) => {
   }, []);
   return (
     <>
+
     {isMobile ? <MobileHeader categories={categories} /> : <DefaultHeader categories={categories} />}
 
     </>

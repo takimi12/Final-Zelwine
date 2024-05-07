@@ -74,6 +74,7 @@ if (segments.includes('Produkty') && segments.length == 3 || segments.includes('
 
   return (
     <>
+    
       <div className={`${headerParentClasses} ${scrolled ? styles.scroll : ''}`}>
         <div className={styles.inner}>
           <div className={styles.icons}>
