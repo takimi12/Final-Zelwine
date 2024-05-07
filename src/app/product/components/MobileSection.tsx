@@ -22,22 +22,10 @@ interface MetaData {
     value: string;
   }
   const ProductPageSingle = ({ responsemobile }: { responsemobile: any }) => {
-    const [isMobile, setIsMobile] = useState(false);
     const [currentSlide, setCurrentSlide] = useState(0);
     const [totalSlides, setTotalSlides] = useState(responsemobile.images ? responsemobile.images.length : 0);
   
-    useEffect(() => {
-      const handleResize = () => {
-        setIsMobile(window.innerWidth < 769);
-      };
-  
-      window.addEventListener('resize', handleResize);
-      handleResize();
-  
-      return () => {
-        window.removeEventListener('resize', handleResize);
-      };
-    }, []);
+ 
   
     const getMetaValue = (metaData: MetaData[], key: string): string => {
       const metaItem = metaData.find((meta) => meta.key === key);
@@ -53,8 +41,6 @@ interface MetaData {
       <>
       <section className={` ${styles.productSectionMobile}`}>
           {responsemobile && (
-            <>
-              {isMobile ? (
                 <>
                   <div className={styles.leftSection}>
                     <Swiper
@@ -141,11 +127,6 @@ interface MetaData {
                         </div>
                       </div>
                     </>
-                  )}
-                </>
-              ) : (
-                // Render something if not mobile
-                <></>
               )}
             </>
           )}

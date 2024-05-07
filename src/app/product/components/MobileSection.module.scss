@@ -1,7 +1,9 @@
 .productSectionMobile{
+  display: none;
     @media screen and (max-width: 768px) {
       padding: 0px 0px;
       padding-bottom: 90px;
+      display: block;
         }
   }
   
@@ -96,6 +98,7 @@
     gap: 30px;
     justify-content: flex-end;
     margin-right: 16px;
+    padding-top: 20px;
     
   }
   
@@ -109,7 +112,6 @@
 
 
   .wrapperClass{
-    height: 580px!important;
 
     @media screen and (max-width: 660px) {
       height: 480px!important;
