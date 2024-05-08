@@ -1,7 +1,7 @@
 .swiperSectionInspiration {
     overflow: hidden;
-    margin-bottom: 40px;
-    margin-top: 60px;
+    margin-bottom: 156px;
+    padding: 40px;
     @media screen and (max-width: 768px) {
       padding: 0px 16px;
 }
@@ -18,8 +18,11 @@
         justify-content: space-between;
         align-items: center;
         order: 1;
-        padding: 0px 40px;
+
         margin-bottom: 40px;
+        .h4{
+          color:var(--black-500)
+        }
         @media screen and (max-width: 768px) {
           padding: 0px ;
     }
@@ -91,11 +94,12 @@
       align-items: center;
       flex-direction: column;
       transition: 0.3s;
+      gap:20px;
   
       .Look {
         color: #fff;
         font-size: 30px;
-        margin-top: 20px;
+ 
       }
     }
   
@@ -171,7 +175,8 @@ transition: 0.5s;
         padding: 16px;
  
         .bottomInfosecttionText{
-          margin-top: 20px;
+          margin-bottom: 20px;
+
       .photoWithText {
         display: flex;
         align-items: center;
@@ -240,6 +245,9 @@ transition: 0.5s;
         .bottomInfoSection {
           padding-top: 67px;
           padding-bottom: 80px;
+          .bottomInfoSectionText{
+            margin-bottom: 20px;
+          }
           .firstParagraph{
             margin-bottom: 24px;
           }
@@ -247,7 +255,7 @@ transition: 0.5s;
   
         .photoWithText {
           display: flex;
-          margin-top: 20px;
+
   
           .photo {
             margin-right: 10px;
@@ -263,7 +271,6 @@ transition: 0.5s;
         .buttonwraper {
           position: absolute;
           top: 0px;
-          margin-top: 38px;
           width: 100%;
           display: flex;
           justify-content: flex-end;
@@ -306,9 +313,8 @@ transition: 0.5s;
   
       .closeButton {
         position: absolute;
-        top: -20;
+        top: -20px;
         right: 0px;
-        background-color: #000;
         border: none;
         cursor: pointer;
         height: 20px;

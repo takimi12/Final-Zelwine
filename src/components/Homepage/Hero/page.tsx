@@ -23,14 +23,17 @@ const Hero = ({ data }: { data: any[] }) => {
         <section key={index} className={styles.hero} style={heroStyle}>
           <div className={styles.textCenter}>
             <div className={styles.textCenterSetting}>
-              <span className="eyebrowheader">{heroItem.small_title}</span>
-              <h1 className={styles.displaySecond}>{heroItem.title}</h1>
-              <Link href="/product">
+            <span className={`EyebrowHeader ${styles.EyebrowHeader}`}>{heroItem.small_title}</span>
+              <h1 className={`display1 ${styles.displaySecond}`}>{heroItem.title}</h1>
+              <Link className={`Button`} href="/product">
               <button
-                className="button h6-500"              >
+                className={` ${styles.Button}`}>
                 {heroItem.link.title}
               </button>
               </Link>
+
+
+              
             </div>
           </div>
         </section>

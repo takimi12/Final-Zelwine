@@ -4,33 +4,210 @@
 
 @import url('./reset.css');
 
-/* zmienne z kolorami z figmy colors.css*/
+
 :root{
-  --black: #000;
+  --font: 'Plus Jakarta Sans';
+  --black-500: #252727;
   --black-300: #525555;
+  --black-400: #3C3E3E;
+  --gray-100: #E4E5E6;
+  --gray-200: #C9CBCC;
+  --gray-300: #AEB2B3;
+  --gray-400: #939899;
+  --gray-500: #787E80;
+  --gray-600: #606566;
+  --gray-700: #484C4D;
+  --light-gray-100: #FAFAFA;
+  --light-gray-200: #F4F5F5;
+  --light-gray-300: #EFEFF0;
+  --light-gray-400: #E9EAEB;
+  --light-gray-500: #E4E5E6;
+  --Turquoise-100: #7AAAB7;
+  --Turquoise-200: #64929F;
+  --Turquoise-300: #4F7B86;
+  --Turquoise-400: #39636E;
+  --Turquoise-500: #244B55;
+  --Turquoise-600: #1D3C44;
+  --Turquoise-700: #162D33;
+  --Brown-100: #DBA58D;
+  --Brown-200: #C98C71;
+  --Brown-300: #B77356;
+  --Brown-400: #A55A3A;
+  --Brown-500: #93411F;
+  --Brown-600: #763418;
+  --Brown-700: #582712;
+  --light-Brown-100: #F7E8E3;
+  --light-Brown-200: #EFD2C6;
+  --light-Brown-300: #E8BBAA;
+  --light-Brown-400: #E0A58D;
+  --light-Brown-500: #D88E71;
+  --light-Brown-600: #BC795F;
+  --light-Brown-700: #A1644C;
+  --Beige-100: #FBF9F7;
+  --Beige-200: #F6F3EF;
+  --Beige-300: #F2ECE8;
+  --Beige-400: #EDE6E0;
+  --Beige-500: #E9E0D8;
+  --Beige-600: #D6C9BD;
+  --Beige-700: #C4B2A1;
   --breakpoint-mobile: 768px;
 }
 
 
-section{
-  padding: 0px 40px;
-  color: var(--black-300);
-}
-
 .display1{
-  font-family:'Plus Jakarta Sans';
+  font-family:var(--font);
   font-weight: 500;
-  font-size: 42px;
+  font-size: 72px;
   line-height: 48px;
   color: var(--black);
 
   @media screen and (min-width: var(--breakpoint-mobile)) {
-    font-size: 72px;
+    font-size: 42px;
     line-height: 83px;
   }
 }
+h1 {
+  font-family:var(--font);
+  font-size: 49px;
+  font-weight: 600;
+  line-height: 125%; /* 61.25px */
+  letter-spacing: -1.96px;
+  @media screen and (min-width: var(--breakpoint-mobile)) {
+    font-size: 37px;
+    line-height: 83px;
+  }
+  }
+  h2 {
+    font-family:var(--font);
+  font-size: 42px;
+  font-weight: 600;
+  line-height: 125%; /* 52.5px */
+  letter-spacing: -0.84px;
+  @media screen and (min-width: var(--breakpoint-mobile)) {
+    font-size: 32px;
+    line-height: 83px;
+  }
+  }
+  h3 {
+    font-family:var(--font);      
+      font-size: 32px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 120%; /* 38.4px */
+      letter-spacing: -0.64px;
+      @media screen and (min-width: var(--breakpoint-mobile)) {
+        font-size: 23px;
+        line-height: 83px;
+      }
+  }
 
-img, video {
-  max-width: 100%;
-  height: fit-content;
+  h4 {
+    font-family:var(--font);
+    color: var(--black-500);
+      font-size: 27px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 120%; /* 32.4px */
+      letter-spacing: -0.54px;
+      @media screen and (max-width: 768px) {
+        font-size: 20px;
+      }
+    }
+  h5{
+    font-family:var(--font);
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%; /* 28.6px */
+  letter-spacing: -0.44px;
+  @media screen and (min-width: var(--breakpoint-mobile)) {
+    font-size: 17px;
+
+  }
+  }
+  h6{
+  font-family:var(--font);
+  color: var(--black-500);
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%; /* 28.6px */
+  letter-spacing: -0.44px;
+  @media screen and (min-width: var(--breakpoint-mobile)) {
+    font-size: 15px;
+  }
+  }
+
+    .big-text {
+      color: var(--black-500);
+      font-family:var(--font);
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; 
+  letter-spacing: 0.17px;
+  }
+
+
+  .body
+  {
+    font-family:var(--font);
+    color: var(--black-300);
+    font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 145%; 
+  letter-spacing: 0.15px;
+  }
+
+  .body-small{
+    font-family:var(--font);
+    color: var(--black-300);
+    font-size: 13px;
+    font-style: normal;
+    line-height: 145%; 
+    letter-spacing: 1.3px;
 }
+.caption{
+    color: var(--black-300);
+font-size: 11px;
+font-style: normal;
+font-weight: 800;
+line-height: 130%; 
+letter-spacing: 1.1px;
+text-transform: uppercase;
+}
+
+.NaviLink {
+  font-family:var(--font);
+    color: var(--black-500);
+font-size: 15px;
+font-style: normal;
+font-weight: 400;
+line-height: 145%; 
+}
+.Button {
+
+  background-color: var(--Turquoise-500);
+  color: var(--light-gray-100);
+  padding: 21px 32px;
+font-size: 15px;
+font-style: normal;
+font-weight: 500;
+line-height: 145%; 
+}
+.EyebrowHeader{
+  font-family:var(--font);
+     font-size: 13px;
+     font-style: normal;
+     font-weight: 800;
+     line-height: 130%; 
+     letter-spacing: 1.3px;
+     text-transform: uppercase;
+}
+
+/********/
+
+
+
+

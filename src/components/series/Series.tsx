@@ -59,7 +59,7 @@ function Series({ series, series1, filtereddataSeries, productSeriesProp}: any) 
               onReachBeginning={handleReachBeginning}
             >
               <div className={styles.topParent}>
-                <p>Kategorie produktów</p>
+                <h4 className={styles.h4}>Kategorie produktów</h4>
                 <div className={styles.arrowParent}>
                   <SwiperNav first={isAtBeginning} last={isAtEnd} />
                 </div>
@@ -79,9 +79,8 @@ function Series({ series, series1, filtereddataSeries, productSeriesProp}: any) 
                       </div>
                     )}
               
-                    <div className={styles.swipperSliderHeading}>
-                    <p className='p15sixx'>{category.name}</p>
-              </div>
+
+                    <h6 className={styles.h6}>{category.name}</h6>
                   </Link>
                 </SwiperSlide>
 

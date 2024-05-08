@@ -12,6 +12,7 @@ import Plus from "../../../../public/static/Homepage/Inspiration/Plus";
 import Prev from "../../../components/swiper/Prev";
 import Next from "../../../components/swiper/Next";
 import Arrow from "../../../../public/static/Homepage/Inspiration/Arrow"
+import Link from "next/link";
 
 interface ImageConfig {
   ID: number;
@@ -147,7 +148,7 @@ const SectionSwiper = ({ data }: { data: any }) => {
           onReachBeginning={handleReachBeginning}
         >
           <div className={styles.swiperTop}>
-            <h3 className="h4">Inspiracje</h3>
+            <h4 className={styles.h4}>Inspiracje</h4>
             <div className="arrowParent">
               <SwiperNav first={isAtBeginning} last={isAtEnd} />
             </div>
@@ -212,32 +213,33 @@ const SectionSwiper = ({ data }: { data: any }) => {
                           </button>
                         </div>
                       </div>
-                      <h3>{selectedImage.title} </h3>
-                      <p className="p-13">Count Column: {selectedImage.count_column}</p>
-                      <p className="p-13">Height: {selectedImage.height}</p>
+                      <h5>{selectedImage.title} </h5>
+                      <p className="body-small">Count Column: {selectedImage.count_column}</p>
+                      <p className="body-small">Height: {selectedImage.height}</p>
                       <div className={styles.bottomInfoSection}>
-                        <p className={`p15six ${styles.firstParagraph}`}>Konfiguracja ze zdjęcia</p>
+                        <h6 className={` ${styles.firstParagraph}`}>Konfiguracja ze zdjęcia</h6>
                         {selectedImage.config.map((configItem: ConfigType, index: number) => (
-                          <div className="bottoInfosecttionText" key={index}>
+                          <div className={styles.bottomInfoSectionText} key={index}>
                             <div className={styles.photoWithText}>
                               <div className={styles.photo}>
-                                <img src={configItem.image.url} alt='alt'
+                                <Image src={configItem.image.url} alt='popraw'
                                   width={100}
                                   height={100}
                                 />
                               </div>
                               <div className="text">
-                                <p className="body-small-bigger-third">{configItem.subtitle}</p>
-                                <p className="body-small-smaller-third">{configItem.value}</p>
+                                <p className="EyebrowHeader">{configItem.subtitle}</p>
+                                <p className="body-small">{configItem.value}</p>
                               </div>
                             </div>
                           </div>
                         ))}
                       </div>
                       <div>
-                        <button><a href="#">Zobacz produkt</a></button>
+                        <Link className={`Button`} href="#"><button   className={` ${styles.Button}`}>Zobacz produkt</button></Link>
                       </div>
                     </div>
+
                   )}
                   {isBelow900 && (
                     <>

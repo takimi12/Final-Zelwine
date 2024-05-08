@@ -10,6 +10,7 @@ import 'swiper/css/pagination';
 import Image from "next/image";
 import styles from "./Opinion.module.scss";
 import Star from "../../../../public/static/Homepage/Opinion/star";
+import Link from "next/link";
 
 const Clients = ({ data }: { data: any[] }) => {
 
@@ -36,17 +37,15 @@ const Clients = ({ data }: { data: any[] }) => {
           <h4 >Opinie klientów</h4>
           <div className={styles.left1}
           >
-          <p className={`${styles.left1} p13brown `}>  Średnia ocena<span className="bodySmallBigger">4.9</span>
+          <p className={`${styles.left1} EyebrowHeader `}>  Średnia ocena<span className="bodySmallBigger">4.9</span>
           </p>
           </div>
         </div>
         <div className={styles.right}>
-          <p className="p15">
-            <a className={styles.cta} href="/Opinie">
+             <Link className={`${styles.cta} body`} href="/Opinie">
               Zobacz wszystkie
-            </a>
-          </p>
-        </div>
+            </Link>
+                  </div>
       </div>
       <div className={styles.clientOpinionParent}>
         <Swiper 
@@ -62,14 +61,14 @@ const Clients = ({ data }: { data: any[] }) => {
 
                 <div className={styles.clientOpinionWrapper}>
                 <div className={styles.star}><Star /><Star /><Star /><Star /><Star /></div>
-                <p className="p15six">{opinion.subtitle}</p> 
-                  <p className="p15">{opinion.content}</p>
- 
+                <h6 className={styles.h6}>{opinion.subtitle}</h6> 
+                <p className={`body ${styles.body}`}>{opinion.content}</p>
+
                   <div className={styles.sign}>
-                    <h5 className="h6-300">
+                    <p className={`body-small ${styles.bodySmall}`}>
                       {opinion.name}{" "}
-                      <span className="bodySmallSmaller">{`from ${opinion.from}`}</span>
-                    </h5>
+                      <span className={`body-small ${styles.bodySmallSmaller}`}>{`from ${opinion.from}`}</span>
+                    </p>
                   </div>
                 </div>
               </div>

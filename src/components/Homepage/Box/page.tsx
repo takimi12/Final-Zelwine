@@ -51,8 +51,8 @@ const FutureSection = ({ data }: { data: Array<object> }) => {
                     height={50}
                   />
                 </div>
-                <p className={`${styles.featureTitle} p15six`}>{(feature as { title: string }).title}</p>
-                <p className={`${styles.featureDescription} p15`}>{(feature as { description: string }).description}</p>
+                <h6 className={`${styles.h6} `}>{(feature as { title: string }).title}</h6>
+                <p className={` body`}>{(feature as { description: string }).description}</p>
               </div>
             </div>
           </SwiperSlide>

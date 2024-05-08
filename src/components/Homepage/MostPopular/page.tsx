@@ -57,7 +57,7 @@ function MostPopular({ data }: { data: any }) {
           breakpoints={breakpoints} // Dodaj breakpoints do Swipera
         >
           <div className={styles.swiperTop}>
-            <h2>Najczęściej wybierane</h2>
+            <h4 className={styles.h4}>Najczęściej wybierane</h4>
           <div>
             <SwiperNav  first={isAtBeginning} last={isAtEnd}/> 
           </div>
@@ -78,8 +78,8 @@ className={styles.imageLarge}
 </div>
 
               <div className={styles.swipperSliderHeading}>
-                <p className='h6-600'>{item.title}</p>
-                <p className='h6-600'>{item.price}</p>
+                <h6 className={styles.h6}>{item.title}</h6>
+                <h6 className={styles.h6}>{item.price}</h6>
               </div>
               </Link>
             </SwiperSlide>

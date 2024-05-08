@@ -2,7 +2,7 @@
 .mostPopular{
     padding-left: 40px;
     overflow: hidden;
-    padding-bottom: 50px;
+    padding-bottom: 136px;
     @media screen and (max-width: 768px) {
         padding: 0px 16px;
   }
@@ -39,6 +39,9 @@
     align-items: center;
     margin-bottom: 50px;
     margin-right: 40px;
+    .h4{
+      color: var(--black-500);
+    }
   }
 
   }
@@ -46,6 +49,11 @@
   .swipperSliderHeading
   {
     margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    .h6{
+      color: var(--black-500);
+    }
   } 
   }
   

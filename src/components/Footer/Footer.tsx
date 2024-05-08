@@ -16,44 +16,44 @@ const Footer = () => {
         <div className={styles.column}>
         <div className={styles.footerColumn}>
           <div className={styles.topHeading}>
-            <p className="body-small-bigger-second">Kategorie</p>
+            <p className={`body-small ${styles.bodySmall}`}>Kategorie</p>
           </div>
           <ul className={styles.list}>
             {categories.map((category, index) => (
-              <li key={index}><h3 className="h6-400-third">{category}</h3></li>
+              <li key={index}><h3 className="body">{category}</h3></li>
             ))}
           </ul>
         </div>
 
         <div className={styles.footerColumn}>
           <div className={styles.topHeading}>
-            <p className="body-small-bigger-second">Serie</p>
+            <p className={`body-small ${styles.bodySmall}`}>Serie</p>
           </div>
           <ul className={styles.list}>
             {series.map((serie, index) => (
-              <li key={index}><h3 className="h6-400-third">{serie}</h3></li>
+              <li key={index}><h3 className="body">{serie}</h3></li>
             ))}
           </ul>
         </div>
 
         <div className={styles.footerColumn}>
           <div className={styles.topHeading}>
-            <p className="body-small-bigger-second">Menu</p>
+            <p className={`body-small ${styles.bodySmall}`}>Menu</p>
           </div>
           <ul className={styles.list}>
             {menuItems.map((menuItem, index) => (
-              <li key={index}><h3 className="h6-400-third">{menuItem}</h3></li>
+              <li key={index}><h3 className="body">{menuItem}</h3></li>
             ))}
           </ul>
         </div>
 
         <div className={styles.footerColumn}>
           <div className={styles.topHeading}>
-            <p className="body-small-bigger-second">Social Media</p>
+            <p className={`body-small ${styles.bodySmall}`}>Social Media</p>
           </div>
           <ul className={styles.list}>
             {socialMedia.map((media, index) => (
-              <li key={index}><h3 className="h6-400-third">{media}</h3></li>
+              <li key={index}><h3 className="body">{media}</h3></li>
             ))}
           </ul>
         </div>
@@ -62,14 +62,14 @@ const Footer = () => {
 
       <div className={styles.bottomFooter}>
         <div className="copyright">
-          <p className="body-small-smaller-second">
+          <p className={`body-small ${styles.bodySmall2}`}>
             Żeliwne 2023
           </p>
         </div>
         <div className={styles.paper}>
-          <p className="body-small-smaller-second">Regulamin</p>
-          <p className="body-small-smaller-second">Polityka prywatności</p>
-          <p className="body-small-smaller-second">Polityka cookies</p>
+          <p className={`body-small ${styles.bodySmall2}`}>Regulamin</p>
+          <p className={`body-small ${styles.bodySmall2}`}>Polityka prywatności</p>
+          <p className={`body-small ${styles.bodySmall2}`}>Polityka cookies</p>
         </div>
       </div>
     </footer>

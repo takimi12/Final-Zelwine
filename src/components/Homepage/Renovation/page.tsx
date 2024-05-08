@@ -2,6 +2,7 @@
 import React from "react";
 import Image from "next/image";
 import styles from "./Renovation.module.scss";
+import Link from "next/link";
 
 const RenovationSection = ({ data }: { data: any }) => {
 
@@ -32,17 +33,22 @@ const RenovationSection = ({ data }: { data: any }) => {
       <div className={styles.renovationSectionContent}>
         <div className={styles.renovationSectionText}>
           <div className={styles.renovationSectionTitle}>
-            <p className="p138">{mappedData.small_title}</p>
+            <p className={`EyebrowHeader ${styles.EyebrowHeader}`}>{mappedData.small_title}</p>
           </div>
-          <p className={`${styles.renovationSectionHeading} h1big`}>{mappedData.title}</p>
+          <p className={`${styles.renovationSectionHeading} display1`}>{mappedData.title}</p>
           <div className={styles.renovationSectionDescription}>
-            <p className="p15">{mappedData.description}</p>
+            <p className="body">{mappedData.description}</p>
           </div>
-          <a href="/Renowacja" target={mappedData.link.target} rel="noopener noreferrer">
-            <button className={`${styles.renovationSectionButton} button`} type="button">
+          <div>
+          <Link className={`Button`} href="/Renowacja" target={mappedData.link.target} rel="noopener noreferrer">
+            <button className={`${styles.renovationSectionButton} `} type="button">
               {mappedData.link.title}
             </button>
-          </a>
+          </Link>
+          </div>
+
+
+
         </div>
         <div className={styles.renovationSectionImage}>
           <Image
