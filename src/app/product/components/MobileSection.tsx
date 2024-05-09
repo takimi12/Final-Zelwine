@@ -102,11 +102,13 @@ interface MetaData {
                           <h3>{getMetaValue(responsemobile.meta_data, 'dopis_przy_cenie')}</h3>
   
                           <div className={styles.buttonWrapper}>
-                            <Link href="/Kontakt">
-                              <button type="button" data-button="true">
-                                <span className="">Skontaktuj się</span>
-                              </button>
-                            </Link>
+                          <Link className={`Button ${styles.button}`}href="/Kontakt" >
+                    <button 
+                           type="button" data-button="true">
+                      <span className="">Skontaktuj się</span>
+                    </button>
+                  </Link>
+
                           </div>
   
                           <div className={styles.time}>

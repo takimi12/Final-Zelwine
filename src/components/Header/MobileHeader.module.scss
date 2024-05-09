@@ -41,11 +41,14 @@ top:0;
   transition-duration: 300ms;
   transition-timing-function: ease;
   .rightSection{
-      max-width: 50%;
+      max-width: 60%;
       width: 100%;
       background-color: #fff;
       padding: 16px;
       overflow-y: scroll;
+      @media only screen and (max-width: 400px) {
+        max-width: 70%;
+       }
       .top
       {
         display: flex;
@@ -54,9 +57,12 @@ top:0;
       }
   }
   .leftSection{
-    max-width: 50%;
+    max-width: 40%;
     width: 100%;
     background-color:rgba(0, 0, 0, 0.6);
+    @media only screen and (max-width: 400px) {
+      max-width: 30%;
+     }
   }
   .bottom
   {
@@ -84,11 +90,14 @@ top:0;
   transition-duration: 300ms;
   transition-timing-function: ease;
   .rightSection{
-      max-width: 50%;
+      max-width: 60%;
       width: 100%;
       background-color: #fff;
       padding: 16px;
       overflow-y: scroll;
+      @media only screen and (max-width: 400px) {
+        max-width: 70%;
+       }
       .top
       {
         display: flex;
@@ -97,9 +106,12 @@ top:0;
       }
   }
   .leftSection{
-    max-width: 50%;
+    max-width: 40%;
     width: 100%;
     background-color:rgba(0, 0, 0, 0.6);
+    @media only screen and (max-width: 400px) {
+      max-width: 30%;
+     }
   }
   .bottom
   {
@@ -146,6 +158,7 @@ top:0;
   display: flex;
   align-items: center;
   gap: 10px;
+  margin-bottom: 30px;
 }
 
 .mobileHeader1{

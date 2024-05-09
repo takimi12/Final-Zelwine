@@ -83,7 +83,7 @@ h1 {
   font-weight: 600;
   line-height: 125%; /* 52.5px */
   letter-spacing: -0.84px;
-  @media screen and (min-width: 768px) {
+  @media screen and (max-width: 768px) {
     font-size: 32px;
   
   }
@@ -198,6 +198,9 @@ font-style: normal;
 font-weight: 500;
 line-height: 145%; 
 }
+.Button:hover {
+  background-color: var(--Turquoise-700);
+}
 .EyebrowHeader{
   font-family:var(--font);
   color: var(--black-500);
@@ -212,4 +215,6 @@ line-height: 145%;
     }
 }
 
-
+html {
+  scroll-behavior: smooth;
+}

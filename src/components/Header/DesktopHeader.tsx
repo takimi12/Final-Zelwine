@@ -6,6 +6,7 @@ import Logo from '../../../public/static/Header/Logo.jsx';
 import SecondLogo from '../../../public/static/Header/SecondLogo.jsx';
 import { useRouter } from 'next/navigation';
 import Kaloryfer from '../../../public/static/Header/Kaloryfer.jsx';
+import ProduktyDropdown from "../../../public/static/Header/ProdyktyArrow.jsx";
 
 const Header = ({ categories }: { categories: Array<any> }) => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -51,7 +52,7 @@ const Header = ({ categories }: { categories: Array<any> }) => {
   const router = useRouter();
 
   let headerParentClasses = ` ${isScrolled ? styles.scroll : ''}`;
-  let kontaktmainClass = `${styles.kontaktDesktop} ${isScrolled ? styles.kontaktDesktop1 : ''}`;
+  let kontaktmainClass = ` ${isScrolled ? styles.contact1 : styles.contact}`;
 
   const currentPath = typeof window !== 'undefined' ? window.location.pathname : '';
   const segments = currentPath.split('/').filter(segment => segment !== '');
@@ -98,7 +99,6 @@ const Header = ({ categories }: { categories: Array<any> }) => {
 
 
 
-  
   return (
     <>
       <header onMouseLeave={MouseLeave} className={`${secondheader === 0 ? styles.headerParent : styles.headerParent1} ${elementMenu == 275 ? styles.activeHeader : headerParentClasses}`}>
@@ -118,26 +118,33 @@ const Header = ({ categories }: { categories: Array<any> }) => {
           )}
           <div className={styles.header}>
             <ul className={styles.menu}>
-              {filteredCategories &&
-                filteredCategories.map(category => (
-                  <li className={styles.anchorParent} key={category.title}>
-                    <Link
-                      className={`${isScrolled || elementMenu == 275 ? styles.second : '' } body`}
-                      onMouseEnter={() => MouseEnterElementMenu(category.product_id)}
-                      href={`/${category.title}`}
-                      aria-label="strona glowna"
-                    >
-                      {category.title}
-                    </Link>
-                  </li>
-                ))}
+            {filteredCategories &&
+  filteredCategories.map(category => (
+    <li className={styles.anchorParent} key={category.title}>
+      <Link
+        className={`${(isScrolled || elementMenu == 275) ? styles.second : '' } body `}
+        onMouseEnter={() => MouseEnterElementMenu(category.product_id)}
+        href={`/${category.title}`}
+        aria-label="strona glowna"
+      >
+        {category.title}
+       
+      </Link>
+      {(category.product_id == 275) && <ProduktyDropdown />}
+    </li>
+  ))}
             </ul>
 
             {kontaktCategory && (
-              <div className={`${kontaktmainClass} ${styles.menu} `}>
-                <Link href={kontaktCategory.title} className={`${isScrolled || elementMenu == 275 ? styles.second : ''} body`} aria-label="strona glowna">
+              <div className={` ${styles.menu} `}>
+                <Link href={kontaktCategory.title} className={`${isScrolled || elementMenu == 275 ? styles.second : ''} body ${kontaktmainClass}` } aria-label="strona glowna">
+                  <button>
                   Skontaktuj się z nami
+                  </button>
                 </Link>
+
+
+                
               </div>
             )}
           </div>

@@ -52,9 +52,9 @@ function MostPopular({ data }: { data: any }) {
           onReachEnd={handleReachEnd}
           onReachBeginning={handleReachBeginning}
           spaceBetween={20}
-          slidesPerView={4}
+          slidesPerView='auto'
           slidesOffsetBefore={40}
-          breakpoints={breakpoints} // Dodaj breakpoints do Swipera
+          breakpoints={breakpoints} 
         >
           <div className={styles.swiperTop}>
             <h4 className={styles.h4}>Najczęściej wybierane</h4>

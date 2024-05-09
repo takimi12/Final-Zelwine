@@ -16,6 +16,7 @@ const Featured = ({ data }: { data: any }) => {
   return (
     <section className={styles.featured} style={sectionStyle}>
       <div className={styles.textCenterSetting}>
+        <div className={styles.wrapper}>
         <p className={`${styles.text} display1`}>{data.title}</p>
         <div>
  <Link className={`Button`} href={"/Produkty/16/76"}>        <button className={styles.button}>
@@ -24,6 +25,7 @@ const Featured = ({ data }: { data: any }) => {
         
         </button>
         </Link>
+        </div>
         </div>
 
 

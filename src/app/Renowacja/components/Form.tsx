@@ -140,7 +140,7 @@ const Form = () => {
 
   return (
     <>
-  <section className={styles.formSection}>
+  <section className={styles.formSection} id="form">
     <form className={styles.renovationForm} onSubmit={handleSubmit}>
       <h4 className={styles.formTitle}>Wyceń renowację swoich grzejników!</h4>
       <div className={styles.formGroup}>

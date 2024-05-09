@@ -152,7 +152,9 @@ if (segments.includes('Produkty') && segments.length == 3 || segments.includes('
           </div>
           <div className={styles.bottom}>
             <div className={styles.back1}>
-              <ArrowBack />
+              <ArrowBack
+               onClick={handleProduktyClose}
+              />
               <p
                 onClick={handleProduktyClose}
                 className='p17'>Powrót</p>

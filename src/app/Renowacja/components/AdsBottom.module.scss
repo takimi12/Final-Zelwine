@@ -31,13 +31,14 @@
        display: flex;
        flex-direction: column;
        align-items: center;
-       max-width: 256px;
+
        .image{
            margin-bottom: 16px;
        }
        .middleText{
 
            margin-bottom: 32px;
+           text-align: center;
        }
        .bottomText{
            text-align: center;
