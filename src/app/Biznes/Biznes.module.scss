@@ -6,6 +6,9 @@
 }
 
 .forBusiness {
+    @media screen and (max-width: 768px) {
+        padding: 0px 16px; 
+       }
     &TitleText {
         max-width: 440px;
         text-align: center;

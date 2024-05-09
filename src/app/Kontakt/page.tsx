@@ -10,7 +10,6 @@ export default async function  Contact() {
     const data = await getData();
     const { acf  } = data;
 
-
   
 
   return (
@@ -20,8 +19,9 @@ export default async function  Contact() {
           <div className={styles.contactDetailsWrapper}>
             {data && (
               <>
+              <div className={styles.mobileSet}>
                 <h2>{data.title.rendered}</h2>
-
+                </div>
                 {data.acf.contacts.map((contact:any, index:any) => (
                   <div className={styles.contactDetailsSmall} key={index}>
                     <div className="Image">

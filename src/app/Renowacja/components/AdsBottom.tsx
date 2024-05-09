@@ -10,7 +10,7 @@ import styles from  './AdsBottom.module.scss'
 
 const AdsBottom = ({ acf }: { acf: any }) => {
   const breakpoints = {
-    600: {
+    1: {
       slidesPerView: 1,
     },
     700: {
@@ -48,10 +48,13 @@ const AdsBottom = ({ acf }: { acf: any }) => {
        breakpoints={breakpoints}
         >
           {acf.benefits.benefits_repeater.map((benefit:any, index:any) => (
-            <SwiperSlide key={index}>
-             <div className={styles.renovationPageInfoParent}>
+            <SwiperSlide key={index} className={styles.slide}>
+         <div className={styles.renovationPageInfoParent}>
           <div className={styles.slides}>
-                  <Image src={benefit.benefit_icons.url} alt={benefit.under_icon} width={65} height={64} />
+                  <Image src={benefit.benefit_icons.url} alt={benefit.under_icon} width={65} height={64}
+                  className={styles.image}
+                  />
+                  
                   <h6 className={` ${styles.middleText}`}>{benefit.under_icon}</h6>
                 </div>
               </div>

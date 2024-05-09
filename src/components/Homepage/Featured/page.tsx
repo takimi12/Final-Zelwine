@@ -10,12 +10,15 @@ const Featured = ({ data }: { data: any }) => {
     backgroundSize: 'cover',
   };
 
+
+  
+
   return (
     <section className={styles.featured} style={sectionStyle}>
       <div className={styles.textCenterSetting}>
         <p className={`${styles.text} display1`}>{data.title}</p>
         <div>
- <Link className={`Button`} href={data.link.url}>        <button className={styles.button}>
+ <Link className={`Button`} href={"/Produkty/16/76"}>        <button className={styles.button}>
         
             {data.link.title}
         

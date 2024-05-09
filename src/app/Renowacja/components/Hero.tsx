@@ -18,7 +18,7 @@ const Hero = ({ acf }: { acf: any }) => {
                 <p className="body">{hero.paragraph}</p>
               </div>
               <div>
-              <Link className={`Button`} href="/product">
+              <Link className={`Button`} href="/">
                 <button type="button" className="button-text-big">
                 {hero.button.title}
                 </button>

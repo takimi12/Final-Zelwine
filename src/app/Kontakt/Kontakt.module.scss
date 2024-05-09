@@ -30,6 +30,11 @@ gap: 15%;
     .companyAdress{
         max-width: 150px;
       }
+      .mobileSet{
+        @media screen and (max-width: 768px) {
+            margin-left: 30px;
+            }
+      }
     }
     .contactSection{
        z-index: 1;

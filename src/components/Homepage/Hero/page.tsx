@@ -1,3 +1,4 @@
+'use client'
 import React from "react";
 import styles from "./Hero.module.scss";
 import Link from "next/link";
@@ -25,7 +26,7 @@ const Hero = ({ data }: { data: any[] }) => {
             <div className={styles.textCenterSetting}>
             <span className={`EyebrowHeader ${styles.EyebrowHeader}`}>{heroItem.small_title}</span>
               <h1 className={`display1 ${styles.displaySecond}`}>{heroItem.title}</h1>
-              <Link className={`Button`} href="/product">
+              <Link className={`Button`} href="/Product/628">
               <button>
                 {heroItem.link.title}
               </button>
