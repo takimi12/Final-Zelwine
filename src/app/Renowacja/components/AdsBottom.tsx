@@ -35,7 +35,7 @@ const AdsBottom = ({ acf }: { acf: any }) => {
   return (
 
 <section className={styles.renovationPageInfoAdvantages}>
-<h2 className={styles.heading}>{acf.benefits.benefits_heading}</h2>
+<h4 className={styles.heading}>{acf.benefits.benefits_heading}</h4>
 <div className={styles.renovationPageInfoParentWrapper}>
 <Swiper
        spaceBetween={20}
@@ -52,7 +52,7 @@ const AdsBottom = ({ acf }: { acf: any }) => {
              <div className={styles.renovationPageInfoParent}>
           <div className={styles.slides}>
                   <Image src={benefit.benefit_icons.url} alt={benefit.under_icon} width={65} height={64} />
-                  <p className={`p15six ${styles.middleText}`}>{benefit.under_icon}</p>
+                  <h6 className={` ${styles.middleText}`}>{benefit.under_icon}</h6>
                 </div>
               </div>
             </SwiperSlide>

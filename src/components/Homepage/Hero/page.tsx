@@ -26,8 +26,7 @@ const Hero = ({ data }: { data: any[] }) => {
             <span className={`EyebrowHeader ${styles.EyebrowHeader}`}>{heroItem.small_title}</span>
               <h1 className={`display1 ${styles.displaySecond}`}>{heroItem.title}</h1>
               <Link className={`Button`} href="/product">
-              <button
-                className={` ${styles.Button}`}>
+              <button>
                 {heroItem.link.title}
               </button>
               </Link>

@@ -65,8 +65,7 @@
 
 
         .textContentInner {
-            padding-left: 7.5%;
-            padding-right: 7.5%;
+ 
             max-width: 440px;
             @media screen and (max-width: 900px) {
              padding: 0;
@@ -84,6 +83,9 @@
             .textContentParagraph{
                 @media screen and (max-width: 900px) {
                  padding-bottom: 88px; 
+                                  }
+                @media screen and (max-width: 768px) {
+                 padding-bottom: 40px; 
                                   }
             }
         }

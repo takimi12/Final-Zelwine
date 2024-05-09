@@ -148,7 +148,6 @@ if (segments.includes('Produkty') && segments.length == 3 || segments.includes('
             <SecondLogo />
             <Close
               onClick={handleProduktyClose}
-              JAK SIE BEDZIESZ WIECEJ USMIECHAC TO KIEDYS CI POWIEM
             />
           </div>
           <div className={styles.bottom}>
@@ -172,7 +171,7 @@ if (segments.includes('Produkty') && segments.length == 3 || segments.includes('
                         <div className={styles.categoryMenu} key={subCategory.title}>
                           <Link href={`/Produkty/${subCategory.product_id}`}>
                             <h3
-                                          onClick={handleHamburgerClickClose}>
+                                          onClick={handleProduktyClose}>
                               {subCategory.title}
                             </h3>
                           </Link>

@@ -15,6 +15,12 @@
         align-items: center;
         justify-content: center;
         margin-bottom: 92px;
+        .EyebrowHeader{
+            color: var(--Brown-500);
+        }
+        .span{
+            color: var(--Turquoise-500);
+        }
         img{
             margin-top: 20px;
             margin-bottom: 10px;
@@ -50,17 +56,9 @@
                 margin: auto;
             }
             img{
-                @media screen and (max-width: 4000px) {
-                    width: 326px!important;
-                    height: 325px!important;
-                }
                 @media screen and (max-width: 768px) {
                     width: 100%;
-                }
-                @media screen and (max-width: 500px) {
-                    width: 326px!important;
-                    height: 325px!important;
-                }
+                                }
             }
     }
     .wrapperOpinion {
@@ -71,7 +69,6 @@
                 display: flex;
                 margin-bottom: 40px;
                 flex-direction: column-reverse;
-                padding: 0px 16px;
                 max-width: 100%;
                 width: 100%;
             }
@@ -80,6 +77,9 @@
             padding: 40px 40px 40px 0;
             max-width: 637px;
             width: 100%;
+            .eyespan{
+                color: var(--gray-400);
+            }
             .middle{
                 margin-top: 20px;
                 margin-bottom: 40px;

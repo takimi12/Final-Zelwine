@@ -3,6 +3,7 @@ import React, { useRef, useState } from "react";
 import styles from  "./form.module.scss";
 import Plus from '../../../public/Renovation.svg'
 import Image from "next/image";
+import Link from "next/link";
 
 
 const ContactForm = ({formProp}: {formProp: any}) => {
@@ -286,7 +287,7 @@ const handleFilesChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 ) : (
   <div>
     <div className={`${styles.photoText} body-small-smaller-second`}>
-      <p className="p13">Zdjęcia grzejników</p>
+      <p className="body-small">Zdjęcia grzejników</p>
     </div>
   
     <div id="photoButton" onClick={handleClick} className={styles.choseFile}>
@@ -298,7 +299,7 @@ const handleFilesChange = (e: React.ChangeEvent<HTMLInputElement>) => {
             width={10}
             height={10}
           />
-          <span className={`${styles.customFileInputText} body-small-smaller-second`}>Dodaj zdjęcia</span>
+          <span className={`${styles.customFileInputText} body-small`}>Dodaj zdjęcia</span>
         </div>
       </button>
  <input
@@ -313,12 +314,13 @@ const handleFilesChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     </div>
   </div>
 )}
-    
-          
-
-          <button className="custom-submit-button button" type="submit" data-button="true">
+<div className={`${styles.mobile} `}>
+    <Link className={`Button ${styles.mobile}`} href="/product">
+          <button className={` custom-submit-button  `} type="submit" data-button="true">
             Wyślij zapytanie
           </button>
+          </Link>
+          </div>
         </form>
         </div>
     </>

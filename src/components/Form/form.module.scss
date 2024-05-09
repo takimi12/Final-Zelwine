@@ -1,5 +1,6 @@
 .contactSection{
     padding: 0px;
+    padding-bottom: 96px;
   }
   
   
@@ -156,6 +157,14 @@
       flex-direction: column;
       width: 100%;
     }
+ 
+  }
+  .mobile{
+    @media screen and (max-width: 768px) {
+   width: 100%;
+   display: flex;
+   justify-content: center;
+           }
   }
 
 

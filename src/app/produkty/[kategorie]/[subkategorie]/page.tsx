@@ -54,6 +54,7 @@ export default async function Subkategories({ params }: { params: { kategorie: s
     
     <div className={styles.breadcrumbDesktop}>
       <Breadcrumbs name='' breadcrumbs1={breadcrumbs1} breadcrumbs2={breadcrumbs2} kategoria={params.kategorie} />
+      <h4>{breadcrumbs2}</h4>
     </div>
       <div  className={styles.breadcrumbMobile}>
         <BreadcrumbsMobile breadcrumbs1={breadcrumbs1} breadscrumb2={params.kategorie}  />
@@ -67,7 +68,7 @@ export default async function Subkategories({ params }: { params: { kategorie: s
       </section>
       <section className={styles.sectionProduct}>
 
-      <h4>{breadcrumbs2}</h4>
+
           {mapped
 .filter((mappedCategory: any) => mappedCategory.images.length > 0 && mappedCategory.name !== '')
 .map(({ id, name, images }: any) => (
@@ -81,7 +82,7 @@ export default async function Subkategories({ params }: { params: { kategorie: s
           <div className={styles.overlay}>
             <Image src={images[1]?.src} alt={images[1]?.alt} width={300} height={300} />
           </div>
-          <p className="p15six">{name}</p>
+          <h6>{name}</h6>
         </div>
       </Link>
     </div>

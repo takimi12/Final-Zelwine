@@ -33,13 +33,13 @@ export default async function  Contact() {
                       />
                     </div>
                     <div className="details">
-                      <h3 className={styles.ContactParagraphDetails}>{contact.bold}</h3>
-                      <p>{contact.grey}</p>
+                      <h6 className={styles.ContactParagraphDetails}>{contact.bold}</h6>
+                      <p className="body-small">{contact.grey}</p>
                     </div>
                   </div>
                 ))}
 
-                <p className={styles.companyAdress}>{data.acf.bottom_grey}</p>
+                <p className={`body-small ${styles.companyAdress}`}>{data.acf.bottom_grey}</p>
               </>
             )}
           </div>

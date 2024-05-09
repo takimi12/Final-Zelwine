@@ -26,6 +26,9 @@
         display: flex;
         flex-wrap: wrap;
       justify-content: space-between;
+      .productsWrapper{
+        margin-bottom: 10px;
+      }
       
         @media screen and (max-width: 767px) {
          flex-direction: column;
@@ -49,7 +52,7 @@
           }
       .title{
         padding: 0;
-        margin-bottom: 30px;
+        margin-bottom: 40px;
     
         }
     

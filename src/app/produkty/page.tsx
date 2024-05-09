@@ -41,7 +41,7 @@ export default async function Products({ params }: any) {
                 width={440}
                 height={330}/>
               )}
-              <p className='p15six'>{category.name}</p>
+              <h6>{category.name}</h6>
             </Link>
           </div>
         ))}

@@ -20,9 +20,9 @@ const response = await getProductsAds(params);
                 {response.acf.Series && (
                     <div className={styles.parent}>
                         <div className={styles.leftSection}>
-                        <p className='p138'>{response.acf.Series.small_title}</p>
-                        <h1 className={styles.mainHeading}>{response.acf.Series.big_title}</h1>
-                        <p className='p15'>{response.acf.Series.description}</p>
+                        <p className={`EyebrowHeader ${styles.EyebrowHeader}`}>{response.acf.Series.small_title}</p>
+                        <h1 className={` display1 ${styles.mainHeading}`}>{response.acf.Series.big_title}</h1>
+                        <p className='body'>{response.acf.Series.description}</p>
                     </div>
                     <div className={styles.rightSection}>
                         {response.acf.Series.image && (

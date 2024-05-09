@@ -39,7 +39,7 @@ export default async function  Business() {
             <div className={styles.textContent}>
               <div className={styles.textContentInner}>
                 <h4 className={styles.textContentHeading}>{item.title}</h4>
-                <p className={`p-15 ${styles.textContentParagraph}`}>{item.paragraph}</p>
+                <p className={`body ${styles.textContentParagraph}`}>{item.paragraph}</p>
               </div>
             </div>
           </div>

@@ -1,5 +1,6 @@
 .renovationPageInfo {
     padding: 0 40px;
+    padding-bottom: 72px;
     max-width: 100%;
 }
 @media only screen and (max-width: 768px) {
@@ -20,68 +21,67 @@
     display: flex;
     margin-bottom: 50px;
     max-width: 50%;
-}
-@media only screen and (max-width: 1199px) {
-    .col6 {
-        max-width: 100%;
+    @media only screen and (max-width: 1199px) {
+             max-width: 100%;
+        
+    }
+    @media only screen and (max-width: 768px) {
+             flex-direction: column;
+            margin-bottom: 50;
+            max-width: 100%;
+            width: 100%;
+        
     }
 }
-@media only screen and (max-width: 768px) {
-    .col6 {
-        flex-direction: column;
-        margin-bottom: 0;
-        max-width: 100%;
-        width: 100%;
-    }
-}
+
 .foto {
     display: flex;
     flex-shrink: 0;
-}
-@media only screen and (max-width: 768px) {
-    .foto {
+    @media only screen and (max-width: 768px) {
+    
         position: relative;
         width: 100%;
         min-height: 300px;
-    }
+    
 }
+}
+
 .photoSection {
     display: block;
+    @media only screen and (max-width: 769px) {
+            display: none;
+    
+    }
 }
 .photoSectionMobile {
     display: none;
-}
-@media only screen and (max-width: 769px) {
-    .photoSection {
-        display: none;
-    }
-    .photoSectionMobile {
-        display: block;
+    @media only screen and (max-width: 769px) {
+            display: block;
+            width: 100%;
+            max-height: 268px;
+            object-fit: cover;
     }
 }
-@media only screen and (min-width: 769px) {
-    .photoSection {
-        display: block;
-    }
-    .photoSectionMobile {
-        display: none;
-    }
-}
+
+
 .text {
     padding: 0 40px;
-}
-@media only screen and (min-width: 760px) {
-    .text {
-        padding-top: 24px;
-        padding-left: 24px;
-        padding-bottom: 40px;
+    @media only screen and (min-width: 760px) {
+             padding-top: 24px;
+            padding-left: 24px;
+            padding-bottom: 40px;
+     
+        
     }
-    
 }
+
 .innerText {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    .EyebrowHeader{
+        color: var(--Turquoise-500);
+    }
 }
 
 

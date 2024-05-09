@@ -104,14 +104,14 @@ const Header = ({ categories }: { categories: Array<any> }) => {
       <header onMouseLeave={MouseLeave} className={`${secondheader === 0 ? styles.headerParent : styles.headerParent1} ${elementMenu == 275 ? styles.activeHeader : headerParentClasses}`}>
         <div className={(isScrolled ? styles.mainWrapper : styles.mainWrapperScroll)}>
           {logoImage || isScrolled || elementMenu == 275 ? (
-            <Link href="/">
+            <Link href="/" aria-label="strona glowna">
               <div onMouseEnter={() => setElementMenu(null)}>
                 <SecondLogo />
               </div>
             </Link>
           ) : (
             <div>
-              <Link href="/">
+              <Link href="/" aria-label="strona glowna">
               <Logo />
               </Link>
             </div>
@@ -122,9 +122,10 @@ const Header = ({ categories }: { categories: Array<any> }) => {
                 filteredCategories.map(category => (
                   <li className={styles.anchorParent} key={category.title}>
                     <Link
-                      className={isScrolled || elementMenu == 275 ? styles.second : ''}
+                      className={`${isScrolled || elementMenu == 275 ? styles.second : '' } body`}
                       onMouseEnter={() => MouseEnterElementMenu(category.product_id)}
                       href={`/${category.title}`}
+                      aria-label="strona glowna"
                     >
                       {category.title}
                     </Link>
@@ -134,7 +135,7 @@ const Header = ({ categories }: { categories: Array<any> }) => {
 
             {kontaktCategory && (
               <div className={`${kontaktmainClass} ${styles.menu} `}>
-                <Link href={kontaktCategory.title} className={isScrolled || elementMenu == 275 ? styles.second : ''}>
+                <Link href={kontaktCategory.title} className={`${isScrolled || elementMenu == 275 ? styles.second : ''} body`} aria-label="strona glowna">
                   Skontaktuj się z nami
                 </Link>
               </div>
@@ -150,9 +151,9 @@ const Header = ({ categories }: { categories: Array<any> }) => {
                         <div className={styles.parentSecondLevel}>
                           {category.children.map((subCategory:any) => (
                             <div key={subCategory.title}>
-                              <Link href={`/Produkty/${subCategory.product_id}`}>
+                              <Link href={`/Produkty/${subCategory.product_id}`} aria-label="strona glowna">
                                 <p
-                                  className={`${subCategory.product_id} `}
+                                  className={`${subCategory.product_id} body`}
                                   onMouseEnter={() => MouseEnterElementMenu1(subCategory.product_id)}
                                 >
                                   {subCategory.title}
@@ -184,10 +185,12 @@ const Header = ({ categories }: { categories: Array<any> }) => {
                                     <div key={thirdLevelCategory.id}>
                                       <Link
                                         href={`/Produkty/${subCategory.product_id}/${thirdLevelCategory.product_id}`}
+                                      aria-label="strona glowna"
+                                      
                                       >
                                         <p
                                           onMouseEnter={() => MouseEnterElementMenu2(thirdLevelCategory.product_id)}
-                                          className={styles.unactive}
+                                          className={`${styles.unactive} body` }
                                         >
                                           {thirdLevelCategory.title}
                                         </p>

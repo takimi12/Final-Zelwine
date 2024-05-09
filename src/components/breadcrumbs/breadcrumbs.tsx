@@ -24,8 +24,8 @@ function Breadcrumbs({ name, breadcrumbs1, breadcrumbs2, kategoria }: { name: st
   return (
 
     <div className={styles.locations}>
-      <p className={`p13 ${styles.color}`}>
-        <Link className={styles.color} href="/">
+      <p className={` ${styles.color}`}>
+        <Link className={`body-small${styles.color}`} href="/">
           Strona Główna
         </Link>
       </p>
@@ -33,7 +33,7 @@ function Breadcrumbs({ name, breadcrumbs1, breadcrumbs2, kategoria }: { name: st
         <Next />
       </span>
       <p className={`p13 ${styles.color}`}>
-        <Link className={styles.color} href="/Produkty">
+        <Link className={`body-small${styles.color}`} href="/Produkty">
           Produkty
         </Link>
       </p>
@@ -44,7 +44,7 @@ function Breadcrumbs({ name, breadcrumbs1, breadcrumbs2, kategoria }: { name: st
             <Next />
           </span>
           <p className={`p13 ${styles.color}`}>
-            <Link className={styles.color} href="/Produkty">
+            <Link className={`body-small${styles.color}`} href="/Produkty">
               {name}
             </Link>
           </p>
@@ -56,7 +56,7 @@ function Breadcrumbs({ name, breadcrumbs1, breadcrumbs2, kategoria }: { name: st
             <Next />
           </span>
           <p className={`p13 ${styles.color}`}>
-          <Link href={`/Produkty/${kategoria}`} className={styles.color}>
+          <Link href={`/Produkty/${kategoria}`} className={`body-small${styles.color}`}>
               {breadcrumbs1}
             </Link>
           </p>
@@ -68,7 +68,7 @@ function Breadcrumbs({ name, breadcrumbs1, breadcrumbs2, kategoria }: { name: st
             <Next />
           </span>
           <p className={`p13 ${styles.color}`}>
-            <Link className={styles.color} href="/#">
+            <Link className={`body-small${styles.color}`} href="/#">
               {breadcrumbs2}
             </Link>
           </p>

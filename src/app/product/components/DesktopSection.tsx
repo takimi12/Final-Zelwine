@@ -95,49 +95,54 @@ export default async function ProductPageSingle({res}: {res: any}) {
               <div className={styles.sticky} key={response.id}>
                 <div className={styles.rightTitle}>
                   <h1>{getMetaValue(response.meta_data, 'tytul_na_strone_produktu')}</h1>
-                  <p className="p15-six">{getAddonValue(response.meta_data)}</p>
+                  <h6 className={styles.h6}>{getAddonValue(response.meta_data)}</h6>
                 </div>
                 <div className={styles.shortDesc}>
-                  <p>{getMetaValue(response.meta_data, 'short_description')}</p>
+                  <p className='body'>{getMetaValue(response.meta_data, 'short_description')}</p>
                 </div>
 
                 <div className={styles.height}>
                   {response.attributes && response.attributes.map(attribute => (
                     <div key={attribute.id}>
-                      <p>{attribute.name}:</p>
+                      <p className='body-small'>{attribute.name}:</p>
                       <div className={styles.wrapperHeight}>
                         {attribute.options.map(option => (
                           <div className={styles.availableHeight} key={option}>
-                            {option}
+                            <p className='body'>{option}</p>
                           </div>
                         ))}
                       </div>
                     </div>
                   ))}
                 </div>
-                <h4>{getMetaValue(response.meta_data, 'dopis_przy_cenie')}</h4>
+                <h4 >{getMetaValue(response.meta_data, 'dopis_przy_cenie')}</h4>
 
                 <div className={styles.buttonWrapper}>
-                  <Link href="/Kontakt" >
-                    <button type="button" data-button="true">
+                  <Link className={`Button`}href="/Kontakt" >
+                    <button 
+                                   className={` ${styles.Button}`}
+                    type="button" data-button="true">
                       <span className="">Skontaktuj się</span>
                     </button>
                   </Link>
+
+               
+
                 </div>
 
                 <div className={styles.time}>
                   <Car />
-                  <p className="p15">Dostawa: 6 - 8 tygodni</p>
+                  <p className="body-small">Dostawa: 6 - 8 tygodni</p>
                 </div>
 
                 <div className={styles.wrapperDelivery}>
                   <div className={styles.delivery}>
                     <Telephone />
-                    <p className="p15">123123123</p>
+                    <p className="body">123123123</p>
                   </div>
                   <div className={styles.delivery}>
                     <Post />
-                    <p className="p15">test@test.pl</p>
+                    <p className="body">test@test.pl</p>
                   </div>
                 </div>
               </div>

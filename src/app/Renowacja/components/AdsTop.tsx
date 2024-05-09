@@ -40,7 +40,7 @@ export const AdsTop: React.FC<{ acf: any }> = ({ acf }) => {
     <section className={styles.renovationPageInfoAdvantages}>
       <div>
       </div>
-      <h2 className={styles.heading}>{acf.simple_steps.heading}</h2>
+      <h3 className={styles.heading}>{acf.simple_steps.heading}</h3>
       <div className={styles.renovationPageInfoParentWrapper}>
         <Swiper
           spaceBetween={20}
@@ -61,9 +61,10 @@ export const AdsTop: React.FC<{ acf: any }> = ({ acf }) => {
               alt={step.icon.title}
               width={step.icon.width}
               height={step.icon.height}
+              className={styles.image}
             />
-                  <p className={`p15six ${styles.middleText}`}>{step.bold}</p>
-                  <p className={`p15 ${styles.bottomText}`}>{step.text}</p>
+                  <h6 className={` ${styles.middleText}`}>{step.bold}</h6>
+                  <p className={`body ${styles.bottomText}`}>{step.text}</p>
                 </div>
               </div>
             </SwiperSlide>

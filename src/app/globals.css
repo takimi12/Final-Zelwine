@@ -58,23 +58,23 @@
   font-family:var(--font);
   font-weight: 500;
   font-size: 72px;
-  line-height: 48px;
+  line-height: 84px;
   color: var(--black);
-
-  @media screen and (min-width: var(--breakpoint-mobile)) {
+  @media screen and (max-width: 768px) {
     font-size: 42px;
-    line-height: 83px;
+    line-height: 50px;
   }
 }
+
+
 h1 {
   font-family:var(--font);
   font-size: 49px;
   font-weight: 600;
-  line-height: 125%; /* 61.25px */
   letter-spacing: -1.96px;
-  @media screen and (min-width: var(--breakpoint-mobile)) {
+  @media screen and (max-width: 768px) {
     font-size: 37px;
-    line-height: 83px;
+
   }
   }
   h2 {
@@ -83,9 +83,9 @@ h1 {
   font-weight: 600;
   line-height: 125%; /* 52.5px */
   letter-spacing: -0.84px;
-  @media screen and (min-width: var(--breakpoint-mobile)) {
+  @media screen and (min-width: 768px) {
     font-size: 32px;
-    line-height: 83px;
+  
   }
   }
   h3 {
@@ -95,9 +95,9 @@ h1 {
       font-weight: 600;
       line-height: 120%; /* 38.4px */
       letter-spacing: -0.64px;
-      @media screen and (min-width: var(--breakpoint-mobile)) {
+      @media screen and (min-width: 768px) {
         font-size: 23px;
-        line-height: 83px;
+ 
       }
   }
 
@@ -109,8 +109,9 @@ h1 {
       font-weight: 600;
       line-height: 120%; /* 32.4px */
       letter-spacing: -0.54px;
-      @media screen and (max-width: 768px) {
+      @media screen and (min-width: 768px) {
         font-size: 20px;
+
       }
     }
   h5{
@@ -120,7 +121,8 @@ h1 {
   font-weight: 600;
   line-height: 130%; /* 28.6px */
   letter-spacing: -0.44px;
-  @media screen and (min-width: var(--breakpoint-mobile)) {
+  @media screen and (min-width: 768px) {
+    
     font-size: 17px;
 
   }
@@ -133,7 +135,7 @@ h1 {
   font-weight: 600;
   line-height: 130%; /* 28.6px */
   letter-spacing: -0.44px;
-  @media screen and (min-width: var(--breakpoint-mobile)) {
+  @media screen and (min-width: 768px){
     font-size: 15px;
   }
   }
@@ -198,16 +200,16 @@ line-height: 145%;
 }
 .EyebrowHeader{
   font-family:var(--font);
+  color: var(--black-500);
      font-size: 13px;
      font-style: normal;
      font-weight: 800;
      line-height: 130%; 
      letter-spacing: 1.3px;
      text-transform: uppercase;
+     @media screen and (min-width: 768px) {
+      font-size: 11px;
+    }
 }
-
-/********/
-
-
 
 

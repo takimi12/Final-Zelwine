@@ -3,9 +3,7 @@
      height: 100%;
      height: 850px;
     background-size: cover;
-    @media screen and (max-width: 900px) {
-      padding-top: 0px;
-  }
+ 
 
     .textCenterSetting {
     max-width: 90%;
@@ -23,7 +21,6 @@
       max-width: 80%;
       text-align: right;
       margin-top: 200px;
-      margin-bottom: 48px;
   }
       }
     .main-heading {

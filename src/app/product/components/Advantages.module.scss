@@ -25,6 +25,7 @@
         margin-bottom: 36px;
     }
     .leftSection
+    
     {
         max-width: 48%;
         @media screen and (max-width: 1050px) {
@@ -34,6 +35,9 @@
             }
         @media screen and (max-width: 768px) {
             padding: 0px 16px;
+            }
+            .EyebrowHeader{
+                color: var(--Turquoise-500);
             }
     }
     .rightSection{

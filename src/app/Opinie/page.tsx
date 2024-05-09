@@ -12,13 +12,13 @@ export default async function Opinie() {
     <>
       <section className={styles.opinions}>
           <div className={styles.mainHeading}>
-            <h1> {data.acf.header}</h1>
+            <h3> {data.acf.header}</h3>
             <Image
             width={100}
             height={100}
             src={`${data.acf.header_stars.url}`}
             alt="popraw"/>
-            <p className="p13brown">Średnia ocena: <span>{data.acf.under_stars}</span></p>
+            <p className={`EyebrowHeader ${styles.EyebrowHeader}`}>Średnia ocena: <span className={styles.span}>{data.acf.under_stars}</span></p>
             
           </div>
 
@@ -28,9 +28,9 @@ export default async function Opinie() {
             <div key={opinion.number_of_stars} className={styles.wrapperOpinion}>
               <div className={styles.wrapperOpinionLeft}>
                  <p> {opinion.number_of_stars}</p>
-                <h2>{opinion.title}</h2>
-                <p className={`${styles.middle} p15`}> {opinion.paragraph}</p>
-                <p className="p13"> {opinion.signature}<span className="span13"> {opinion.country}</span></p>
+                <h6>{opinion.title}</h6>
+                <p className={`${styles.middle} body`}> {opinion.paragraph}</p>
+                <p className="body-small"> {opinion.signature}<span className={`body-small ${styles.eyespan}`}> {opinion.country}</span></p>
 
 
               </div>

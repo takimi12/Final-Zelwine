@@ -2,6 +2,7 @@
     height: 850px;
     background-size: cover;
     margin-bottom: 64px;
+
      .textCenter {
       width: 100%;
       display: flex;
@@ -11,6 +12,12 @@
       height: 100%;
       .textCenterSetting {
         max-width: 650px;
+        margin-left: 150px;
+        @media screen and (max-width: 767px) {
+          max-width: 450px;
+          margin-left: 80px;
+        
+      }
         .EyebrowHeader{
           color: var(  --light-gray-100);
         }
@@ -21,10 +28,7 @@
           background-color: var(--turquoise-500);
         }
         
-  @media screen and (max-width: 1300px) {
-      padding-left: 80px;
-    
-  }
+
   .displaySecond {
     padding-top: 8px;
     padding-bottom: 32px;

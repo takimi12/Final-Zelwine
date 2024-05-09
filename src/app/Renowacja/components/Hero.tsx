@@ -13,13 +13,19 @@ const Hero = ({ acf }: { acf: any }) => {
       <div className={`${styles.renovationColumWrapper} ${styles.renovationColumnWrapper2}`}>
           <div className={styles.renovationPageText}>
             <div className={styles.innerWrapper}>
-              <h1 className="h1big">{hero.title}</h1>
+              <h1 className="display1">{hero.title}</h1>
               <div className={styles.renovationPageParagraph}>
-                <p className="p15">{hero.paragraph}</p>
+                <p className="body">{hero.paragraph}</p>
               </div>
+              <div>
+              <Link className={`Button`} href="/product">
                 <button type="button" className="button-text-big">
                 {hero.button.title}
                 </button>
+                </Link>
+              </div>
+
+
             </div>
           </div>
         </div>

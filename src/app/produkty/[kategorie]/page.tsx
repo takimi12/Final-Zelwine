@@ -60,7 +60,7 @@ export default async function Subkategories({ params }: { params: { kategorie: s
                     />
 
                   </div>
-                  <p className="p15six">{category.name}</p>
+                  <h6>{category.name}</h6>
  
               </Link>
           
@@ -80,7 +80,7 @@ export default async function Subkategories({ params }: { params: { kategorie: s
                       alt="sss"
                     />
                   </div>
-                  <p className="p15six">{category.name}</p>
+                  <h6 >{category.name}</h6>
                 </div>
               </Link>
             ))}
