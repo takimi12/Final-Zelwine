@@ -11,6 +11,9 @@ import ProduktyDropdown from "../../../public/static/Header/ProdyktyArrow.jsx";
 const Header = ({ categories }: { categories: Array<any> }) => {
   const [isScrolled, setIsScrolled] = useState(false);
 
+
+
+
   useEffect(() => {
     const handleScroll = () => {
       const scrolled = typeof window !== 'undefined' && window.scrollY > 100;
@@ -34,14 +37,14 @@ const Header = ({ categories }: { categories: Array<any> }) => {
   useEffect(() => {
     const currentPath = typeof window !== 'undefined' ? window.location.pathname : '';
     const segments = currentPath.split('/').filter(segment => segment !== '');
-    if (segments.includes('Produkty') && segments.length == 3) {
+    if (segments.includes('products') && segments.length == 3) {
       setLogoImage(0);
     }
 
 
 
-    if (segments.includes('Renowacja') || segments.includes('Opinie') || segments.includes('Kontakt') || segments.includes('Product')  ||  (segments.includes('Produkty') && segments.length == 1) ||
-    (segments.includes('Produkty') && segments.length == 2)) {
+    if (segments.includes('Renowacja') || segments.includes('Opinie') || segments.includes('Kontakt') || segments.includes('product')  ||  (segments.includes('products') && segments.length == 1) ||
+    (segments.includes('products') && segments.length == 2)) {
       setLogoImage(275);
     }
   
@@ -66,9 +69,9 @@ const Header = ({ categories }: { categories: Array<any> }) => {
       segments.includes('Renowacja') ||
       segments.includes('Opinie') ||
       segments.includes('Kontakt') ||
-      segments.includes('Product') ||
-      (segments.includes('Produkty') && segments.length == 1) ||
-      (segments.includes('Produkty') && segments.length == 2)
+      segments.includes('product') ||
+      (segments.includes('products') && segments.length == 1) ||
+      (segments.includes('products') && segments.length == 2)
     ) {
       setSecondHeader(1);
     }
@@ -124,7 +127,7 @@ const Header = ({ categories }: { categories: Array<any> }) => {
       <Link
         className={`${(isScrolled || elementMenu == 275) ? styles.second : '' } body `}
         onMouseEnter={() => MouseEnterElementMenu(category.product_id)}
-        href={`/${category.title}`}
+        href={`/${category.slug}`}
         aria-label="strona glowna"
       >
         {category.title}
@@ -158,7 +161,7 @@ const Header = ({ categories }: { categories: Array<any> }) => {
                         <div className={styles.parentSecondLevel}>
                           {category.children.map((subCategory:any) => (
                             <div key={subCategory.title}>
-                              <Link href={`/Produkty/${subCategory.product_id}`} aria-label="strona glowna">
+                              <Link href={`/products/${subCategory.product_id}`} aria-label="strona glowna">
                                 <p
                                   className={`${subCategory.product_id} body`}
                                   onMouseEnter={() => MouseEnterElementMenu1(subCategory.product_id)}
@@ -191,7 +194,7 @@ const Header = ({ categories }: { categories: Array<any> }) => {
                                   {subCategory.children.map((thirdLevelCategory:any) => (
                                     <div key={thirdLevelCategory.id}>
                                       <Link
-                                        href={`/Produkty/${subCategory.product_id}/${thirdLevelCategory.product_id}`}
+                                        href={`/products/${subCategory.product_id}/${thirdLevelCategory.product_id}`}
                                       aria-label="strona glowna"
                                       
                                       >

@@ -1,6 +1,6 @@
 import { Plus_Jakarta_Sans  } from 'next/font/google'
 
-export const PluskartaSans = Plus_Jakarta_Sans({
+export const PlusJakartaSans = Plus_Jakarta_Sans({
   weight: '400',
   subsets: ['latin'],
   display: 'swap',

@@ -5,10 +5,10 @@ import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 import { getHeaderData } from "./api/Header";
 
-import { PluskartaSans } from "./fonts";
+import { PlusJakartaSans } from "./fonts";
 
 
-const inter = PluskartaSans;
+
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -23,7 +23,7 @@ export default async function RootLayout({
   const categories=await getHeaderData()
     return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={PlusJakartaSans.className}>
         <Header categories={categories} />
         {children  }
       <Footer />

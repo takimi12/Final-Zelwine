@@ -1,3 +1,4 @@
+
 import React from "react";
 import styles from "./Featured.module.scss";
 import Link from "next/link";
@@ -19,9 +20,11 @@ const Featured = ({ data }: { data: any }) => {
         <div className={styles.wrapper}>
         <p className={`${styles.text} display1`}>{data.title}</p>
         <div>
- <Link className={`Button`} href={"/Produkty/16/76"}>        <button className={styles.button}>
+ <Link className={`Button`} href={data.link.url}>       
+  <button className={styles.button}>
         
             {data.link.title}
+
         
         </button>
         </Link>

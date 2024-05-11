@@ -133,20 +133,39 @@ const SectionSwiper = ({ data }: { data: any }) => {
 
   const handleSwitcherClick = () => {
     setIsConfigExpanded(!isConfigExpanded);
+
   };
+
+
+
+  const breakpoints = {
+    400: {
+      slidesPerView: 1,
+    },
+  800: {
+      slidesPerView: 2,
+    },
+    1200: {
+      slidesPerView: 3,
+    },
+  };
+
 
   return (
     <>
       <section className={styles.swiperSectionInspiration}>
         <Swiper
-          spaceBetween={20}
-          slidesPerView={4}
+          spaceBetween={40}
+          slidesPerView='auto'
           slidesOffsetBefore={40}
           className={styles.swiper}
           wrapperClass={styles.wrapperClass}
           onReachEnd={handleReachEnd}
           onReachBeginning={handleReachBeginning}
+
+          breakpoints={breakpoints}
         >
+
           <div className={styles.swiperTop}>
             <h4 className={styles.h4}>Inspiracje</h4>
             <div className="arrowParent">

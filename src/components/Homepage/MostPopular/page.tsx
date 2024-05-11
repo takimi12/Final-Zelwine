@@ -4,6 +4,7 @@ import 'swiper/css';
 import 'swiper/css/bundle';
 import 'swiper/css/pagination';
 
+
 import Image from 'next/image';
 import styles from './MostPopular.module.scss';
 import SwiperNav from '../../series/SwiperNav';
@@ -92,5 +93,3 @@ className={styles.imageLarge}
 }
 
 export default MostPopular;
-
-

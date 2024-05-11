@@ -25,16 +25,16 @@
     
     }
     .products{
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 1em;
+      @media screen and (max-width: 900px) {
+        grid-template-columns: repeat(2, 1fr);
+              }
     .productsWrapper{
-      max-width: 30%;
       width: 100%;
       margin-bottom: 64px;
-      @media screen and (max-width: 1199px) {
-      max-width: 47%;
-      }
+    
     }
   
     .categoryImage{

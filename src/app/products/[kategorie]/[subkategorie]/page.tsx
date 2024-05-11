@@ -1,5 +1,3 @@
-
-
 import styles from "./subkategorie.module.scss";
 import Image from "next/image";
 import Link from "next/link";
@@ -42,7 +40,8 @@ export default async function Subkategories({ params }: { params: { kategorie: s
     return {
       name: category.name,
       id: category.id,
-      images: category.images.slice(imagesLength - 2, imagesLength)
+      images: category.images.slice(imagesLength - 2, imagesLength),
+      slug: category.slug
     };
   });
 
@@ -74,7 +73,7 @@ export default async function Subkategories({ params }: { params: { kategorie: s
 .map(({ id, name, images }: any) => (
 
     <div className={styles.settingWidth} key={id}>
-      <Link href={`/Product/${id}`} key={id}>
+      <Link href={`/product/${id}`} key={id}>
         <div className={styles.categoryContainer}>
           <div className={styles.categoryImage}>
             <Image src={images[0]?.src} alt={images[0]?.alt} width={300} height={300} />

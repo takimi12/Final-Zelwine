@@ -43,6 +43,11 @@ const MobileHeader = ({ categories }: { categories: any }) => {
     setIsThirdLevel(false);
   };
 
+  const handleAllClose = () => {
+    setIsMenuOpen(false);
+    setIsThirdLevel(false);
+  }
+
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
 
@@ -61,11 +66,11 @@ const MobileHeader = ({ categories }: { categories: any }) => {
 
   const currentPath = window.location.pathname;
   let segments = currentPath.split('/').filter(segment => segment !== '');
-  if (  segments.includes('Renowacja') || segments.includes('Opinie') || segments.includes('Kontakt') || segments.includes('Product')|| segments.includes('Produkty')) {
+  if (  segments.includes('Renowacja') || segments.includes('Opinie') || segments.includes('Kontakt') || segments.includes('product')|| segments.includes('products')) {
     headerParentClasses = `${styles.mobileHeader1} `;
   }
 
-if (segments.includes('Produkty') && segments.length == 3 || segments.includes('Biznes')) {
+if (segments.includes('products') && segments.length == 3 || segments.includes('Biznes')) {
   headerParentClasses = `${styles.mobileHeader} `;
 }
 
@@ -141,13 +146,13 @@ if (segments.includes('Produkty') && segments.length == 3 || segments.includes('
       <div className={`${styles.slideHeader1} ${ThirdLevel ? styles.active2 : ''}`} >
         <div
           className={styles.leftSection}
-          onClick={handleProduktyClose}
+          onClick={handleAllClose}
         ></div>
         <div className={styles.rightSection}>
           <div className={styles.top}>
             <SecondLogo />
             <Close
-              onClick={handleProduktyClose}
+              onClick={handleAllClose}
             />
           </div>
           <div className={styles.bottom}>
@@ -171,9 +176,9 @@ if (segments.includes('Produkty') && segments.length == 3 || segments.includes('
                     <div className={styles.parentSecondLevel}>
                       {category.children.map((subCategory:any) => (
                         <div className={styles.categoryMenu} key={subCategory.title}>
-                          <Link href={`/Produkty/${subCategory.product_id}`}>
+                          <Link href={`/products/${subCategory.product_id}`}>
                             <h3
-                                          onClick={handleProduktyClose}>
+                                          onClick={handleAllClose}>
                               {subCategory.title}
                             </h3>
                           </Link>

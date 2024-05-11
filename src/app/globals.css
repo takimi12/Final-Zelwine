@@ -5,8 +5,8 @@
 @import url('./reset.css');
 
 
-:root{
-  /* --font: 'Plus Jakarta Sans'; */
+:root{--font-primary:--font-primary; ;
+  --font:--font-primary;
   --black-500: #252727;
   --black-300: #525555;
   --black-400: #3C3E3E;

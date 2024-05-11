@@ -1,62 +1,62 @@
 
 .mostPopular{
-    padding-left: 40px;
-    overflow: hidden;
-    padding-bottom: 136px;
-    @media screen and (max-width: 768px) {
-        padding: 0px 16px 136px 16px;
-  }
-  
-  .swiper
-  {
-  display: flex;
-  flex-direction: column-reverse;
-  overflow: visible;
-  .wrapperClass{
-    margin-left: -40px;
-  }
-  .swiperSlide{
-    width: 555px!important;
-   
-    @media screen and (max-width: 768px) {
-      width: 300px!important; 
+  padding-left: 40px;
+  overflow: hidden;
+  padding-bottom: 136px;
+  @media screen and (max-width: 768px) {
+      padding: 0px 16px 136px 16px;
+}
+
+.swiper
+{
+display: flex;
+flex-direction: column-reverse;
+overflow: visible;
+.wrapperClass{
+  margin-left: -40px;
 
 }
-    .imageWraper{
-      width: 555px!important;
-      height: 416px;
-      position: relative;
-      @media screen and (max-width: 768px) {
-        width: 300px!important; 
-        height: 224px;
-  }
-    }
-  }
-  .swiperTop
-  {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 50px;
-    margin-right: 40px;
-    .h4{
-      color: var(--black-500);
-    }
-  }
+.swiperSlide{
+  width: 555px!important;
+ 
+  @media screen and (max-width: 768px) {
+    width: 300px!important; 
 
+}
+  .imageWraper{
+    width: 555px!important;
+    height: 416px;
+    position: relative;
+    @media screen and (max-width: 768px) {
+      width: 300px!important; 
+      height: 224px;
+}
   }
-  
-  .swipperSliderHeading
-  {
-    margin-top: 20px;
-    display: flex;
-    justify-content: space-between;
-    .h6{
-      color: var(--black-500);
-    }
-  } 
+}
+.swiperTop
+{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 50px;
+  margin-right: 40px;
+  .h4{
+    color: var(--black-500);
   }
-  
+}
+
+}
+
+.swipperSliderHeading
+{
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  .h6{
+    color: var(--black-500);
+  }
+} 
+}
 
 
-  
+

@@ -13,11 +13,11 @@ const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ breadcrumbs1, breadscrumb2 })
     <div className={styles.locations}>
       <Prev />
       {breadcrumbs1 ? (
-        <Link href={`/Produkty/${breadscrumb2 }`}>
+        <Link href={`/products/${breadscrumb2 }`}>
          {breadcrumbs1}
         </Link>
       ) : (
-        <Link href="/Produkty">
+        <Link href="/products">
         Produkty
         </Link>
       )}

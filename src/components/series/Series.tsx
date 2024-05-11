@@ -1,5 +1,5 @@
 'use client';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/bundle';
@@ -15,16 +15,34 @@ function Series({ series, series1, filtereddataSeries, productSeriesProp}: any) 
 
   const [isAtBeginning, setIsAtBeginning] = useState(true);
   const [isAtEnd, setIsAtEnd] = useState(false);
+  const swiperRef = useRef(null);
+
+
+
+
 
 
   const handleReachEnd = () => {
     setIsAtBeginning(false);
     setIsAtEnd(true);
+   
   };
 
   const handleReachBeginning = () => {
     setIsAtBeginning(true);
     setIsAtEnd(false);
+ 
+  };
+  const breakpoints = {
+    400: {
+      slidesPerView: 1,
+    },
+  800: {
+      slidesPerView: 2,
+    },
+    1200: {
+      slidesPerView: 3,
+    },
   };
 
   let filteredCategories = [];
@@ -44,19 +62,14 @@ function Series({ series, series1, filtereddataSeries, productSeriesProp}: any) 
         <div className={styles.product}>
           {filteredCategories.length > 0 && (
             <Swiper
-              spaceBetween={20}
-              slidesPerView={4}
-              slidesOffsetBefore={40}
+              spaceBetween={40}
               className={styles.swiperClass}
               wrapperClass={styles.wrapperClass}
-              breakpoints={{
-                640: { slidesPerView: 2, spaceBetween: 30 },
-                768: { slidesPerView: 2, spaceBetween: 40 },
-                991: { slidesPerView: 3, spaceBetween: 40 },
-                1199: { slidesPerView: 4, spaceBetween: 40 },
-              }}
               onReachEnd={handleReachEnd}
               onReachBeginning={handleReachBeginning}
+              slidesPerView='auto'
+              slidesOffsetBefore={40}
+              breakpoints={breakpoints} 
             >
               <div className={styles.topParent}>
                 <h4 className={styles.h4}>Kategorie produktów</h4>
@@ -66,7 +79,7 @@ function Series({ series, series1, filtereddataSeries, productSeriesProp}: any) 
               </div>
               {filteredCategories.map((category: any) => (
                 <SwiperSlide key={category.id} className={styles.slide}>
-                  <Link href={`/Produkty/${category.id}`}>
+                  <Link href={`/products/${category.id}`}>
                     {category.image && category.image.src && (
                       <div className={styles.imageWraper}> 
                       <Image
@@ -92,22 +105,17 @@ function Series({ series, series1, filtereddataSeries, productSeriesProp}: any) 
               ))}
             </Swiper>
           )}
-          
+
           {filteredCategories1.length > 0 && (
             <Swiper
-              spaceBetween={20}
-              slidesPerView={4}
-              slidesOffsetBefore={40}
-              className={styles.swiperClass}
-              wrapperClass={styles.wrapperClass}
-              breakpoints={{
-                640: { slidesPerView: 2, spaceBetween: 30 },
-                768: { slidesPerView: 2, spaceBetween: 40 },
-                991: { slidesPerView: 3, spaceBetween: 40 },
-                1199: { slidesPerView: 4, spaceBetween: 40 },
-              }}
-              onReachEnd={handleReachEnd}
-              onReachBeginning={handleReachBeginning}
+            spaceBetween={40}
+            className={styles.swiperClass}
+            wrapperClass={styles.wrapperClass}
+            onReachEnd={handleReachEnd}
+            onReachBeginning={handleReachBeginning}
+            slidesPerView='auto'
+            slidesOffsetBefore={40}
+            breakpoints={breakpoints} 
             >
               <div className={styles.topParent}>
                 <p>Pozostałe Kategorie</p>
@@ -117,7 +125,7 @@ function Series({ series, series1, filtereddataSeries, productSeriesProp}: any) 
               </div>
               {filteredCategories1.map((category: any) => (
                 <SwiperSlide key={category.id} className={styles.slide}>
-                  <Link href={`/Produkty/${category.id}`}>
+                  <Link href={`/products/${category.id}`}>
                     {category.image && category.image.src && (
                       <Image
                         src={category.image.src}
@@ -135,19 +143,15 @@ function Series({ series, series1, filtereddataSeries, productSeriesProp}: any) 
           )}
           {filtereddataSeries.length  > 0 && (
             <Swiper
-              spaceBetween={20}
-              slidesPerView={4}
-              slidesOffsetBefore={40}
-              className={styles.swiperClass}
-              wrapperClass={styles.wrapperClass}
-              breakpoints={{
-                640: { slidesPerView: 2, spaceBetween: 30 },
-                768: { slidesPerView: 2, spaceBetween: 40 },
-                991: { slidesPerView: 3, spaceBetween: 40 },
-                1199: { slidesPerView: 4, spaceBetween: 40 },
-              }}
-              onReachEnd={handleReachEnd}
-              onReachBeginning={handleReachBeginning}
+            spaceBetween={40}
+            className={styles.swiperClass}
+            wrapperClass={styles.wrapperClass}
+            onReachEnd={handleReachEnd}
+            onReachBeginning={handleReachBeginning}
+            slidesPerView='auto'
+            slidesOffsetBefore={40}
+            breakpoints={breakpoints} 
+
             >
               <div className={styles.topParent}>
                 <p>Pozostałe Serie</p>
@@ -157,7 +161,7 @@ function Series({ series, series1, filtereddataSeries, productSeriesProp}: any) 
               </div>
               {filtereddataSeries.map((category: any) => (
                 <SwiperSlide key={category.id} className={styles.slide}>
-                  <Link href={`/Produkty/${category.id}`}>
+                  <Link href={`/products/${category.id}`}>
                     {category.image && category.image.src && (
                       <Image
                         src={category.image.src}
