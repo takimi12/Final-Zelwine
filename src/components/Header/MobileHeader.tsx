@@ -129,7 +129,7 @@ if (segments.includes('products') && segments.length == 3 || segments.includes('
                     </>
                   ) : (
                     <div className={styles.categoryMenu} key={category.title}>
-                      <Link href={category.title}>
+                      <Link href={`/${category.slug}`}>
                         <h3
                                       onClick={handleHamburgerClickClose}
                         >

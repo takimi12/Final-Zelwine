@@ -7,6 +7,7 @@ import SecondLogo from '../../../public/static/Header/SecondLogo.jsx';
 import { useRouter } from 'next/navigation';
 import Kaloryfer from '../../../public/static/Header/Kaloryfer.jsx';
 import ProduktyDropdown from "../../../public/static/Header/ProdyktyArrow.jsx";
+import Image from 'next/image';
 
 const Header = ({ categories }: { categories: Array<any> }) => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -241,10 +242,13 @@ const Header = ({ categories }: { categories: Array<any> }) => {
                                               : styles.unActiveImage
                                           }`}
                                         >
-                                          <img
+                                          <Image
                                             className={styles.headerImage}
                                             src={thirdLevelCategory.thumbnail}
                                             alt={`Category: ${thirdLevelCategory.title}`}
+                                            width={499}
+                                            height={400}
+
                                           />
                                         </li>
                                       ))}
