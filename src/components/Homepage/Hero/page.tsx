@@ -3,13 +3,11 @@ import React from "react";
 import styles from "./Hero.module.scss";
 import Link from "next/link";
 
-const Hero = ({ data }: { data: any[] }) => {
+const Hero = ({ data, }: { data: any[] }) => {
 
   if (!data || !data || data.length === 0) {
     return null;
   }
-
-
 
   // Dynamiczne style
   const heroStyle = {

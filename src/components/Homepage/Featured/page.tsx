@@ -12,8 +12,6 @@ const Featured = ({ data }: { data: any }) => {
   };
 
 
-  
-
   return (
     <section className={styles.featured} style={sectionStyle}>
       <div className={styles.textCenterSetting}>

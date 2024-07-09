@@ -7,7 +7,6 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/bundle';
 import 'swiper/css/pagination';
-import Image from "next/image";
 import styles from "./Opinion.module.scss";
 import Star from "../../../../public/static/Homepage/Opinion/star";
 import Link from "next/link";

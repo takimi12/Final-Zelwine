@@ -1,0 +1,164 @@
+.contactSection {
+  padding: 0px;
+  padding-bottom: 96px;
+
+  .contactFormSection {
+    padding: 50px 40px;
+
+    .renovation{
+      margin-bottom: 30px;
+    }
+    @media screen and (max-width: 769px) {
+      padding: 0px 16px;
+    }
+
+    .contactHeading {
+      padding-top: 72px;
+      padding-bottom: 40px;
+    }
+
+    .formGroup {
+      display: flex;
+      gap: 20px;
+      width: 100%;
+      margin-bottom: 20px;
+
+      @media screen and (max-width: 768px) {
+        flex-direction: column;
+      }
+
+      .inputWrapper {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        label {
+          &.error {
+            color: rgb(220, 15, 15); 
+          }
+        }
+
+        input {
+          padding: 14px 14px;
+          background-color: #f5f5f5;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          cursor: pointer;
+          margin-top: 10px;
+
+          &.error {
+            border-color: rgb(220, 15, 15); 
+            background-color: #f0e1e1; 
+          }
+        }
+
+        .errorText {
+          color: rgb(255, 107, 107); 
+          margin-top: 4px;
+          font-size: 12px;
+        }
+      }
+    }
+
+    .textareaWrapper {
+      display: block;
+      margin-bottom: 20px;
+
+      label {
+        &.error {
+          color:rgb(255, 107, 107); 
+        }
+      }
+
+      textarea {
+        resize: none;
+        border: 1px solid #aeb2b3;
+        background: #fafafa;
+        width: 100%;
+        height: 150px;
+        margin-right: 10px;
+        margin-top: 10px;
+        padding: 10px;
+
+        &.error {
+          border-color: rgb(220, 15, 15); 
+          background-color: #f0e1e1; 
+        }
+      }
+
+      .errorText {
+        color:rgb(255, 107, 107); 
+        margin-top: 4px;
+        font-size: 12px;
+        margin-bottom: 20px;
+      }
+    }
+
+    .customFileInput {
+      display: inline-block;
+      font-size: 12px;
+    }
+
+    .customFileInputButton {
+
+
+      .customFileInputButtonInner {
+        display: flex;
+        align-items: center;
+      }
+
+      .customFileInputIcon {
+        margin-right: 8px;
+      }
+    }
+
+    .photoText {
+      margin-top: 20px;
+      margin-bottom: 8px;
+    }
+
+    .photoButton {
+      margin: 20px 0px;
+    }
+
+    .choseFile {
+  
+
+      .customFileInputButton {
+        width: 100%;
+        height: 60px;
+      }
+
+
+      .inputHidden {
+        display: none;
+      }
+    }
+  }
+}
+.choseFiles{
+
+  border: 0.0625rem solid #1D3C44;
+  background-color: transparent;
+  color: #1D3C44;
+  border-color: #AEB2B3;
+  max-width: 152px;
+  cursor:pointer;
+  position: relative;
+  margin-top: 8px;
+  margin-bottom: 40px;
+  .customFileInputButton{
+width: 100%;
+height: 60px;
+  }
+.positionButton {
+  display: flex;
+justify-content: center;
+align-items: center;
+gap: 10px;
+}
+.inputHidden {
+  display: none;
+}
+}
+

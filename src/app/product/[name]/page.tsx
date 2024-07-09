@@ -15,8 +15,12 @@ export default async function ProductPageSingle({ params }: { params: { name: an
   const res =params.name 
   let lastSegment = params.name;
 
+  console.log(res)
 
   const responsemobile = await getProducts(res);
+
+
+
   return (
     <>
       <DesktopSection  res={res} /> 

@@ -100,3 +100,60 @@
     }
 }
 }
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+
+    button {
+        padding: 8px 12px;
+        background-color: #fff;
+        border: solid 1px var(--gray-500);
+        cursor: pointer;
+        transition: background-color 0.3s;
+
+        &:hover:not(:disabled) {
+            background-color: var(--Turquoise-500);
+            color: #fff;
+        }
+
+        &:disabled {
+            background-color: var(--gray-300);
+            color: var(--gray-500);
+            cursor: not-allowed;
+
+            &:hover {
+                background-color: var(--gray-300);
+                color: var(--gray-500);
+            }
+        }
+    }
+
+    .prev, .next {
+        background-color: #fff;
+        border: solid 1px var(--gray-500);
+
+        &:hover:not(:disabled) {
+            background-color: var(--Turquoise-500);
+            color: #fff;
+        }
+
+        &.active {
+            background-color: var(--Turquoise-500);
+            color: #fff;
+        }
+
+        &:disabled {
+            background-color: var(--gray-300);
+            color: var(--gray-500);
+            cursor: not-allowed;
+
+            &:hover {
+                background-color: var(--gray-300);
+                color: var(--gray-500);
+            }
+        }
+    }
+}

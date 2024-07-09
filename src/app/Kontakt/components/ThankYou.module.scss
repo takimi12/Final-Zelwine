@@ -1,0 +1,93 @@
+.modalBackground {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ 
+  }
+  
+  .modalContent {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 80%;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    min-height: 400px;
+    align-items: center;
+    position: relative;
+
+    @media screen and (max-width: 900px) {
+      overflow: scroll;
+      max-width: 80%;
+      top: 29px;
+      max-height: 400px;  
+    }
+
+    @media screen and (max-width: 800px) {
+      padding-top: 50px;
+    }
+    @media screen and (max-width: 500px) {
+      padding-top: 150px;
+    }
+    .modalClose{
+        position: absolute;
+        top:20px;
+        right: 20px;
+    }
+  }
+  
+  .modalTitle {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .modalText {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  
+  .closeButton {
+
+        padding: 0px 32px;
+        appearance: none;
+        text-align: left;
+        text-decoration: none;
+        box-sizing: border-box;
+        -webkit-tap-highlight-color: transparent;
+        display: inline-block;
+        width: auto;
+        border-radius: 0rem;
+        position: relative;
+        line-height: 1;
+        user-select: none;
+        cursor: pointer;
+        border: 0.0625rem solid rgb(29, 60, 68);
+        background-color: transparent;
+        color: rgb(29, 60, 68);
+        font-size: 0.875rem;
+        font-weight: 500;
+        height: 4rem;
+         
+        &:hover{
+                background-color: var(--Turquoise-500);
+                color:#fff;
+        }
+  }
+  
+
+  .leftSide{
+    max-width: 60%;
+  }
+  .rightSide{
+    max-width: 40%;
+     @media screen and (max-width: 900px) {
+  display: none;   
+    }
+  }

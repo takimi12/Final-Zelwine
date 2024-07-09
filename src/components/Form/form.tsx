@@ -34,7 +34,7 @@ const ContactForm = ({formProp}: {formProp: any}) => {
   const [telephoneTouched, setTelephoneTouched] = useState(false);
   const [messageTouched, setMessageTouched] = useState(false);
 
-  // Funkcje obsługujące zmianę wartości pól
+
   const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setName(e.target.value);
   };
@@ -165,7 +165,7 @@ const handleFilesChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         {formProp ? null : (
   <div>
     <h5 className={styles.contactHeading}>Wyceń renowację swoich grzejników!</h5>
-    {/* Dodaj tutaj inne elementy, jeśli są potrzebne */}
+
   </div>
 )}
          
@@ -309,7 +309,7 @@ const handleFilesChange = (e: React.ChangeEvent<HTMLInputElement>) => {
   type="file"
   placeholder="ddd"
   multiple
-  onChange={handleFilesChange} // Przypisanie funkcji do zdarzenia onChange
+  onChange={handleFilesChange} 
 />
     </div>
   </div>

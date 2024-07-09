@@ -86,30 +86,6 @@ export default async function Subkategories({ params }: { params: { kategorie: s
       </Link>
     </div>
   ))}
-     {/* {mapped && mapped.map((mappedCategory :any) => (
-      {mappedCategory.images.length > 0 && mappedCategory.name !== '' && (
-<div className={styles.settingWidth} key={mappedCategory.id}>
-    <Link 
-      href={`/product/${mappedCategory.id}`}
-      key={mappedCategory.name}
-    >
-
-        <div className={styles.categoryContainer}>
-          <div className={styles.categoryImage}>
-            <Image src={mappedCategory.images[0]?.src} alt={mappedCategory.images[0]?.alt} width={300} height={300} />
-          </div>
-          <div className={` ${styles.overlay}`}>
-            <Image src={mappedCategory.images[1]?.src} alt={mappedCategory.images[1]?.alt} width={300} height={300} />
-          </div>
-          <p className="p15six">{mappedCategory.name}</p>         
-        </div>
-
-    </Link>
-  </div>
-  )}
-  ))}
- */}
-
       </section>
 
         <Series filtereddataSeries={filtereddataSeries}  />

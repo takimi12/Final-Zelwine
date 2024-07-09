@@ -24,7 +24,7 @@ export default async function   HomeLayout() {
 
   return ( 
     <>
-        <Hero data={acf.hero} />
+        <Hero data={acf.hero}  />
         <Most data={acf.most} />
         <Series series={series} series1="" filtereddataSeries="" />
         <Inspiration data={acf.inspirations} />

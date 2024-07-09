@@ -2,6 +2,7 @@ import Image from "next/image";
 import styles from "./Biznes.module.scss";
 import { getData } from "../api/Biznes";
 import background from "../../../public/static/Biznes/Header-section.jpg";
+import Link from "next/link";
 
 
 export default async function  Business() {
@@ -45,6 +46,18 @@ export default async function  Business() {
           </div>
         ))}
       </section>
+      <div className={styles.contentCta}>
+  <div className={styles.textWrapper}>
+    <div><h2>Masz dodatkowe pytania?</h2></div>
+    <div className={styles.smallText}><p >Napisz lub zadzwoń do nas - chętnie porozmawiamy o tym jak możemy pomóc rozwijać Twój biznes.</p></div>
+    <button className="Button" type="button" data-button="true">
+          <Link href="/kontakt">
+        <span>Skontaktuj się z nami</span>
+        </Link>
+    </button>
+  </div>
+</div>
+
     </>
   );
 }

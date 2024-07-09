@@ -4,8 +4,8 @@ import "./globals.css";
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 import { getHeaderData } from "./api/Header";
-
 import { PlusJakartaSans } from "./fonts";
+
 
 
 

@@ -1,16 +1,11 @@
-.headerParent {
+.header {
   position: fixed;
-  top: 0;
   width: 100%;
-  z-index: 100;
-  height: 70px;
-  transition: all 0.3s ease 0s;
-  .anchorParent{
-    display: flex;
-    align-items: center;
-    gap: 1px
+  transition: all 0.3s ease-in-out;
+  padding: 20px;
+  z-index: 1000;
+  top: 0;
 
-  }
   .anchorParent a:after{ 
     display: block;
     content: '';
@@ -18,7 +13,6 @@
     height: 2px;
     opacity: 0;
     background: #fff;
-    -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
     position: relative;
     bottom: -0.375rem;
@@ -29,282 +23,114 @@
     height: 2px;
     opacity: 1;
     background: #fff;
-    -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
     position: relative;
     bottom: -0.375rem;
-    top: 9px;    
   }
-  .contact {
-    border: 1px solid #fff;
-    padding: 15px 25px;
-  }
-  
-  .contact:hover {
-    border: 1px solid var(--Turquoise-500);
-    background-color: var(--Turquoise-500);
-    color: var(--light-gray-100);
-  }
-  .contact1{
-    border: 1px solid #000;
-    padding: 15px 25px;
-  }
-  .contact1:hover{
-    border: 1px solid var(--Turquoise-500);
-    background-color: var(--Turquoise-500);
-    color: var(--light-gray-100)!important;
 
-  }
-   .mainWrapper{
-    padding: 10px 40px;
-    display: flex;
-    align-items: center;
-    transition: all 0.3s ease 0s;
-    .black{
-      path{
-        fill: #000;
-      }
-    }
-  }
-  .scroll{
-    .kontaktDesktop{
-      border: 1px solid #000;
-      padding: 15px 25px;
-    }
-  }
-  .mainWrapperScroll{
-    padding: 10px 40px 10px 40px ;
-    display: flex;
-    align-items: center;
-    transition: all 0.3s ease 0s;
-  }
-}
-.headerParent1 {
-  position: fixed;
-  background-color: #fff;
-  top: 0;
-  width: 100%;
-  z-index: 100;
-  height: 70px;
-  transition: all 0.3s ease 0s;
-  .kontaktDesktop{
-    border: 1px solid rgb(36, 75, 85);
-    padding: 15px 25px;
-  }
-  .kontaktDesktop:hover{
-    background-color:  rgb(36, 75, 85);
-    a{
-       color: #fff!important;
-  }
-  }
-  .menu {
-    display: flex;
-    gap: 30px;
-    a{
-      color: #000!important;
-    }}
-  
-  .mainWrapper{
-    padding: 20px 40px;
-    display: flex;
-    align-items: center;
-    transition: all 0.3s ease 0s;
-  }
-  .mainWrapperScroll{
-    padding: 10px 40px 10px 40px ;
-    display: flex;
-    align-items: center;
-    transition: all 0.3s ease 0s;
-  }
- 
-}
-.scroll{
-  background-color: #fff;
-  transition: all 0.3s ease 0s;
-  height: 70px;
-  .menu {
-    display: flex;
-    gap: 30px;
-    .anchorParent a:after{ 
-      display: block;
-      content: '';
-      width: 0;
-      height: 2px;
-      opacity: 0;
-      background: #252727;
-      -webkit-transition: all 0.3s ease-in-out;
-      transition: all 0.3s ease-in-out;
-      position: relative;
-      bottom: -0.375rem;
-      top: 9px;
-    }
-    .anchorParent:hover a:after{ 
-      width: 100%;
-      height: 2px;
-      opacity: 1;
-      background: #252727;
-      -webkit-transition: all 0.3s ease-in-out;
-      transition: all 0.3s ease-in-out;
-      position: relative;
-      bottom: -0.375rem;
-      top: 9px;    
-    }
-}
-}
+  &.header-scrolled,
+  &.header-white-background {
+    background-color: white;
+    color: black;
 
-.header {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  align-items: center;
+    .anchorParent a:after,
+    .anchorParent:hover a:after {
+      background: #000;
+    }
+  }
+
+  &.header-transparent {
+    background-color: transparent;
+    color: white;
+  }
+
   
-    .menu {
+    nav {
       display: flex;
-      gap: 30px;
-      
-      a{
-        color: #fff;
+      align-items: center;
+      justify-content: space-between;
+      .leftSide{
+        display: flex;
       }
-      .second{
-        color: #000;
-      }
-    }
-}
-  
-    .active {
-      visibility: visible !important;
-      display: flex;
-    }
-  
-    .unActiveImage {
-      visibility: hidden!important;
-    }
-  
-    .activeImage {
-      visibility: visible;
-      position: absolute;
-      top: 0;
-    }
-  
-    .activeHeader{
-      background-color: #fff;
-      .anchorParent a:after{ 
+      .rightSide{
         display: block;
-        content: '';
-        width: 0;
-        height: 2px;
-        opacity: 0;
-        background: #000;
-        -webkit-transition: all 0.3s ease-in-out;
-        transition: all 0.3s ease-in-out;
-        position: relative;
-        bottom: -0.375rem;
-        top: 9px;
+        .kontakt{
+          border: solid;
+          padding: 12px;
+          &:hover{
+            background: #244b56;
+            border: solid;
+            color: #fff;
+            transition: 0.4s;    
+          }
+        }
       }
-      .anchorParent:hover a:after{ 
-        width: 100%;
-        height: 2px;
-        opacity: 1;
-        background: #000;
-        -webkit-transition: all 0.3s ease-in-out;
-        transition: all 0.3s ease-in-out;
-        position: relative;
-        bottom: -0.375rem;
-        top: 9px;    
+      ul{
+        display: flex;
       }
-      .second{
-        color: #000;
+      li {
+        display: flex;
+        align-items: center;
       }
-    }
-    .secondLevel {
-      display: flex;  
-      visibility: hidden;
-      max-height: 300px;
-      overflow: hidden;
-      position: absolute;
-      background: #fff;
-      width: 100%;
-      left: 0;
-      top: 70px;
-      border-top: solid 1px  rgb(228, 229, 230);
-
-    
-    .secondLevelbelow{
-        max-width: 300px;
-    border-right: 1px solid rgb(228, 229, 230);
-    }
-    }
   
-   
-  
-    .taklasa:hover .taklasa1 {
-      display: block;
-    }
-  
-    .headerImage {
-      max-width: 400px;
-      max-height: 225px;
-    }
-  
-    .headerMenu {
-      position: absolute;
-      top: 20%;
-      left: 60%;
-  
-      .headerImageli {
-        position: absolute;
-        top: 0;
-      }
-      a{
-        color: #fff;
+      a {
+        margin: 0 10px;
+        text-decoration: none;
+        color: inherit;
+        transition: color 0.3s;
       }
     }
+  }
   
-
-  .parentSecondLevel {
-    position: relative;
+  .logo {
+    text-decoration: none;
+  
+    &.logo-green {
+      color: green;
+    }
+  
+    &.logo-black {
+      color: black;
+    }
+  
+    &.logo-white {
+      color: white;
+    }
+  }
+  .wrapperSubmenu{
     display: flex;
-    gap: 30px;
-    flex-direction: column;
-    padding: 40px;
-
-    .thirdLevel {
+    background-color: #fff;
+    position: absolute;
+    width: 100%;
+    margin-top: 20px;
+    left: 0;
+    .secondLevel{
       display: flex;
       flex-direction: column;
-      visibility: hidden;
-      margin-left: 30px;
-      border-right: 1px solid rgb(228, 229, 230);
-      min-width: 300px;
+      gap: 30px;
+      padding: 40px;
+      border-right: solid 1px #d2d2d2;
+    padding-right: 100px;
+      .secondLevelSubwrapper{
+        color:#000;
+      }
     }
-
-    .childrenSecondLevel {
-      margin-bottom: 20px;
+    .thirdLevel{
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      height: 300px;
+      gap: 25px 122px;
+      padding: 40px 100px;
+      border-right: solid 1px #d2d2d2;
+      min-width: 280px;
+      .thirdLevelItem{
+        color:#000;
+      }
     }
-  }
-  .thirdLevelWrapper {
-    padding-right: 200px;
-    border-right: 1px solid rgb(228, 229, 230);
-  }
-  .thirdLevel {
-    display: flex;
-    flex-direction: column;
-    visibility: hidden;
-    gap: 31px;
-    flex-wrap: wrap;
-    margin-left: 40px;
-    margin-top: 40px;
-    max-height: 250px;
-    max-width: 300px;
-    width: 300px;
-  }
-  .active2 {
-    visibility: visible !important;
-    display: flex;
-
-  }
-  .active2 {
-    visibility: visible !important;
-    display: flex;
-    position: absolute;
-    top: 0;
+    .fourthLevel{
+      position: absolute;
+      right: 10%;
+      top: 50px;
+    }
   }
