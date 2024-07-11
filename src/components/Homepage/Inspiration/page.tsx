@@ -39,7 +39,7 @@ interface ImageConfig {
   width: number;
   height: number;
   sizes: {
-    [key: string]: string | number; // Możliwe różne rozmiary
+    [key: string]: string | number;
   };
 }
 
@@ -49,6 +49,33 @@ interface ConfigType {
   value: string;
 }
 
+interface Relationship {
+  ID: number;
+  post_author: string;
+  post_date: string;
+  post_date_gmt: string;
+  post_content: string;
+  post_title: string;
+  post_excerpt: string;
+  post_status: string;
+  comment_status: string;
+  ping_status: string;
+  post_password: string;
+  post_name: string;
+  to_ping: string;
+  pinged: string;
+  post_modified: string;
+  post_modified_gmt: string;
+  post_content_filtered: string;
+  post_parent: number;
+  guid: string;
+  menu_order: number;
+  post_type: string;
+  post_mime_type: string;
+  comment_count: string;
+  filter: string;
+}
+
 interface SelectedImage {
   image: ImageConfig;
   bigger_image: ImageConfig;
@@ -56,13 +83,11 @@ interface SelectedImage {
   count_column: string;
   height: string;
   config: ConfigType[];
-  relationship: {
-    [key: string]: string | number;
-  }[];
+  relationship: Relationship[];
   link: string;
 }
 
-const SectionSwiper = ({ data }: { data: any }) => {
+const SectionSwiper = ({ data }: { data: SelectedImage[] }) => {
   const [showPopup, setShowPopup] = useState(false);
   const popupRef = useRef<HTMLDivElement | null>(null);
   const [selectedImage, setSelectedImage] = useState<SelectedImage | null>(null);
@@ -98,7 +123,7 @@ const SectionSwiper = ({ data }: { data: any }) => {
     setIsAtEnd(false);
   };
 
-  const handleImageClick = (image: any, index: number) => {
+  const handleImageClick = (image: SelectedImage, index: number) => {
     setSelectedImage(image);
     setSelectedSlideIndex(index);
     setShowPopup(true);
@@ -109,7 +134,7 @@ const SectionSwiper = ({ data }: { data: any }) => {
     setSelectedImage(null);
   };
 
-  const handlePopupClick = (event: any) => {
+  const handlePopupClick = (event: React.MouseEvent) => {
     event.stopPropagation();
   };
 
@@ -133,23 +158,19 @@ const SectionSwiper = ({ data }: { data: any }) => {
 
   const handleSwitcherClick = () => {
     setIsConfigExpanded(!isConfigExpanded);
-
   };
-
-
 
   const breakpoints = {
     400: {
       slidesPerView: 1,
     },
-  800: {
+    800: {
       slidesPerView: 2,
     },
     1200: {
       slidesPerView: 3,
     },
   };
-
 
   return (
     <>
@@ -162,17 +183,15 @@ const SectionSwiper = ({ data }: { data: any }) => {
           wrapperClass={styles.wrapperClass}
           onReachEnd={handleReachEnd}
           onReachBeginning={handleReachBeginning}
-
           breakpoints={breakpoints}
         >
-
           <div className={styles.swiperTop}>
             <h4 className={styles.h4}>Inspiracje</h4>
             <div className="arrowParent">
               <SwiperNav first={isAtBeginning} last={isAtEnd} />
             </div>
           </div>
-          {data.map((item: any, index: any) => (
+          {data.map((item: SelectedImage, index: number) => (
             <SwiperSlide key={index} className={styles.slide}>
               <div className={styles.hoverEffectDiv} onClick={() => handleImageClick(item, index)}>
                 <Image
@@ -258,7 +277,6 @@ const SectionSwiper = ({ data }: { data: any }) => {
                         <Link className={`Button`} href="#"><button   className={` ${styles.Button}`}>Zobacz produkt</button></Link>
                       </div>
                     </div>
-
                   )}
                   {isBelow900 && (
                     <>

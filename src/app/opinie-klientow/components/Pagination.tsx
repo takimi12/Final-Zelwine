@@ -33,7 +33,7 @@ interface OpinieProps {
     data: ClientData;
 }
 
-const Opinie: React.FC<OpinieProps> = ({ data }) => {
+ const Opinie: React.FC<OpinieProps> = ({ data }) => {
     const [currentPage, setCurrentPage] = useState(1);
     const postsPerPage = 2;
 

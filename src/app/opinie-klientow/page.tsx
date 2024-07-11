@@ -1,7 +1,5 @@
-import Image from "next/image";
-import styles from "./Opinie.module.scss";
 import { getData } from "../api/Opinie";
-import Pagination from "./components/page"
+import Pagination from "./components/Pagination"
 
 
 

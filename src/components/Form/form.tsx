@@ -6,7 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 
-const ContactForm = ({formProp}: {formProp: any}) => {
+const ContactForm = ({formProp}: {formProp: number}) => {
   const inputRef = useRef<HTMLInputElement | null>(null);
 
   const handleClick = () => {
@@ -55,7 +55,7 @@ const ContactForm = ({formProp}: {formProp: any}) => {
     }
   };
 
-  const handleMessageChange = (e:any) => {
+  const handleMessageChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setMessage(e.target.value);
   };
 
@@ -141,8 +141,7 @@ const ContactForm = ({formProp}: {formProp: any}) => {
 
     // Sprawdzenie, czy nie ma żadnych błędów walidacji
     if (!nameError && !surnameError && !emailError && !telephoneError && !messageError) {
-      // Tutaj dodaj kod do przesłania formularza
-      console.log("Formularz przesłany poprawnie!", name, surname, email, telephone, message, attachedFiles);
+ 
     }
   };
 

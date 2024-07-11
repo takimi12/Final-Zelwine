@@ -5,9 +5,10 @@ import Box from "../../../components/Homepage/Box/page"
 import { getData } from "@/app/api/Homepage";
 import DesktopSection from "../components/DesktopSection";
 import MobileSection from "../components/MobileSection";
+import { getDataSeries } from "@/app/api/Series";
 
 
-export default async function ProductPageSingle({ params }: { params: { name: any } }) {
+export default async function ProductPageSingle({ params }: { params: { name: string } }) {
 
 
   const data = await getData();
@@ -15,7 +16,8 @@ export default async function ProductPageSingle({ params }: { params: { name: an
   const res =params.name 
   let lastSegment = params.name;
 
-  console.log(res)
+  const series = await getDataSeries();
+
 
   const responsemobile = await getProducts(res);
 
@@ -26,8 +28,8 @@ export default async function ProductPageSingle({ params }: { params: { name: an
       <DesktopSection  res={res} /> 
       <MobileSection  responsemobile={responsemobile} />
       <Box data={acf.box} />
-      <Advantages  params={lastSegment}/>
-      {/* <Series  filtereddataSeries="" /> */}
+      <Advantages  parameter={lastSegment}/>
+      <Series  filtereddataSeries=""  series={series} series1=""/>
 
     </>
   );

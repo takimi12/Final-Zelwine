@@ -3,11 +3,16 @@ import Image from 'next/image';
 import styles from './Advantages.module.scss'
 import {getProductsAds} from '../../api/Advantages';
 
-export default async function Advantages ({params}: any) {
+type AdvantagesProps = {
+    parameter: string ;
+  };
 
 
 
-const response = await getProductsAds(params);
+  export default async function Advantages({ parameter }: AdvantagesProps) {
+
+
+    const response = await getProductsAds(parameter);
 
 
 

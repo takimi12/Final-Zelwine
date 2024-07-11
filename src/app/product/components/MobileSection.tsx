@@ -16,14 +16,54 @@ import Telephone from "../../../../public/static/ProductPage/telephonepage.jsx";
 import Car from '../../../../public/static/ProductPage/Car.jsx';
 import Post from '../../../../public/static/ProductPage/post.jsx';
 
+interface Category {
+  id: number;
+  name: string;
+  slug: string;
+}
 
+interface Tag {
+  id: number;
+  name: string;
+  slug: string;
+}
+
+interface Image {
+  id: number;
+  src: string;
+  name: string;
+  alt: string;
+  position: number;
+}
+interface Attribute {
+  id: number;
+  name: string;
+  slug: string;
+  position: number;
+  visible: boolean;
+  variation: boolean;
+  options: string[];
+}
+
+
+
+interface ResponseMobile {
+  id: number;
+  categories: Category[];
+  images: Image[];
+  attributes: Attribute[];
+  meta_data: MetaData[];
+}
 interface MetaData {
     key: string;
     value: string;
   }
-  const ProductPageSingle = ({ responsemobile }: { responsemobile: any }) => {
+  const ProductPageSingle = ({ responsemobile }: { responsemobile: ResponseMobile }) => {
+
+
     const [currentSlide, setCurrentSlide] = useState(0);
     const [totalSlides, setTotalSlides] = useState(responsemobile.images ? responsemobile.images.length : 0);
+  
   
  
   
@@ -54,8 +94,8 @@ interface MetaData {
                         setTotalSlides(swiper.slides.length);
                       }}
                     >
-                      {responsemobile.images &&
-                        responsemobile.images.map((image: any, index: number) => (
+                      {responsemobile.images &&responsemobile.images.map((image: Image, index: number) => (
+
                           <SwiperSlide key={index} className={styles.swiper}>
                             <Image src={image.src} alt='Popraw' width={200} height={200} />
                           </SwiperSlide>
@@ -85,12 +125,12 @@ interface MetaData {
                             <p>{getMetaValue(responsemobile.meta_data, 'short_description')}</p>
                           </div>
   
-                          <div className={styles.height}>
-                            {responsemobile.attributes && responsemobile.attributes.map((attribute: any) => (
+                          <div className={styles.height}>{responsemobile.attributes && responsemobile.attributes.map((attribute: Attribute) => (
+
                               <div key={attribute.id}>
                                 <p>{attribute.name}:</p>
                                 <div className={styles.wrapperHeight}>
-                                  {attribute.options.map((option: any) => (
+                                  {attribute.options.map((option: string) => (
                                     <div className={styles.availableHeight} key={option}>
                                       {option}
                                     </div>

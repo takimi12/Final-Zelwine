@@ -11,7 +11,18 @@ import styles from "./Opinion.module.scss";
 import Star from "../../../../public/static/Homepage/Opinion/star";
 import Link from "next/link";
 
-const Clients = ({ data }: { data: any[] }) => {
+
+interface Product{
+  star:String;
+  subtitle: String;
+  content: String;
+  name: String;
+  from: String;
+}
+
+const Clients = ({ data }: { data: Product[] }) => {
+
+
 
   const breakpoints = {
     200: {
@@ -54,7 +65,7 @@ const Clients = ({ data }: { data: any[] }) => {
         wrapperClass={styles.wrapperClass}
         breakpoints={breakpoints} 
         >
-            {data.map((opinion: any, index: number) => (
+            {data.map((opinion: Product, index: number) => (
             <SwiperSlide key={index} className={styles.swiperSlide}>
               <div className={styles.clientOpinion}>
 

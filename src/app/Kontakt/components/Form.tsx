@@ -179,14 +179,7 @@ const MyForm: React.FC<{ contact: number }> = ({ contact }) => {
 
     if (isFormValid) {
       setShowModal(true); 
-      console.log({
-        name,
-        surname,
-        email,
-        telephone,
-        message,
-        attachedFiles
-      });
+
     }
   };
 

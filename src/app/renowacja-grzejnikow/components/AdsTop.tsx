@@ -9,11 +9,81 @@ import Image from "next/image";
 import styles from  './AdsTop.module.scss'
 import { getData } from "@/app/api/Renowacja";
 
-
-export const AdsTop: React.FC<{ acf: any }> = ({ acf }) => {
-
+interface ImageSize {
  
+}
 
+interface ImageData {
+  ID: number;
+  id: number;
+  title: string;
+  filename: string;
+  filesize: number;
+  url: string;
+  link: string;
+  alt: string;
+  author: string;
+  description: string;
+  caption: string;
+  name: string;
+  status: string;
+  uploaded_to: number;
+  date: string;
+  modified: string;
+  menu_order: number;
+  mime_type: string;
+  type: string;
+  subtype: string;
+  icon: string;
+  width: number;
+  height: number;
+  sizes: ImageSize;
+}
+
+interface ButtonData {
+  title: string;
+  url: string;
+  target: string;
+}
+
+interface HeroData {
+  image: ImageData;
+  title: string;
+  paragraph: string;
+  button: ButtonData;
+}
+
+interface Step {
+  icon: ImageData;
+  bold: string;
+  text: string;
+}
+
+interface ProcessStep {
+
+}
+
+interface Benefit {
+
+}
+
+interface ACFData {
+  hero: HeroData;
+  simple_steps: {
+    heading: string;
+    steps: Step[];
+  };
+  process: {
+    title: string;
+    process_steps: ProcessStep[];
+  };
+  benefits: {
+    benefits_heading: string;
+    benefits_repeater: Benefit[];
+  };
+}
+
+export const AdsTop: React.FC<{ acf: ACFData }> = ({ acf }) => {
   const breakpoints = {
     1: {
       slidesPerView: 1,
@@ -52,17 +122,17 @@ export const AdsTop: React.FC<{ acf: any }> = ({ acf }) => {
           className={styles.swiper}
           breakpoints={breakpoints}
         >
-            {acf.simple_steps.steps.map((step: any, index: number) => (
+          {acf.simple_steps.steps.map((step: Step, index: number) => (
             <SwiperSlide key={index} className={styles.slide}>
               <div className={styles.renovationPageInfoParent}>
                 <div className={styles.slides}>
-                <Image
-              src={step.icon.url}
-              alt={step.icon.title}
-              width={step.icon.width}
-              height={step.icon.height}
-              className={styles.image}
-            />
+                  <Image
+                    src={step.icon.url}
+                    alt={step.icon.title}
+                    width={step.icon.width}
+                    height={step.icon.height}
+                    className={styles.image}
+                  />
                   <h6 className={` ${styles.middleText}`}>{step.bold}</h6>
                   <p className={`body ${styles.bottomText}`}>{step.text}</p>
                 </div>

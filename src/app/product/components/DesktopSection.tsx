@@ -34,7 +34,10 @@ interface Image {
 
 
 
-export default async function ProductPageSingle({res}: {res: any}) {
+export default async function ProductPageSingle({res}: {res: string}) {
+
+
+
 
 
   const data = await getData();

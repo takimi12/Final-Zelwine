@@ -2,9 +2,18 @@
 import { useEffect, useState } from 'react';
 import DefaultHeader from './DesktopHeader';
 import MobileHeader from './MobileHeader';
+interface Category {
+  title: string;
+  url: string;
+  slug: string;
+  product_id: string;
+  thumbnail: string;
+  children: Category[];
+}
 
-const Header = ({categories}: {categories: any[]}) => {
+const Header = ({ categories }: { categories: Category[] }) => {
   const [isMobile, setIsMobile] = useState(false);
+
 
   useEffect(() => {
     const handleResize = () => {

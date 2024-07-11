@@ -3,7 +3,6 @@ import Form from "./components/Form";
 import styles from "./Kontakt.module.scss";
 import { getData } from "../api/Kontakt";
 
-// Typy dla kontaktów
 type ContactItem = {
   icon: {
     sizes: {
@@ -36,14 +35,6 @@ type ContactData = {
   title: {
     rendered: string;
   };
-  content: {
-    rendered: string;
-    protected: boolean;
-  };
-  excerpt: {
-    rendered: string;
-    protected: boolean;
-  };
   author: number;
   featured_media: number;
   parent: number;
@@ -51,45 +42,7 @@ type ContactData = {
   comment_status: string;
   ping_status: string;
   template: string;
-  meta: {
-    _acf_changed: boolean;
-    _seopress_robots_primary_cat: string;
-    _seopress_titles_title: string;
-    _seopress_titles_desc: string;
-    _seopress_robots_index: string;
-    inline_featured_image: boolean;
-    footnotes: string;
-  };
   acf: ContactsData;
-  _links: {
-    self: {
-      [key: string]: any;
-    }[];
-    collection: {
-      [key: string]: any;
-    }[];
-    about: {
-      [key: string]: any;
-    }[];
-    author: {
-      [key: string]: any;
-    }[];
-    replies: {
-      [key: string]: any;
-    }[];
-    'version-history': {
-      [key: string]: any;
-    }[];
-    'predecessor-version': {
-      [key: string]: any;
-    }[];
-    'wp:attachment': {
-      [key: string]: any;
-    }[];
-    curies: {
-      [key: string]: any;
-    }[];
-  };
 };
 
 export default async function Contact() {

@@ -10,34 +10,85 @@ import Link from 'next/link';
 import SwiperNav from './SwiperNav';
 import Image from 'next/image';
 
+interface ImageData {
+  id: number;
+  date_created: string;
+  date_created_gmt: string;
+  date_modified: string;
+  date_modified_gmt: string;
+  src: string;
+  name: string;
+  alt: string;
+}
 
-function Series({ series, series1, filtereddataSeries, productSeriesProp}: any) {
+interface CategoryData {
+  id: number;
+  name: string;
+  slug: string;
+  parent: number;
+  description: string;
+  display: string;
+  image: ImageData | null;
+  menu_order: number;
+  count: number;
+  slug_parent: string;
+}
 
+interface SeriesItem {
+  id: number;
+  name: string;
+  slug: string;
+  parent: number;
+  description: string;
+  display: string;
+  image: {
+    id: number;
+    date_created: string;
+    date_created_gmt: string;
+    date_modified: string;
+    date_modified_gmt: string;
+    src: string;
+    name: string;
+    alt: string;
+  } | null;
+  menu_order: number;
+  count: number;
+  slug_parent: string;
+  _links: {
+    self: { href: string }[];
+    collection: { href: string }[];
+    up?: { href: string }[];
+  };
+}
+
+interface SeriesProps {
+  series: SeriesItem[] | "";
+  series1: "" | SeriesItem[];
+  filtereddataSeries?: CategoryData[] | "" ;
+ }
+
+function Series({ series, series1, filtereddataSeries,  }: SeriesProps) {
   const [isAtBeginning, setIsAtBeginning] = useState(true);
   const [isAtEnd, setIsAtEnd] = useState(false);
   const swiperRef = useRef(null);
 
 
 
-
-
-
   const handleReachEnd = () => {
     setIsAtBeginning(false);
     setIsAtEnd(true);
-   
   };
 
   const handleReachBeginning = () => {
     setIsAtBeginning(true);
     setIsAtEnd(false);
- 
   };
+
   const breakpoints = {
     400: {
       slidesPerView: 1,
     },
-  800: {
+    800: {
       slidesPerView: 2,
     },
     1200: {
@@ -45,22 +96,21 @@ function Series({ series, series1, filtereddataSeries, productSeriesProp}: any) 
     },
   };
 
-  let filteredCategories = [];
-  if (series) {
-    filteredCategories = series.filter((category: any) => category.parent === 0 && category.name !== "Bez kategorii");
+  let filteredCategories: SeriesItem[] = [];
+  if (Array.isArray(series)) {
+    filteredCategories = series.filter((category) => category.parent === 0 && category.name !== "Bez kategorii");
   }
 
-  let filteredCategories1 = [];
-  if (series1) {
-    filteredCategories1 = series1.filter((category: any) => category.parent === 0 && category.name !== "Bez kategorii");
+  let filteredCategories1: SeriesItem[] = [];
+  if (Array.isArray(series1)) {
+    filteredCategories1 = series1.filter((category) => category.parent === 0 && category.name !== "Bez kategorii");
   }
-
 
   return (
     <>
       <section className={styles.products}>
         <div className={styles.product}>
-          {filteredCategories.length > 0 && (
+          {filteredCategories.length > 0   && (
             <Swiper
               spaceBetween={40}
               className={styles.swiperClass}
@@ -77,45 +127,37 @@ function Series({ series, series1, filtereddataSeries, productSeriesProp}: any) 
                   <SwiperNav first={isAtBeginning} last={isAtEnd} />
                 </div>
               </div>
-              {filteredCategories.map((category: any) => (
+              {filteredCategories.map((category: SeriesItem) => (
                 <SwiperSlide key={category.id} className={styles.slide}>
                   <Link href={`/products/${category.id}`}>
                     {category.image && category.image.src && (
                       <div className={styles.imageWraper}> 
-                      <Image
-                        src={category.image.src}
-                        alt={category.image.alt}
-                        className={styles.image}
-                        fill
-                        objectFit='cover'
-                      />
+                        <Image
+                          src={category.image.src}
+                          alt={category.image.alt}
+                          className={styles.image}
+                          fill
+                          objectFit='cover'
+                        />
                       </div>
                     )}
-              
-
                     <h6 className={styles.h6}>{category.name}</h6>
                   </Link>
                 </SwiperSlide>
-
-
-
-
-
-
               ))}
             </Swiper>
           )}
 
-          {filteredCategories1.length > 0 && (
+          {filteredCategories1.length > 0  && (
             <Swiper
-            spaceBetween={40}
-            className={styles.swiperClass}
-            wrapperClass={styles.wrapperClass}
-            onReachEnd={handleReachEnd}
-            onReachBeginning={handleReachBeginning}
-            slidesPerView='auto'
-            slidesOffsetBefore={40}
-            breakpoints={breakpoints} 
+              spaceBetween={40}
+              className={styles.swiperClass}
+              wrapperClass={styles.wrapperClass}
+              onReachEnd={handleReachEnd}
+              onReachBeginning={handleReachBeginning}
+              slidesPerView='auto'
+              slidesOffsetBefore={40}
+              breakpoints={breakpoints} 
             >
               <div className={styles.topParent}>
                 <p>Pozostałe Kategorie</p>
@@ -123,7 +165,7 @@ function Series({ series, series1, filtereddataSeries, productSeriesProp}: any) 
                   <SwiperNav first={isAtBeginning} last={isAtEnd} />
                 </div>
               </div>
-              {filteredCategories1.map((category: any) => (
+              {filteredCategories1.map((category: SeriesItem) => (
                 <SwiperSlide key={category.id} className={styles.slide}>
                   <Link href={`/products/${category.id}`}>
                     {category.image && category.image.src && (
@@ -141,17 +183,17 @@ function Series({ series, series1, filtereddataSeries, productSeriesProp}: any) 
               ))}
             </Swiper>
           )}
-          {filtereddataSeries.length  > 0 && (
-            <Swiper
-            spaceBetween={40}
-            className={styles.swiperClass}
-            wrapperClass={styles.wrapperClass}
-            onReachEnd={handleReachEnd}
-            onReachBeginning={handleReachBeginning}
-            slidesPerView='auto'
-            slidesOffsetBefore={40}
-            breakpoints={breakpoints} 
 
+          {Array.isArray(filtereddataSeries) && filtereddataSeries.length > 0 && (
+            <Swiper
+              spaceBetween={40}
+              className={styles.swiperClass}
+              wrapperClass={styles.wrapperClass}
+              onReachEnd={handleReachEnd}
+              onReachBeginning={handleReachBeginning}
+              slidesPerView='auto'
+              slidesOffsetBefore={40}
+              breakpoints={breakpoints} 
             >
               <div className={styles.topParent}>
                 <p>Pozostałe Serie</p>
@@ -159,7 +201,7 @@ function Series({ series, series1, filtereddataSeries, productSeriesProp}: any) 
                   <SwiperNav first={isAtBeginning} last={isAtEnd} />
                 </div>
               </div>
-              {filtereddataSeries.map((category: any) => (
+              {filtereddataSeries.map((category: CategoryData) => (
                 <SwiperSlide key={category.id} className={styles.slide}>
                   <Link href={`/products/${category.id}`}>
                     {category.image && category.image.src && (

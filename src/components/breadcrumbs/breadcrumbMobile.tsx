@@ -4,7 +4,7 @@ import Prev from '../../../public/static/components/ArrowPrev';
 import styles from './breadcrumbMobile.module.scss';
 
 interface BreadcrumbsProps {
-  breadcrumbs1: any;
+  breadcrumbs1?: string;
   breadscrumb2?: string;
 }
 

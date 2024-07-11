@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Next from '../../../public/static/breadcrumbs/Next';
 import styles from './breadcrumbs.module.scss';
 
-function Breadcrumbs({ name, breadcrumbs1, breadcrumbs2, kategoria }: { name: string, breadcrumbs1: string, breadcrumbs2: string, kategoria: string }) {
+function Breadcrumbs({ name, breadcrumbs1, breadcrumbs2, kategoria }: { name: string |undefined, breadcrumbs1: string, breadcrumbs2: string, kategoria: string }) {
 
   const [isMobile, setIsMobile] = useState(false);
 
