@@ -3,7 +3,7 @@ import {AdsTop} from "./components/AdsTop";
 import AdsBottom from "./components/AdsBottom";
 import Hero from "./components/Hero";
 import RenovationProces from "./components/RenovationProces";
-import Form from "../kontakts/components/Form"
+import Form from "../kontakt/components/Form"
 
 
 export default async function Opinie() {
