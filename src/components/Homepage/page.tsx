@@ -19,6 +19,13 @@ export default async function   HomeLayout() {
     const data = await getData();
     const series = await getDataSeries();
 
+
+    
+
+
+
+
+
     let prop = 1;
     const { acf } = data;
 
@@ -26,7 +33,7 @@ export default async function   HomeLayout() {
     <>
         <Hero data={acf.hero}  />
         <Most data={acf.most} />
-        <Series series={series} series1="" filtereddataSeries="" />
+        <Series series={series} series1="" filtereddataSeries=""   />
         <Inspiration data={acf.inspirations} />
       <Box data={acf.box} />
       <RenovationSection data={acf.image_with_text} />

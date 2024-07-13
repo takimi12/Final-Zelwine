@@ -1,12 +1,13 @@
 import { getProducts } from '@/app/api/Produkt';
 import Image from 'next/image';
-import styles from './Produkt.module.scss';
+import styles from './DesktopSection.module.scss';
 import Link from "next/link";
 import { getData } from "@/app/api/Homepage";
 
 import Telephone from "../../../../public/static/ProductPage/telephonepage.jsx";
 import Car from '../../../../public/static/ProductPage/Car.jsx';
 import Post from '../../../../public/static/ProductPage/post.jsx';
+import DetailsData from "./subcomponents/detailsdata"
 
 
 interface Product {
@@ -31,10 +32,74 @@ interface Image {
   src: string;
   alt: string;
 }
+interface ModalData {
+  title: string;
+  description: string;
+  produkt: Array<{
+    ID: number;
+    featured_image_url: string;
+    post_title: string;
+  }>;
+}
+
+interface ImageSizes {
+  [key: string]: string | number;
+}
+
+interface ImageData {
+  ID: number;
+  id: number;
+  title: string;
+  filename: string;
+  filesize: number;
+  url: string;
+  link: string;
+  alt: string;
+  author: string;
+  description: string;
+  caption: string;
+  name: string;
+  status: string;
+  uploaded_to: number;
+  date: string;
+  modified: string;
+  menu_order: number;
+  mime_type: string;
+  type: string;
+  subtype: string;
+  icon: string;
+  width: number;
+  height: number;
+  sizes: ImageSizes;
+}
+
+interface ConnectionType {
+  image: ImageData;
+}
+
+interface TechnicalData {
+  title: string;
+  values: Array<{ label: string; value: string }>;
+}
+
+interface ResponseModal {
+  acf: {
+    wykonczenia: ModalData[];
+    connection_types: ConnectionType[];
+    guarantee_pack: {
+      description: string;
+      image: {
+        url: string;
+        alt: string;
+      };
+    };
+    technical_data: TechnicalData[];
+  };
+}
 
 
 
-export default async function ProductPageSingle({res}: {res: string}) {
+export default async function ProductPageSingle({res, responseModal}: {res: string, responseModal:ResponseModal}) {
 
 
 
@@ -100,6 +165,11 @@ export default async function ProductPageSingle({res}: {res: string}) {
                   <h1>{getMetaValue(response.meta_data, 'tytul_na_strone_produktu')}</h1>
                   <h6 className={styles.h6}>{getAddonValue(response.meta_data)}</h6>
                 </div>
+
+
+
+              <DetailsData  responseModal={responseModal}/>
+
                 <div className={styles.shortDesc}>
                   <p className='body'>{getMetaValue(response.meta_data, 'short_description')}</p>
                 </div>

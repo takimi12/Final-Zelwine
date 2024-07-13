@@ -21,6 +21,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/components/Homepage/Inspiration/page.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/components/Homepage/Inspiration/page.tsx", "public/static/ProductPage/modalArrow.jsx"],
   "exclude": ["node_modules"]
 }

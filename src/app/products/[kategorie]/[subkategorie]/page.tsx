@@ -40,6 +40,9 @@ export default async function Subkategories({ params }: { params: { kategorie: s
     return category.parent == 16 || category.parent == 17 || category.parent == 34;
   });
 
+
+
+
   interface Product {
     categories: { id: number; name: string }[];
     name: string;
@@ -78,7 +81,13 @@ export default async function Subkategories({ params }: { params: { kategorie: s
       images: category.images.slice(imagesLength - 2, imagesLength),
       slug: category.slug
     };
+  }).filter((category:String) => {
+    return !Object.values(category).some(value => 
+      typeof value === 'string' && value.includes("(Kopia)")
+    );
   });
+  
+
 
   return (
     <>

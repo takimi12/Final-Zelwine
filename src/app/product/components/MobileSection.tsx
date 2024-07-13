@@ -16,6 +16,8 @@ import Telephone from "../../../../public/static/ProductPage/telephonepage.jsx";
 import Car from '../../../../public/static/ProductPage/Car.jsx';
 import Post from '../../../../public/static/ProductPage/post.jsx';
 
+import DetailsData from "./subcomponents/detailsdata"
+
 interface Category {
   id: number;
   name: string;
@@ -58,7 +60,100 @@ interface MetaData {
     key: string;
     value: string;
   }
-  const ProductPageSingle = ({ responsemobile }: { responsemobile: ResponseMobile }) => {
+
+
+  interface Product {
+    id: number;
+    meta_data: MetaData[];
+    attributes: Attribute[];
+    images: Image[];
+  }
+  
+  interface MetaData {
+    key: string;
+    value: string;
+  }
+  
+  interface Attribute {
+    id: number;
+    name: string;
+    options: string[];
+  }
+  
+  interface Image {
+    src: string;
+    alt: string;
+  }
+  
+  interface ModalData {
+    title: string;
+    description: string;
+    produkt: Array<{
+      ID: number;
+      featured_image_url: string;
+      post_title: string;
+    }>;
+  }
+  
+  interface ImageSizes {
+    [key: string]: string | number;
+  }
+  
+  interface ImageData {
+    ID: number;
+    id: number;
+    title: string;
+    filename: string;
+    filesize: number;
+    url: string;
+    link: string;
+    alt: string;
+    author: string;
+    description: string;
+    caption: string;
+    name: string;
+    status: string;
+    uploaded_to: number;
+    date: string;
+    modified: string;
+    menu_order: number;
+    mime_type: string;
+    type: string;
+    subtype: string;
+    icon: string;
+    width: number;
+    height: number;
+    sizes: ImageSizes;
+  }
+  
+  interface ConnectionType {
+    image: ImageData;
+  }
+  
+
+  
+  interface TechnicalData {
+    title: string;
+    values: Array<{ label: string; value: string }>;
+  }
+  
+  interface ResponseModal {
+    acf: {
+      wykonczenia: ModalData[];
+      connection_types: ConnectionType[];
+      guarantee_pack: {
+        description: string;
+        image: {
+          url: string;
+          alt: string;
+        };
+      };
+      technical_data: TechnicalData[];
+    };
+  }
+
+
+  const ProductPageSingle = ({ responsemobile,responseModal }: { responsemobile: ResponseMobile, responseModal:ResponseModal }) => {
 
 
     const [currentSlide, setCurrentSlide] = useState(0);
@@ -121,6 +216,9 @@ interface MetaData {
                             <h1>{getMetaValue(responsemobile.meta_data, 'tytul_na_strone_produktu')}</h1>
                             <p className="p15-six">{getAddonValue(responsemobile.meta_data)}</p>
                           </div>
+
+                          <DetailsData  responseModal={responseModal}/>
+                          
                           <div className={styles.shortDesc}>
                             <p>{getMetaValue(responsemobile.meta_data, 'short_description')}</p>
                           </div>

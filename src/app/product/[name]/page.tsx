@@ -6,6 +6,9 @@ import { getData } from "@/app/api/Homepage";
 import DesktopSection from "../components/DesktopSection";
 import MobileSection from "../components/MobileSection";
 import { getDataSeries } from "@/app/api/Series";
+import { getInfoBox } from "@/app/api/Modals";
+import Modals from "../components/Modals"
+
 
 
 export default async function ProductPageSingle({ params }: { params: { name: string } }) {
@@ -18,18 +21,20 @@ export default async function ProductPageSingle({ params }: { params: { name: st
 
   const series = await getDataSeries();
 
-
   const responsemobile = await getProducts(res);
+  const responseModal = await getInfoBox(res);
 
 
 
   return (
     <>
-      <DesktopSection  res={res} /> 
-      <MobileSection  responsemobile={responsemobile} />
+      <DesktopSection  res={res} responseModal={responseModal}/> 
+      <MobileSection  responsemobile={responsemobile} responseModal={responseModal} />
       <Box data={acf.box} />
+      <Modals responseModal={responseModal} />
       <Advantages  parameter={lastSegment}/>
       <Series  filtereddataSeries=""  series={series} series1=""/>
+
 
     </>
   );

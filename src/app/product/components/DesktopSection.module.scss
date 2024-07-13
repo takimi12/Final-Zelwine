@@ -3,6 +3,7 @@
   justify-content: space-between;
   padding: 0px 40px;
   margin-bottom: 120px;
+  margin-top: 100px;
 
   @media screen and (max-width: 1199px) {
    flex-direction: column;
@@ -34,6 +35,7 @@
 .rightSection{
   max-width: 35%;
   width: 100%;
+  z-index: 9;
   @media screen and (max-width: 1199px) {
     max-width: 100%;
    }
@@ -41,6 +43,7 @@
   .sticky{
     position: sticky;
     top: 100px;
+    overflow: hidden;
   .rightTitle{
     display: flex;
     align-items: center;
@@ -126,3 +129,5 @@
 .normal{
   visibility: visible;
 }
+
+

@@ -67,7 +67,7 @@ interface SeriesProps {
   filtereddataSeries?: CategoryData[] | "" ;
  }
 
-function Series({ series, series1, filtereddataSeries,  }: SeriesProps) {
+function Series({ series, series1, filtereddataSeries, }: SeriesProps) {
   const [isAtBeginning, setIsAtBeginning] = useState(true);
   const [isAtEnd, setIsAtEnd] = useState(false);
   const swiperRef = useRef(null);
