@@ -88,21 +88,23 @@ const DesktopHeader: React.FC<HeaderProps> = ({ categories }) => {
   const isProductsCategorySubcategory = pathname?.startsWith('/products/') && pathname.split('/').length === 4;
   const isBiznes = pathname === '/dla-biznesu';
 
-  const isNumericPath = (path: string, prefix: string) => {
-    const regex = new RegExp(`^${prefix}/\\d+`);
-    return regex.test(path);
-  };
+  const isNumericPath = (pathname: string, basePath: string) => {
 
+    const regex = new RegExp(`^${basePath}/\\d+$`);
+    return regex.test(pathname);
+  };
   const isWhiteBackground = pathname === '/kontakt' ||
     pathname === '/opinie-klientow' ||
     pathname === '/renowacja-grzejnikow' ||
     pathname === '/products' ||
-    isNumericPath(pathname, '/products') ||
+    pathname === '/polityka-prywatnosci' ||
+    isNumericPath(pathname, '/products') || 
     isNumericPath(pathname, '/product');
 
   const showOnlySecondLogo = pathname === '/kontakt' ||
     pathname === '/opinie-klientow' ||
     pathname === '/renowacja-grzejnikow' ||
+    pathname === '/polityka-prywatnosci' ||
     isNumericPath(pathname, '/product') ||
     isNumericPath(pathname, '/products') ||
     pathname === '/products';
@@ -115,6 +117,13 @@ const DesktopHeader: React.FC<HeaderProps> = ({ categories }) => {
 
   const shouldShowSecondLogo = showOnlySecondLogo || 
     ((scrolled || isProductsHovered) && (isMainPage || isProductsCategorySubcategory || isBiznes));
+
+  const handleLinkClick = () => {
+    setActiveCategoryId(null);
+    setActiveChildCategoryId(null);
+    setActiveImage(null);
+    setIsProductsHovered(false);
+  };
 
   return (
     <header className={`${styles.header} ${headerClass}`} onMouseLeave={handleHeaderMouseLeave}>
@@ -143,7 +152,7 @@ const DesktopHeader: React.FC<HeaderProps> = ({ categories }) => {
         <div className={styles.rightSide}>
           {kontaktCategory && (
             <div className={` ${styles.kontakt} `}>
-              <Link href={kontaktCategory.slug} aria-label="strona glowna">
+              <Link href={`/kontakt`} aria-label="strona glowna">
                 <button>Skontaktuj się z nami</button>
               </Link>
             </div>
@@ -160,7 +169,7 @@ const DesktopHeader: React.FC<HeaderProps> = ({ categories }) => {
                   className={`  ${styles.secondLevelSubwrapper}`}
                   onMouseEnter={() => MouseEnterChildMenu(child.product_id)}
                 >
-                  <Link href={`/products/${child.product_id}`}>
+                  <Link href={`/products/${child.product_id}`} onClick={handleLinkClick}>
                     {child.title}
                   </Link>
                 </div>
@@ -176,6 +185,7 @@ const DesktopHeader: React.FC<HeaderProps> = ({ categories }) => {
                         key={grandChild.product_id}
                         href={`/products/${child.product_id}/${grandChild.product_id}`}
                         onMouseEnter={() => handleMouseEnterGrandChild(grandChild.thumbnail)}
+                        onClick={handleLinkClick}
                       >
                         {grandChild.title}
                       </Link>

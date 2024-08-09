@@ -72,3 +72,9 @@ padding-top: 45px;
   color: var(--black-400);
   font-weight: 900;
 }
+
+.categoryItem{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

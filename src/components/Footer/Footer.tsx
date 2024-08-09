@@ -1,13 +1,44 @@
 import React from "react";
 import Logo from "./components/Logo";
 import styles from "./Footer.module.scss";
+import { getGlobals } from "@/app/api/Global";
+import Link from "next/link";
 
-const Footer = () => {
+interface Social {
+  title: string;
+  url: string;
 
-  const categories = ["Grzejniki łazienkowe", "Zawory", "Akcesoria", "Próbki wykończeń"];
-  const series = ["Emmeline", "Vulcan", "Grace", "Mercury", "Rococo", "Neptune"];
-  const menuItems = ["Opinie", "Renowacja", "Dla biznesu", "Kontakt"];
-  const socialMedia = ["Facebook", "Instagram", "Pinterest"];
+}
+interface SocialItem {
+  social: Social;
+}
+interface Category {
+  title: string;
+  url: string;
+  slug: string;
+  product_id: string;
+  thumbnail: string;
+  children: Category[];
+}
+
+export async function  Footer ({ categories }: { categories: Category[] }) {
+
+
+
+
+  const data = await getGlobals();
+  const filteredSociale = data.sociale;
+
+
+  const filteredCategories = categories && categories.filter(category => category.title !== 'Produkty');
+
+
+  const categoriesWithChildren = categories.filter(category => category.children.length > 0);
+
+  const children = categoriesWithChildren[0].children;
+
+
+
 
   return (
     <footer className={styles.footer}>
@@ -19,10 +50,25 @@ const Footer = () => {
             <p className={`body-small ${styles.bodySmall}`}>Kategorie</p>
           </div>
           <ul className={styles.list}>
-            {categories.map((category, index) => (
-              <li key={index}><h3 className="body">{category}</h3></li>
-            ))}
-          </ul>
+  {categories.map((category, index) => {
+    if (category.children.length > 0) {
+      return (
+        <React.Fragment key={index}>
+          {category.children.map((child, childIndex) => (
+            <li key={childIndex}>
+              
+             
+              <Link href={`/products/${child.product_id}`}>{child.title}</Link>
+            </li>
+          ))}
+        </React.Fragment>
+      );
+    }
+
+    return null;
+  })}
+</ul>
+
         </div>
 
         <div className={styles.footerColumn}>
@@ -30,10 +76,24 @@ const Footer = () => {
             <p className={`body-small ${styles.bodySmall}`}>Serie</p>
           </div>
           <ul className={styles.list}>
-            {series.map((serie, index) => (
-              <li key={index}><h3 className="body">{serie}</h3></li>
-            ))}
-          </ul>
+  {children.map((child) => (
+    <li key={child.product_id} className={styles.categoryItem}>
+      {child.children.length > 0 && (
+        <>
+          {child.children.map((subchild) => (
+            <Link 
+              key={subchild.product_id}  // Dodanie atrybutu key
+              href={`/products/${child.product_id}/${subchild.product_id}`}
+            >
+              {subchild.title}
+            </Link>
+          ))}
+        </>
+      )}
+    </li>
+  ))}
+</ul>
+
         </div>
 
         <div className={styles.footerColumn}>
@@ -41,9 +101,11 @@ const Footer = () => {
             <p className={`body-small ${styles.bodySmall}`}>Menu</p>
           </div>
           <ul className={styles.list}>
-            {menuItems.map((menuItem, index) => (
-              <li key={index}><h3 className="body">{menuItem}</h3></li>
-            ))}
+          {filteredCategories.map(category => (
+      <li key={category.product_id}>
+        <Link href={`/${category.slug}`}>{category.title}</Link>
+      </li>
+    ))}
           </ul>
         </div>
 
@@ -52,9 +114,16 @@ const Footer = () => {
             <p className={`body-small ${styles.bodySmall}`}>Social Media</p>
           </div>
           <ul className={styles.list}>
-            {socialMedia.map((media, index) => (
-              <li key={index}><h3 className="body">{media}</h3></li>
-            ))}
+          {filteredSociale.map((item: SocialItem, index: number) => (
+          <li key={index}>
+            <Link
+              href={`/${item.social.title}`} 
+              rel="noopener noreferrer"
+            >
+              {item.social.title}
+            </Link>
+          </li>
+        ))}
           </ul>
         </div>
         </div>
@@ -67,13 +136,11 @@ const Footer = () => {
           </p>
         </div>
         <div className={styles.paper}>
-          <p className={`body-small ${styles.bodySmall2}`}>Regulamin</p>
-          <p className={`body-small ${styles.bodySmall2}`}>Polityka prywatności</p>
-          <p className={`body-small ${styles.bodySmall2}`}>Polityka cookies</p>
+          <p className={`body-small ${styles.bodySmall2}`}> 
+           <Link    href={`/polityka-prywatnosci`} >Polityka prywatności </Link></p>
+          <p className={`body-small ${styles.bodySmall2}`}>    <Link    href={`/cookies`} >Polityka cookies</Link></p>
         </div>
       </div>
     </footer>
   );
 };
-
-export default Footer;

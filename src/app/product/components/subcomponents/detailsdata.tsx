@@ -102,7 +102,7 @@ interface ResponseModal {
   };
 }
 
-export default function ProductPageSingle({ responseModal }: { responseModal: ResponseModal }) {
+export default function ProductPageSingle({ responseModal, }: { responseModal: ResponseModal }) {
   const [activeComponent, setActiveComponent] = useState<string | null>(null);
 
   const closeModal = () => {
@@ -119,7 +119,7 @@ export default function ProductPageSingle({ responseModal }: { responseModal: Re
   };
 
   return (
-    <div className={styles.main}>
+    <div className={styles.main} >
       {responseModal.acf.technical_data && responseModal.acf.technical_data.length > 0 && (
         <div  onClick={() => setActiveComponent("technicalData")}>
           <div>

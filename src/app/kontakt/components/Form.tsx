@@ -1,9 +1,10 @@
 'use client';
 import React, { useRef, useState } from 'react';
 import styles from './Form.module.scss'; 
-import ThankYou from "./ThankYouModal"
+import ThankYou from "./ThankYouModal";
 import Plus from "../../../../public/Renovation.svg";
 import Image from 'next/image';
+import emailjs from '@emailjs/browser';
 
 const MyForm: React.FC<{ contact: number }> = ({ contact }) => {
   const [attachedFiles, setAttachedFiles] = useState<File[]>([]);
@@ -20,7 +21,9 @@ const MyForm: React.FC<{ contact: number }> = ({ contact }) => {
   const [messageError, setMessageError] = useState("");
 
   const [showModal, setShowModal] = useState(false);
+  const [isLoading, setIsLoading] = useState(false); // Dodany stan isLoading
   const inputRef = useRef<HTMLInputElement | null>(null);
+  const formRef = useRef<HTMLFormElement | null>(null);
 
   const handleClick = () => {
     inputRef.current?.click();
@@ -178,24 +181,45 @@ const MyForm: React.FC<{ contact: number }> = ({ contact }) => {
     const isFormValid = validateForm();
 
     if (isFormValid) {
-      setShowModal(true); 
+      setIsLoading(true); // Ustawienie isLoading na true
 
+      emailjs.send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID as string,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID as string,
+        {
+          user_name: name,
+          from_name: surname,
+          message: message,
+          user_email: email,
+          user_phone: telephone,
+        },
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY as string
+      )
+      .then((result) => {
+        console.log(result.text);
+        setShowModal(true);
+        setIsLoading(false); // Ustawienie isLoading na false po sukcesie
+      }, (error) => {
+        console.log(error.text);
+        setIsLoading(false); // Ustawienie isLoading na false po błędzie
+      });
     }
   };
 
   return (
     <section className={styles.contactSection}>
       <div className={styles.contactFormSection}>
-      {contact !== 1 && (
-        <h3 className={styles.renovation}>Wyceń renowację swoich grzejników</h3>
+        {contact !== 1 && (
+          <h3 className={styles.renovation}>Wyceń renowację swoich grzejników</h3>
         )}
-        <form onSubmit={handleSubmit}>
+        <form ref={formRef} onSubmit={handleSubmit}>
           <div className={styles.formGroup}>
             <div className={styles.inputWrapper}>
               <label htmlFor="name" className={nameError ? `${styles.error} ${styles.inputLabel}` : styles.inputLabel}>Imię:</label>
               <input
                 type="text"
                 id="name"
+                name="name"
                 value={name}
                 onChange={handleNameChange}
                 onBlur={handleNameBlur}
@@ -209,6 +233,7 @@ const MyForm: React.FC<{ contact: number }> = ({ contact }) => {
               <input
                 type="text"
                 id="surname"
+                name="surname"
                 value={surname}
                 onChange={handleSurnameChange}
                 onBlur={handleSurnameBlur}
@@ -224,6 +249,7 @@ const MyForm: React.FC<{ contact: number }> = ({ contact }) => {
               <input
                 type="email"
                 id="email"
+                name="email"
                 value={email}
                 onChange={handleEmailChange}
                 onBlur={handleEmailBlur}
@@ -237,6 +263,7 @@ const MyForm: React.FC<{ contact: number }> = ({ contact }) => {
               <input
                 type="tel"
                 id="telephone"
+                name="telephone"
                 value={telephone}
                 onChange={handleTelephoneChange}
                 onBlur={handleTelephoneBlur}
@@ -250,6 +277,7 @@ const MyForm: React.FC<{ contact: number }> = ({ contact }) => {
             <label htmlFor="message" className={messageError ? `${styles.error} ${styles.textareaLabel}` : styles.textareaLabel}>Wiadomość:</label>
             <textarea
               id="message"
+              name="message"
               value={message}
               onChange={handleMessageChange}
               onBlur={handleMessageBlur}
@@ -278,7 +306,6 @@ const MyForm: React.FC<{ contact: number }> = ({ contact }) => {
                   ref={inputRef} 
                   className={styles.inputHidden} 
                   type="file"  
-                  placeholder="ddd" 
                   multiple 
                   onChange={handleFileChange}
                 />
@@ -287,7 +314,12 @@ const MyForm: React.FC<{ contact: number }> = ({ contact }) => {
           )}
 
           <div className={styles.photoButton}>
-            <button type="submit" className={`Button ${styles.choseFile}`}>
+            <button 
+              type="submit" 
+              className={`Button ${styles.choseFile} ${isLoading ? styles.disabledButton : ''}`} 
+
+            >
+              {isLoading && <span className={styles.spinner}></span>} 
               <span className={styles.customFileInputButton}>
                 <span className={styles.positionButton}>Wyślij</span>
               </span>

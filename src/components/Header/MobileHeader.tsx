@@ -8,6 +8,9 @@ import SecondLogo from '../../../public/static/Header/SecondLogo';
 import Close from '../../../public/static/Header/Close';
 import ArrowSmall from '../../../public/static/Header/ArrowSmall';
 import ArrowBack from '../../../public/static/Header/backArrows';
+import { usePathname } from 'next/navigation';
+
+
 
 interface SubCategory {
   title: string;
@@ -35,6 +38,13 @@ const MobileHeader: React.FC<Props> = ({ categories }) => {
   const [scrolled, setScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [ThirdLevel, setIsThirdLevel] = useState(false);
+
+
+
+  const pathname = usePathname();
+
+
+  const [alwaysSecondColor, setSecondColor] = useState(false);
 
   const handleScroll = () => {
     const scrollPosition = window.scrollY;
@@ -68,40 +78,48 @@ const MobileHeader: React.FC<Props> = ({ categories }) => {
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
-
+    const currentPath = window.location.pathname;
+    let segments = currentPath.split('/').filter(segment => segment !== '');
+      if (segments.includes('polityka') || segments.includes('renowacja-grzejnikow') || segments.includes('opinie-klientow') || segments.includes('kontakt') || segments.includes('product')  ) {
+        setSecondColor(true);
+      } else {
+        setSecondColor(false);
+      }
     return () => {
       window.removeEventListener('scroll', handleScroll);
       document.body.classList.remove('no-scroll');
       document.documentElement.style.overflow = 'auto';
     };
-  }, []);
+    
+  }, [pathname]);
 
   const filteredCategories = categories && categories.filter(category => category.title);
 
   let headerParentClasses = `${styles.mobileHeader} ${scrolled ? styles.scroll : ''}`;
 
+
+
+
   const currentPath = window.location.pathname;
   let segments = currentPath.split('/').filter(segment => segment !== '');
-  if (segments.includes('Renowacja') || segments.includes('Opinie') || segments.includes('Kontakt') || segments.includes('product') || segments.includes('products')) {
+  if (segments.includes('cookies') || segments.includes('polityka-prywatnosci') || segments.includes('renowacja-grzejnikow') || segments.includes('opinie-klientow') || segments.includes('kontakt') || segments.includes('product') || segments.includes('products') && segments.length === 1  || segments.includes('products') && segments.length === 2  ) {
     headerParentClasses = `${styles.mobileHeader1} `;
   }
 
-  if (segments.includes('products') && segments.length === 3 || segments.includes('Biznes')) {
-    headerParentClasses = `${styles.mobileHeader} `;
-  }
+  
 
   return (
     <>
       <div className={`${headerParentClasses} ${scrolled ? styles.scroll : ''}`}>
         <div className={styles.inner}>
           <div className={styles.icons}>
-            <Link href='/' aria-label="strona glowna">
-              <Logo className={` ${scrolled ? styles.secondColor : ''}`} />
-            </Link>
-            <WhiteHamburger
-              className={` ${scrolled ? styles.secondColor : ''}`}
-              onClick={handleHamburgerClick}
-            />
+          <Link href='/' aria-label="strona glowna">
+  <Logo className={alwaysSecondColor ? styles.secondColor : (scrolled ? styles.secondColor : '')} />
+</Link>
+<WhiteHamburger
+  className={alwaysSecondColor ? styles.secondColor : (scrolled ? styles.secondColor : '')}
+  onClick={handleHamburgerClick}
+/>
           </div>
         </div>
       </div>

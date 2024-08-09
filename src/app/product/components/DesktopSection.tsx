@@ -7,7 +7,7 @@ import { getData } from "@/app/api/Homepage";
 import Telephone from "../../../../public/static/ProductPage/telephonepage.jsx";
 import Car from '../../../../public/static/ProductPage/Car.jsx';
 import Post from '../../../../public/static/ProductPage/post.jsx';
-import DetailsData from "./subcomponents/detailsdata"
+
 
 
 interface Product {
@@ -133,6 +133,7 @@ export default async function ProductPageSingle({res, responseModal}: {res: stri
           <>
           
             <div className={styles.leftSection}>
+              
               {response.images && response.images.map((image, index, array) => (
                 index < array.length - 2 ? (
                   <Image
@@ -158,8 +159,11 @@ export default async function ProductPageSingle({res, responseModal}: {res: stri
                 </div>
               )}
             </div>
+            
 
             <div className={styles.rightSection}>
+
+
               <div className={styles.sticky} key={response.id}>
                 <div className={styles.rightTitle}>
                   <h1>{getMetaValue(response.meta_data, 'tytul_na_strone_produktu')}</h1>
@@ -167,8 +171,6 @@ export default async function ProductPageSingle({res, responseModal}: {res: stri
                 </div>
 
 
-
-              <DetailsData  responseModal={responseModal}/>
 
                 <div className={styles.shortDesc}>
                   <p className='body'>{getMetaValue(response.meta_data, 'short_description')}</p>
@@ -187,6 +189,8 @@ export default async function ProductPageSingle({res, responseModal}: {res: stri
                       </div>
                     </div>
                   ))}
+
+                  
                 </div>
                 <h4 >{getMetaValue(response.meta_data, 'dopis_przy_cenie')}</h4>
 

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 import "./globals.css";
 import Header from "../components/Header/Header";
-import Footer from "../components/Footer/Footer";
+import {Footer} from "../components/Footer/Footer";
 import { getHeaderData } from "./api/Header";
 import { PlusJakartaSans } from "./fonts";
 
@@ -26,7 +26,7 @@ export default async function RootLayout({
       <body className={PlusJakartaSans.className}>
         <Header categories={categories} />
         {children  }
-      <Footer />
+      <Footer categories={categories}/>
       </body>
     </html>
   );

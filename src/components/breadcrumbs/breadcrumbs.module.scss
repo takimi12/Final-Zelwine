@@ -1,7 +1,7 @@
 .locations{
     display: flex;
     align-items: center;
-    margin-top: 100px;
+    margin-top: 80px;
     margin-bottom: 20px;
     gap: 20px;
   
@@ -9,4 +9,8 @@
 
 .breadcrumb{
   display: flex;
+}
+
+.white{
+  color: #fff;
 }

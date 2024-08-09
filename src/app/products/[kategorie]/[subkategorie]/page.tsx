@@ -6,6 +6,7 @@ import { getDataProducts } from "@/app/api/Produkty";
 import Breadcrumbs from "@/components/breadcrumbs/breadcrumbs";
 import BreadcrumbsMobile from "../../../../components/breadcrumbs/breadcrumbMobile";
 import Series from "@/components/series/Series";
+import Background from "../../../../../public/static/Products/grzejnik-zeliwny-aurora-header-section.png"
 
 interface ImageData {
   id: number;
@@ -87,19 +88,23 @@ export default async function Subkategories({ params }: { params: { kategorie: s
     );
   });
   
+  let whiteArrow = true;
 
 
   return (
     <>
-      <section className={styles.breadcrumbs}>
-        <div className={styles.breadcrumbDesktop}>
-          <Breadcrumbs name='' breadcrumbs1={breadcrumbs1} breadcrumbs2={breadcrumbs2} kategoria={params.kategorie} />
-          <h4>{breadcrumbs2}</h4>
-        </div>
-        <div className={styles.breadcrumbMobile}>
-          <BreadcrumbsMobile breadcrumbs1={breadcrumbs1} breadscrumb2={params.kategorie} />
-        </div>
-      </section>
+
+<section className={styles.breadcrumbs} style={{ backgroundImage: `url(${Background.src})` }}>
+    <div className={styles.breadcrumbDesktop}>
+      <Breadcrumbs name='' breadcrumbs1={breadcrumbs1} breadcrumbs2={breadcrumbs2} kategoria={params.kategorie} whiteArrow={whiteArrow}/>
+      <h3>{breadcrumbs2}</h3>
+    </div>
+    <div className={styles.breadcrumbMobile}>
+      <BreadcrumbsMobile breadcrumbs1={breadcrumbs1} breadscrumb2={params.kategorie} />
+    </div>
+  </section>
+     
+
       <section className={styles.sectionProduct}>
         {mapped
           .filter((mappedCategory: MappedCategory) => mappedCategory.images.length > 0 && mappedCategory.name !== '')

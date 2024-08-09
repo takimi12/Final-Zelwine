@@ -16,8 +16,6 @@ import Telephone from "../../../../public/static/ProductPage/telephonepage.jsx";
 import Car from '../../../../public/static/ProductPage/Car.jsx';
 import Post from '../../../../public/static/ProductPage/post.jsx';
 
-import DetailsData from "./subcomponents/detailsdata"
-
 interface Category {
   id: number;
   name: string;
@@ -217,7 +215,6 @@ interface MetaData {
                             <p className="p15-six">{getAddonValue(responsemobile.meta_data)}</p>
                           </div>
 
-                          <DetailsData  responseModal={responseModal}/>
                           
                           <div className={styles.shortDesc}>
                             <p>{getMetaValue(responsemobile.meta_data, 'short_description')}</p>

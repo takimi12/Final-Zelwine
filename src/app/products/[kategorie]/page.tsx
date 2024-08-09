@@ -7,7 +7,6 @@ import Breadcrumbs from "@/components/breadcrumbs/breadcrumbs";
 import BreadcrumbsMobile from "../../../components/breadcrumbs/breadcrumbMobile"
 import { getDataSeries } from "@/app/api/Series";
 
-
 interface ImageData {
   id: number;
   date_created: string;
@@ -63,12 +62,13 @@ export default async function Subkategories({ params }: Params) {
     <>
       <section className={styles.breadcrumb}>
         <div className={styles.breadcrumbDesktop}>
-          <Breadcrumbs name={names} breadcrumbs1="" breadcrumbs2="" kategoria="" />
+          <Breadcrumbs name={names} breadcrumbs1="" breadcrumbs2="" kategoria="" whiteArrow={false} />
         </div>
         <div className={styles.breadcrumbMobile}>
           <BreadcrumbsMobile breadcrumbs1="" />
         </div>
       </section>
+      
 
       <section className={styles.sectionProduct}>
         <div className={styles.title}>

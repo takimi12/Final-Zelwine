@@ -45,7 +45,7 @@ export default async function Products() {
   return (
     <>
       <section className={styles.breadcrumbs}>
-        <Breadcrumbs name="" breadcrumbs1="" breadcrumbs2="" kategoria="" />
+        <Breadcrumbs name="" breadcrumbs1="" breadcrumbs2="" kategoria="" whiteArrow={false}/>
       </section>
       <section className={styles.sectionProduct}>
         <div className={styles.title}>

@@ -2,18 +2,30 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Next from '../../../public/static/breadcrumbs/Next';
+import NextWhite from "../../../public/static/breadcrumbs/NextWhite"
 import styles from './breadcrumbs.module.scss';
 
-function Breadcrumbs({ name, breadcrumbs1, breadcrumbs2, kategoria }: { name: string |undefined, breadcrumbs1: string, breadcrumbs2: string, kategoria: string }) {
+interface BreadcrumbsProps {
+  name?: string;
+  breadcrumbs1: string;
+  breadcrumbs2: string;
+  kategoria: string;
+  whiteArrow: boolean;
+}
+
+const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ name, breadcrumbs1, breadcrumbs2, kategoria, whiteArrow }) => {
 
   const [isMobile, setIsMobile] = useState(false);
+
+
+
 
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 767);
     };
 
-    handleResize(); // Initial check
+    handleResize(); 
     window.addEventListener('resize', handleResize);
 
     return () => {
@@ -25,15 +37,17 @@ function Breadcrumbs({ name, breadcrumbs1, breadcrumbs2, kategoria }: { name: st
 
     <div className={styles.locations}>
       <p className={` ${styles.color}`}>
-        <Link className={`body-small${styles.color}`} href="/">
+  
+      <Link className={`body-small ${whiteArrow ? styles.white : styles.color}`} href="/">
           Strona Główna
         </Link>
       </p>
       <span className={styles.breadcrumb}>
-        <Next />
+      {whiteArrow ? <NextWhite /> : <Next />}
+
       </span>
       <p className={`p13 ${styles.color}`}>
-        <Link className={`body-small${styles.color}`} href="/products">
+      <Link className={`body-small ${whiteArrow ? styles.white : styles.color}`} href="/products">
           Produkty
         </Link>
       </p>
@@ -41,10 +55,12 @@ function Breadcrumbs({ name, breadcrumbs1, breadcrumbs2, kategoria }: { name: st
       {name && (
         <>
           <span className={styles.breadcrumb}>
-            <Next />
+          {whiteArrow ? <NextWhite /> : <Next />}
+
           </span>
           <p className={`p13 ${styles.color}`}>
-            <Link className={`body-small${styles.color}`} href="/products">
+           
+      <Link className={`body-small ${whiteArrow ? styles.white : styles.color}`} href="/products">
               {name}
             </Link>
           </p>
@@ -53,10 +69,11 @@ function Breadcrumbs({ name, breadcrumbs1, breadcrumbs2, kategoria }: { name: st
       {breadcrumbs1 && (
         <>
           <span className={styles.breadcrumb}>
-            <Next />
+          {whiteArrow ? <NextWhite /> : <Next />}
+
           </span>
           <p className={`p13 ${styles.color}`}>
-          <Link href={`/products/${kategoria}`} className={`body-small${styles.color}`}>
+          <Link href={`/products/${kategoria}`} className={`body-small ${whiteArrow ? styles.white : styles.color}`}>
               {breadcrumbs1}
             </Link>
           </p>
@@ -65,10 +82,11 @@ function Breadcrumbs({ name, breadcrumbs1, breadcrumbs2, kategoria }: { name: st
       {breadcrumbs2 && (
         <>
           <span className={styles.breadcrumb}>
-            <Next />
+          {whiteArrow ? <NextWhite /> : <Next />}
+
           </span>
           <p className={`p13 ${styles.color}`}>
-            <Link className={`body-small${styles.color}`} href="/#">
+            <Link className={`body-small ${whiteArrow ? styles.white : styles.color}`} href="/#">
               {breadcrumbs2}
             </Link>
           </p>
