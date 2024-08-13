@@ -1,0 +1,45 @@
+.mainwrapper{
+    display: flex;
+    height: 100%;
+  
+  .grey{
+    max-width: 15%;
+    width: 100%;
+    background-color: grey;
+  }
+  .wykonczenia{
+  
+    max-width: 85%;
+    width: 100%;
+    margin-top: 50px;
+    padding: 0px 115px;
+    @media only screen and (max-width: 800px) {
+      max-width: 100%;
+      padding: 0px 60px;
+    }
+
+    .topText{
+      display: flex;
+      justify-content: space-between;
+      .guaranteeTitle{
+        @media only screen and (max-width: 800px) {
+        font-size: 18px; 
+        }
+      }
+    }
+  .innerWrapper{
+    display: flex;
+    margin-top: 100px;
+    @media only screen and (max-width: 1200px) {
+      flex-direction: column;
+      overflow: scroll;
+      height: 100%;
+      padding-bottom: 100px;
+    }
+    @media only screen and (max-width: 800px) {
+     padding-bottom: 200px;
+     margin-top: 50px;
+    }
+  }
+  }
+  }
