@@ -1,26 +1,24 @@
-.productSection{
+.productSection {
   height: 100%;
 }
 
+.mainwrapper {
+  display: flex;
+  height: 100%;
 
-    .mainwrapper{
-      display: flex;
-      height: 100%;
-   
-    .wykonczenia{
-    
-      max-width: 85%;
-      width: 100%;
-      margin-top: 30px;
-      padding: 0px 80px;
-      @media only screen and (max-width: 900px) {
-        padding: 0px 40px;
-        }
-        @media only screen and (max-width: 800px) {
-          max-width: 100%;
-          padding: 0px 30px;
-          }
-    .topText{
+  .wykonczenia {
+    max-width: 85%;
+    width: 100%;
+    margin-top: 30px;
+    padding: 0px 80px;
+    @media only screen and (max-width: 900px) {
+      padding: 0px 40px;
+    }
+    @media only screen and (max-width: 800px) {
+      max-width: 100%;
+      padding: 0px 30px;
+    }
+    .topText {
       margin-top: 50px;
       margin-bottom: 75px;
       display: flex;
@@ -28,27 +26,26 @@
       @media only screen and (max-width: 800px) {
         gap: 55%;
         justify-content: flex-start;
-        }
+      }
       @media only screen and (max-width: 600px) {
-        gap:55%
-        }
+        gap: 55%;
+      }
       @media only screen and (max-width: 500px) {
-        gap:45%
-        }
+        gap: 45%;
+      }
       @media only screen and (max-width: 400px) {
-        gap:35%
-        }
+        gap: 35%;
+      }
       @media only screen and (max-width: 350px) {
-        gap:25%
-        }
+        gap: 25%;
+      }
     }
-    .bottomWrapper{
+    .bottomWrapper {
       display: flex;
       @media only screen and (max-width: 800px) {
-flex-direction: column-reverse;
-
-        }
-      .left{
+        flex-direction: column-reverse;
+      }
+      .left {
         max-width: 70%;
         width: 100%;
         gap: 20px;
@@ -56,12 +53,12 @@ flex-direction: column-reverse;
         flex-direction: column;
         @media only screen and (max-width: 800px) {
           max-width: 100%;
-          .top{
+          .top {
             text-align: center;
           }
-          }
+        }
       }
-      .right{
+      .right {
         max-width: 30%;
         display: flex;
         justify-content: center;
@@ -69,7 +66,7 @@ flex-direction: column-reverse;
         width: 100%;
         @media only screen and (max-width: 800px) {
           max-width: 100%;
-          }
+        }
       }
     }
   }

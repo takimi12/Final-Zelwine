@@ -5,7 +5,7 @@
   .contactFormSection {
     padding: 50px 40px;
 
-    .renovation{
+    .renovation {
       margin-bottom: 30px;
     }
     @media screen and (max-width: 769px) {
@@ -34,7 +34,7 @@
 
         label {
           &.error {
-            color: rgb(220, 15, 15); 
+            color: rgb(220, 15, 15);
           }
         }
 
@@ -47,13 +47,13 @@
           margin-top: 10px;
 
           &.error {
-            border-color: rgb(220, 15, 15); 
-            background-color: #f0e1e1; 
+            border-color: rgb(220, 15, 15);
+            background-color: #f0e1e1;
           }
         }
 
         .errorText {
-          color: rgb(255, 107, 107); 
+          color: rgb(255, 107, 107);
           margin-top: 4px;
           font-size: 12px;
         }
@@ -66,7 +66,7 @@
 
       label {
         &.error {
-          color:rgb(255, 107, 107); 
+          color: rgb(255, 107, 107);
         }
       }
 
@@ -81,13 +81,13 @@
         padding: 10px;
 
         &.error {
-          border-color: rgb(220, 15, 15); 
-          background-color: #f0e1e1; 
+          border-color: rgb(220, 15, 15);
+          background-color: #f0e1e1;
         }
       }
 
       .errorText {
-        color:rgb(255, 107, 107); 
+        color: rgb(255, 107, 107);
         margin-top: 4px;
         font-size: 12px;
         margin-bottom: 20px;
@@ -100,8 +100,6 @@
     }
 
     .customFileInputButton {
-
-
       .customFileInputButtonInner {
         display: flex;
         align-items: center;
@@ -122,13 +120,9 @@
     }
 
     .choseFile {
-  
-
       .customFileInputButton {
         width: 100%;
-
       }
-
 
       .inputHidden {
         display: none;
@@ -136,57 +130,60 @@
     }
   }
 }
-.choseFiles{
-
-  border: 0.0625rem solid #1D3C44;
+.choseFiles {
+  border: 0.0625rem solid #1d3c44;
   background-color: transparent;
-  color: #1D3C44;
-  border-color: #AEB2B3;
+  color: #1d3c44;
+  border-color: #aeb2b3;
   max-width: 152px;
-  cursor:pointer;
+  cursor: pointer;
   position: relative;
   margin-top: 8px;
   margin-bottom: 40px;
-  .customFileInputButton{
-width: 100%;
-height: 60px;
+  .customFileInputButton {
+    width: 100%;
+    height: 60px;
   }
-.positionButton {
-  display: flex;
-justify-content: center;
-align-items: center;
-gap: 10px;
-}
-.inputHidden {
-  display: none;
-}
+  .positionButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  .inputHidden {
+    display: none;
+  }
 }
 
 .disabledButton {
-  background-color: #ccc; 
-  cursor: not-allowed; 
+  background-color: #ccc;
+  cursor: not-allowed;
   display: flex;
   gap: 10px;
 }
 
 .disabledButton:disabled {
-  opacity: 0.6; 
+  opacity: 0.6;
 }
 .spinner {
-  border: 4px solid rgba(0, 0, 0, 0.1); 
-  border-left: 4px solid #000; 
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-left: 4px solid #000;
   border-radius: 50%;
   width: 24px;
   height: 24px;
   animation: spin 1s linear infinite;
-  margin-right: 8px; 
+  margin-right: 8px;
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .disabledButton {
-  background-color: #ccc; 
+  background-color: #ccc;
 }

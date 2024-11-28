@@ -1,15 +1,9 @@
-import Layout from '../components/Homepage/page';
+import Layout from './components/Homepage/page';
 
-
-
-
-export default function HomePage(){
-
-    
-    return (
-<>
+export default function HomePage() {
+  return (
+    <>
       <Layout />
-        
-  </>    
-    );
+    </>
+  );
 }

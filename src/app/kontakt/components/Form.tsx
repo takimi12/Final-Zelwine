@@ -1,33 +1,36 @@
-'use client';
-import React, { useRef, useState } from 'react';
-import styles from './Form.module.scss'; 
-import ThankYou from "./ThankYouModal";
-import Plus from "../../../../public/Renovation.svg";
-import Image from 'next/image';
-import emailjs from '@emailjs/browser';
+'use client'
+import React, { useState, useRef } from 'react';
+import { useForm, Controller } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from 'yup';
+import styles from './Form.module.scss';
+import ThankYou from './ThankYouModal';
+import sendEmail from '@/app/utils/email';
+import { InputField } from './Input';
+import { TextAreaField } from './TextareField';
+import { Button } from './Button';
+import { PhotoUploadButton } from './PhotoUpLoadButton';
+
+const schema = yup.object({
+  name: yup.string().min(2, 'Imię musi zawierać przynajmniej dwie litery').required('Imię jest wymagane'),
+  surname: yup.string().min(2, 'Nazwisko musi mieć przynajmniej dwie litery').required('Nazwisko jest wymagane'),
+  email: yup.string().email('Niepoprawny adres email').required('Email jest wymagany'),
+  telephone: yup
+    .string()
+    .matches(/^\d{9}$/, 'Numer telefonu musi składać się z co najmniej 9 cyfr')
+    .required('Numer telefonu jest wymagany'),
+  message: yup.string().min(10, 'Tekst musi mieć przynajmniej 10 znaków').required('Wiadomość jest wymagana'),
+});
 
 const MyForm: React.FC<{ contact: number }> = ({ contact }) => {
   const [attachedFiles, setAttachedFiles] = useState<File[]>([]);
-  const [name, setName] = useState("");
-  const [surname, setSurname] = useState("");
-  const [email, setEmail] = useState("");
-  const [telephone, setTelephone] = useState("");
-  const [message, setMessage] = useState("");
-
-  const [nameError, setNameError] = useState("");
-  const [surnameError, setSurnameError] = useState("");
-  const [emailError, setEmailError] = useState("");
-  const [telephoneError, setTelephoneError] = useState("");
-  const [messageError, setMessageError] = useState("");
-
   const [showModal, setShowModal] = useState(false);
-  const [isLoading, setIsLoading] = useState(false); // Dodany stan isLoading
+  const [isLoading, setIsLoading] = useState(false);
   const inputRef = useRef<HTMLInputElement | null>(null);
-  const formRef = useRef<HTMLFormElement | null>(null);
 
-  const handleClick = () => {
-    inputRef.current?.click();
-  };
+  const { control, handleSubmit, formState: { errors } } = useForm({
+    resolver: yupResolver(schema),
+  });
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files) {
@@ -39,170 +42,15 @@ const MyForm: React.FC<{ contact: number }> = ({ contact }) => {
     setShowModal(false);
   };
 
-  const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setName(e.target.value);
-  };
-
-  const handleSurnameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSurname(e.target.value);
-  };
-
-  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setEmail(e.target.value);
-  };
-
-  const handleTelephoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const onlyDigits = e.target.value.replace(/\D/g, "");
-    if (onlyDigits.length <= 9) {
-      setTelephone(onlyDigits);
-    }
-  };
-
-  const handleMessageChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setMessage(e.target.value);
-  };
-
-  const handleNameBlur = () => {
-    if (name.length < 2) {
-      setNameError("Imię musi zawierać przynajmniej dwie litery");
-    } else {
-      setNameError("");
-    }
-  };
-
-  const handleSurnameBlur = () => {
-    if (surname.length < 2) {
-      setSurnameError("Nazwisko musi mieć przynajmniej dwie litery");
-    } else {
-      setSurnameError("");
-    }
-  };
-
-  const handleEmailBlur = () => {
-    if (!email) {
-      setEmailError("Email musi zawierać znak @");
-    } else if (!email.includes("@")) {
-      setEmailError("Niepoprawny adres email");
-    } else {
-      setEmailError("");
-    }
-  };
-
-  const handleTelephoneBlur = () => {
-    if (!telephone) {
-      setTelephoneError("Pole nie może być puste");
-    } else if (telephone.length < 9) {
-      setTelephoneError("Numer telefonu musi składać się z co najmniej 9 cyfr");
-    } else {
-      setTelephoneError("");
-    }
-  };
-
-  const handleMessageBlur = () => {
-    if (!message || message.length < 10) {
-      setMessageError("Tekst musi mieć przynajmniej 10 znaków");
-    } else {
-      setMessageError("");
-    }
-  };
-
-  const handleInputFocus = (inputName: string) => {
-    switch (inputName) {
-      case "name":
-        setNameError("");
-        break;
-      case "surname":
-        setSurnameError("");
-        break;
-      case "email":
-        setEmailError("");
-        break;
-      case "telephone":
-        setTelephoneError("");
-        break;
-      case "message":
-        setMessageError("");
-        break;
-      default:
-        break;
-    }
-  };
-
-  const validateForm = () => {
-    let isValid = true;
-
-    if (name.length < 2) {
-      setNameError("Imię musi zawierać przynajmniej dwie litery");
-      isValid = false;
-    } else {
-      setNameError("");
-    }
-
-    if (surname.length < 2) {
-      setSurnameError("Nazwisko musi mieć przynajmniej dwie litery");
-      isValid = false;
-    } else {
-      setSurnameError("");
-    }
-
-    if (!email) {
-      setEmailError("Email musi zawierać znak @");
-      isValid = false;
-    } else if (!email.includes("@")) {
-      setEmailError("Niepoprawny adres email");
-      isValid = false;
-    } else {
-      setEmailError("");
-    }
-
-    if (!telephone) {
-      setTelephoneError("Pole nie może być puste");
-      isValid = false;
-    } else if (telephone.length < 9) {
-      setTelephoneError("Numer telefonu musi składać się z co najmniej 9 cyfr");
-      isValid = false;
-    } else {
-      setTelephoneError("");
-    }
-
-    if (!message || message.length < 10) {
-      setMessageError("Tekst musi mieć przynajmniej 10 znaków");
-      isValid = false;
-    } else {
-      setMessageError("");
-    }
-
-    return isValid;
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-
-    const isFormValid = validateForm();
-
-    if (isFormValid) {
-      setIsLoading(true); // Ustawienie isLoading na true
-
-      emailjs.send(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID as string,
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID as string,
-        {
-          user_name: name,
-          from_name: surname,
-          message: message,
-          user_email: email,
-          user_phone: telephone,
-        },
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY as string
-      )
-      .then((result) => {
-        console.log(result.text);
-        setShowModal(true);
-        setIsLoading(false); // Ustawienie isLoading na false po sukcesie
-      }, (error) => {
-        console.log(error.text);
-        setIsLoading(false); // Ustawienie isLoading na false po błędzie
-      });
+  const onSubmit = async (data: any) => {
+    setIsLoading(true);
+    try {
+      await sendEmail(data.name, data.surname, data.message, data.email, data.telephone);
+      setShowModal(true);
+    } catch (error) {
+      console.error('Error sending email:', error);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -212,118 +60,108 @@ const MyForm: React.FC<{ contact: number }> = ({ contact }) => {
         {contact !== 1 && (
           <h3 className={styles.renovation}>Wyceń renowację swoich grzejników</h3>
         )}
-        <form ref={formRef} onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit(onSubmit)}>
           <div className={styles.formGroup}>
-            <div className={styles.inputWrapper}>
-              <label htmlFor="name" className={nameError ? `${styles.error} ${styles.inputLabel}` : styles.inputLabel}>Imię:</label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                value={name}
-                onChange={handleNameChange}
-                onBlur={handleNameBlur}
-                onFocus={() => handleInputFocus("name")}
-                className={nameError ? `${styles.customInput} ${styles.error}` : styles.customInput}
-              />
-              {nameError && <span className={styles.errorText}>{nameError}</span>}
-            </div>
-            <div className={styles.inputWrapper}>
-              <label htmlFor="surname" className={surnameError ? `${styles.error} ${styles.inputLabel}` : styles.inputLabel}>Nazwisko:</label>
-              <input
-                type="text"
-                id="surname"
-                name="surname"
-                value={surname}
-                onChange={handleSurnameChange}
-                onBlur={handleSurnameBlur}
-                onFocus={() => handleInputFocus("surname")}
-                className={surnameError ? `${styles.customInput} ${styles.error}` : styles.customInput}
-              />
-              {surnameError && <span className={styles.errorText}>{surnameError}</span>}
-            </div>
-          </div>
-          <div className={styles.formGroup}>
-            <div className={styles.inputWrapper}>
-              <label htmlFor="email" className={emailError ? `${styles.error} ${styles.inputLabel}` : styles.inputLabel}>Email:</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={email}
-                onChange={handleEmailChange}
-                onBlur={handleEmailBlur}
-                onFocus={() => handleInputFocus("email")}
-                className={emailError ? `${styles.customInput} ${styles.error}` : styles.customInput}
-              />
-              {emailError && <span className={styles.errorText}>{emailError}</span>}
-            </div>
-            <div className={styles.inputWrapper}>
-              <label htmlFor="telephone" className={telephoneError ? `${styles.error} ${styles.inputLabel}` : styles.inputLabel}>Telefon:</label>
-              <input
-                type="tel"
-                id="telephone"
-                name="telephone"
-                value={telephone}
-                onChange={handleTelephoneChange}
-                onBlur={handleTelephoneBlur}
-                onFocus={() => handleInputFocus("telephone")}
-                className={telephoneError ? `${styles.customInput} ${styles.error}` : styles.customInput}
-              />
-              {telephoneError && <span className={styles.errorText}>{telephoneError}</span>}
-            </div>
-          </div>
-          <div className={styles.textareaWrapper}>
-            <label htmlFor="message" className={messageError ? `${styles.error} ${styles.textareaLabel}` : styles.textareaLabel}>Wiadomość:</label>
-            <textarea
-              id="message"
-              name="message"
-              value={message}
-              onChange={handleMessageChange}
-              onBlur={handleMessageBlur}
-              onFocus={() => handleInputFocus("message")}
-              className={messageError ? `${styles.customtextarea} ${styles.error}` : styles.textarea}
-            ></textarea>
-            {messageError && <span className={styles.errorText}>{messageError}</span>}
-          </div>
-          {contact !== 1 && (
-            <>
-              <p>Zdjęcia grzejników</p>
-              <div id="photoButton" onClick={handleClick} className={styles.choseFiles}>
-                <button className={styles.customFileInputButton} type="button">
-                  <div className={styles.positionButton}>
-                    <Image 
-                      src={Plus}  
-                      alt="popraw" 
-                      width={10}
-                      height={10}
-                    />
-                    <span className={`${styles.customFileInputText} body-small-smaller-second`}>Dodaj zdjęcia</span>
-                  </div>
-                </button>
-                <input 
-                  id="inputHidden" 
-                  ref={inputRef} 
-                  className={styles.inputHidden} 
-                  type="file"  
-                  multiple 
-                  onChange={handleFileChange}
+            <Controller
+              name="name"
+              control={control}
+              render={({ field }) => (
+                <InputField
+                  id="name"  // Make sure to pass `id` here
+                  label="Imię:"
+                  value={field.value}
+                  onChange={field.onChange}
+                  onBlur={field.onBlur}
+                  error={errors.name?.message}
+                  inputClassName={styles.customInput}
+                  labelClassName={styles.inputLabel}
+                  conditionalInputClassName={errors.name ? styles.error : ''}
+                  conditionalLabelClassName={errors.name ? styles.error : ''}
                 />
-              </div>
-            </>
-          )}
-
+              )}
+            />
+            <Controller
+              name="surname"
+              control={control}
+              render={({ field }) => (
+                <InputField
+                  id="surname"  // Ensure `id` is passed
+                  label="Nazwisko:"
+                  value={field.value}
+                  onChange={field.onChange}
+                  onBlur={field.onBlur}
+                  error={errors.surname?.message}
+                  inputClassName={styles.customInput}
+                  labelClassName={styles.inputLabel}
+                  conditionalInputClassName={errors.surname ? styles.error : ''}
+                  conditionalLabelClassName={errors.surname ? styles.error : ''}
+                />
+              )}
+            />
+          </div>
+          <div className={styles.formGroup}>
+            <Controller
+              name="email"
+              control={control}
+              render={({ field }) => (
+                <InputField
+                  id="email"  // Pass `id` here as well
+                  label="Email:"
+                  type="email"
+                  value={field.value}
+                  onChange={field.onChange}
+                  onBlur={field.onBlur}
+                  error={errors.email?.message}
+                  inputClassName={styles.customInput}
+                  labelClassName={styles.inputLabel}
+                  conditionalInputClassName={errors.email ? styles.error : ''}
+                  conditionalLabelClassName={errors.email ? styles.error : ''}
+                />
+              )}
+            />
+            <Controller
+              name="telephone"
+              control={control}
+              render={({ field }) => (
+                <InputField
+                  id="telephone"  // Make sure `id` is passed for this field too
+                  label="Telefon:"
+                  type="tel"
+                  value={field.value}
+                  onChange={field.onChange}
+                  onBlur={field.onBlur}
+                  error={errors.telephone?.message}
+                  inputClassName={styles.customInput}
+                  labelClassName={styles.inputLabel}
+                  conditionalInputClassName={errors.telephone ? styles.error : ''}
+                  conditionalLabelClassName={errors.telephone ? styles.error : ''}
+                />
+              )}
+            />
+          </div>
+          <Controller
+            name="message"
+            control={control}
+            render={({ field }) => (
+              <TextAreaField
+                id="message"
+                label="Wiadomość:"
+                value={field.value}
+                onChange={field.onChange}
+                onBlur={field.onBlur}
+                error={errors.message?.message}
+                textareaClassName={styles.textarea}
+                labelClassName={styles.textareaLabel}
+                conditionalTextareaClassName={errors.message ? styles.error : ''}
+                conditionalLabelClassName={errors.message ? styles.error : ''}
+              />
+            )}
+          />
+          <PhotoUploadButton onFileChange={handleFileChange} onClick={() => inputRef.current?.click()} contact={contact} />
           <div className={styles.photoButton}>
-            <button 
-              type="submit" 
-              className={`Button ${styles.choseFile} ${isLoading ? styles.disabledButton : ''}`} 
-
-            >
-              {isLoading && <span className={styles.spinner}></span>} 
-              <span className={styles.customFileInputButton}>
-                <span className={styles.positionButton}>Wyślij</span>
-              </span>
-            </button>
+            <Button type="submit" isLoading={isLoading}>
+              Wyślij
+            </Button>
           </div>
         </form>
       </div>

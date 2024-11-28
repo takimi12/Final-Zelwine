@@ -1,104 +1,97 @@
-.breadcrumbs{
+.breadcrumbs {
   padding: 0px 40px;
-   display: block;
+  display: block;
   width: 100%;
-  color:#fff;
+  color: #fff;
   padding: 50px 40px;
   background-repeat: no-repeat;
-  h3{
+  h3 {
     color: #fff;
   }
   @media screen and (max-width: 900px) {
-  padding: 50px 16px;
+    padding: 50px 16px;
   }
   .breadcrumbMobile {
     display: none;
     @media screen and (max-width: 768px) {
       display: block;
-         }
-   }
-   .breadcrumbDesktop {
+    }
+  }
+  .breadcrumbDesktop {
     display: block;
     @media screen and (max-width: 768px) {
       display: none;
-         }
-   }
+    }
+  }
 }
 
+.sectionProduct {
+  padding: 40px 40px 0px 40px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  @media screen and (max-width: 768px) {
+    padding: 40px 16px 80px 16px;
+  }
+  .title {
+    padding: 0;
+    margin-bottom: 80px;
+  }
+}
 
-  .sectionProduct{
-      padding: 40px 40px 0px 40px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      @media screen and (max-width: 768px) {
-        padding: 40px 16px 80px 16px;
-          }
-      .title{
-        padding: 0;
-        margin-bottom: 80px;
-    
-        }
-    
-    }
-    
-    .productsWrapper{
-      max-width: 48%;
-      width: 100%;
-      @media screen and (max-width: 991px) {
-      max-width: 100%;
-      margin-bottom: 40px;
-      }
-    }
-  
+.productsWrapper {
+  max-width: 48%;
+  width: 100%;
+  @media screen and (max-width: 991px) {
+    max-width: 100%;
+    margin-bottom: 40px;
+  }
+}
 
-  
-    .none {
-      visibility: hidden;
+.none {
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+}
+
+.active {
+  visibility: visible;
+}
+
+.settingWidth {
+  width: 325px;
+  height: 273px;
+  margin-bottom: 40px;
+
+  .categoryContainer {
+    position: relative;
+    .overlay {
       position: absolute;
       top: 0;
-  }
-  
-  .active {
-      visibility: visible;
-  }
-  
-  .settingWidth{
-    width: 325px;
-    height: 273px;
-    margin-bottom: 40px;
- 
-
-    .categoryContainer{
-      position: relative;
-      .overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        opacity: 0;
-        transition: opacity 0.3s ease-in-out;
-        width: 100%;
-      }
+      left: 0;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+      width: 100%;
     }
-    .categoryContainer:hover{
-       .overlay {
+  }
+  .categoryContainer:hover {
+    .overlay {
       opacity: 1;
     }
   }
-    @media screen and (max-width: 1199px) {
-      max-width: 48%;
-      width: 100%;
-      }
-    @media screen and (max-width: 768px) {
-      max-width: 100%;
-      width: 100%;
-      margin-bottom: 40px;
-      img{
-        width: 100%;
-      }
-      p{margin-bottom: 40px;}
-      }
+  @media screen and (max-width: 1199px) {
+    max-width: 48%;
+    width: 100%;
   }
-
-
-
+  @media screen and (max-width: 768px) {
+    max-width: 100%;
+    width: 100%;
+    margin-bottom: 40px;
+    img {
+      width: 100%;
+    }
+    p {
+      margin-bottom: 40px;
+    }
+  }
+}

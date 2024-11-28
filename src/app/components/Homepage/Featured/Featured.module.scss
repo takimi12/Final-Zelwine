@@ -1,0 +1,40 @@
+.featured {
+  padding: 0px 0px 40px 0px;
+  height: 100%;
+  height: 850px;
+  background-size: cover;
+
+  .textCenterSetting {
+    padding: 0px 40px;
+    width: 100%;
+    display: flex;
+    height: 100%;
+    color: #fff;
+    align-items: flex-end;
+    flex-direction: column;
+    justify-content: start;
+    .wrapper {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      align-items: flex-end;
+    }
+    @media screen and (max-width: 768px) {
+      padding: 0px 16px;
+    }
+    .text {
+      display: flex;
+      color: #fff;
+      flex-direction: row;
+      text-align: right;
+      margin-top: 200px;
+    }
+  }
+  .main-heading {
+    text-align: right;
+  }
+}
+.button {
+  margin-left: auto;
+  margin-top: 48px;
+}

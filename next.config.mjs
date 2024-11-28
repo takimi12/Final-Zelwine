@@ -1,8 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    images: {
-        domains: ['grzejniki.ergotree.pl'],
-    } 
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'grzejniki.ergotree.pl',
+      },
+    ],
+  },
 };
 
 export default nextConfig;

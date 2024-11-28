@@ -1,48 +1,43 @@
 .renovationPage {
-    display: flex;
-    padding: 88px 40px 72px 40px;
-    justify-content: space-around;
-    min-height: 650px;
-    gap:40px;
-    
+  display: flex;
+  padding: 88px 40px 72px 40px;
+  justify-content: space-around;
+  min-height: 650px;
+  gap: 40px;
+
+  @media only screen and (max-width: 1199px) {
+    flex-direction: column-reverse;
+    padding: 0px 0px 72px 0px;
+  }
+  .renovationColumWrapper {
+    max-width: 100%;
+    width: 100%;
+    position: relative;
+    img {
+      width: 100%;
+    }
+    .renovationPageText {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      .innerWrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+      }
+    }
+  }
+  .renovationColumnWrapper1 {
     @media only screen and (max-width: 1199px) {
-      
-      flex-direction: column-reverse;
-      padding: 0px 0px 72px 0px;
-      }
-      .renovationColumWrapper{
-        max-width: 100%;
-        width: 100%;
-        position: relative;
-        img{
-            width: 100%;
-        }
-        .renovationPageText{
-            display: flex;
-            align-items: center;
-            height: 100%;
-            .innerWrapper{
-                display: flex;
-                flex-direction: column;
-                gap: 50px;
-            }
-        }
-      }
-      .renovationColumnWrapper1{
-        @media only screen and (max-width: 1199px) {
-      
-          min-height: 650px;
-      }
+      min-height: 650px;
     }
-      .renovationColumnWrapper2{
-        @media only screen and (max-width: 1199px) {
+  }
+  .renovationColumnWrapper2 {
+    @media only screen and (max-width: 1199px) {
       padding: 0px 40px;
-      }
-        @media only screen and (max-width: 768px) {
-      padding: 0px 16px;
-      }
     }
-
- 
-
+    @media only screen and (max-width: 768px) {
+      padding: 0px 16px;
+    }
+  }
 }

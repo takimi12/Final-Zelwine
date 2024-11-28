@@ -1,17 +1,12 @@
-import { getData } from "../api/Opinie";
-import Pagination from "./components/Pagination"
-
-
+import { getDataOpinionPage } from '../api/Opinie';
+import Pagination from './components/Opinie';
 
 export default async function Opinie() {
-    
-    const data = await getData();
-   
+  const data = await getDataOpinionPage();
+
   return (
     <>
-  
       <Pagination data={data} />
     </>
   );
-};
-
+}
