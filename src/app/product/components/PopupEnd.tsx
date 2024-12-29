@@ -6,6 +6,7 @@ import Image from 'next/image';
 import Close from '../../../../public/static/ProductPage/close.svg';
 import { PopupEndProps, ModalData } from '../../types/popupEnd';
 import {ButtonModal} from './subcomponents/ButtonPopupEnd'; 
+import {RenderModal} from './RenderModal';
 
 export default function PopupEnd({
   responseModal,
@@ -18,33 +19,6 @@ export default function PopupEnd({
   const openModal = (modalId: string) => {
     setActiveModal(modalId);
     setActiveButton(modalId);
-  };
-
-  const renderModal = (modalData: ModalData): React.ReactNode => {
-    if (!modalData) return null;
-    return (
-      <div className='modal'>
-        <div className={styles.modalContent}>
-          <h3>{modalData.title}</h3>
-          <p className={styles.paragraph}>{modalData.description}</p>
-          <div className={styles.productGrid}>
-            {modalData.produkt.map((product) => (
-              <div key={product.ID} className={styles.itemWrapper}>
-                <div className={styles.productItem}>
-                  <Image
-                    src={product.featured_image_url}
-                    alt={product.post_title}
-                    width={130}
-                    height={120}
-                  />
-                </div>
-                <h6 className={styles.title}>{product.post_title}</h6>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    );
   };
 
   return (
@@ -79,13 +53,13 @@ export default function PopupEnd({
           <div className='mainwrapper'>
             {activeModal === 'signature-series' &&
               acf.wykonczenia[0] &&
-              renderModal(acf.wykonczenia[0])}
+              <RenderModal modalData={acf.wykonczenia[0]}/>}
             {activeModal === 'bare-metal' &&
               acf.wykonczenia[1] &&
-              renderModal(acf.wykonczenia[1])}
+              <RenderModal modalData={acf.wykonczenia[1]}/>}
             {activeModal === 'ral' &&
               acf.wykonczenia[2] &&
-              renderModal(acf.wykonczenia[2])}
+              <RenderModal modalData={acf.wykonczenia[2]}/>}
           </div>
         </div>
       </div>

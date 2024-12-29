@@ -7,9 +7,10 @@ import {OpinieList} from './subcomponents/OpinieList';
 import {Pagination } from './subcomponents/Pagination';
 import styles from './Opinie.module.scss';
 
+const postsPerPage = 2;
+
 const Opinie: React.FC<OpinieProps> = ({ data }) => {
   const [currentPage, setCurrentPage] = useState(1);
-  const postsPerPage = 2;
   const totalPages = Math.ceil(data.acf.opinions.length / postsPerPage);
 
   const handleClick = (pageNumber: number) => {
