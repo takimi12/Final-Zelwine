@@ -22,7 +22,7 @@ Zeliwne is a web application project where the frontend is built using the Next.
 - **Git**: Version >2
 - **Code editor**: e.g. Visual Studio Code
 
-![Techstack](public/static//ReadMe//ReadMePhoto.png)
+![Techstack](public/static//ReadMe//TechStack.webp)
 
 
 ### Instalacja / Installation
