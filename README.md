@@ -9,9 +9,7 @@ Zeliwne jest to projekt aplikacji internetowej, gdzie frontend został wykonany 
 Zeliwne is a web application project where the frontend is built using the Next.js framework, and the backend, along with the database, is powered by WordPress. The client can use the WordPress admin panel to modify and make any changes to the text and graphics. The graphical structure of the project, developed after consultations with the client, was designed in Figma. Ultimately, the project was deployed on Vercel.
 
 
-![Technologie uzyte w projekcie](public/ReadMe/ReadMePhoto.png)
-
-
+![Technologie uzyte w projekcie]/[Technologies used in the project](public/static//ReadMe//Group4.png)
 
 
 ## Wymagania wstępne / Prerequisites
@@ -20,10 +18,14 @@ Zeliwne is a web application project where the frontend is built using the Next.
 - **Git**: Wersja >2
 - **Edytor kodu**: np. Visual Studio Code
 
-![Techstack](public/ReadMe/TechStack.webp)
+- **Node.js**: 18.17.0 (Recommended: 22)
+- **Git**: Version >2
+- **Code editor**: e.g. Visual Studio Code
+
+![Wykorzystane technologie]/[Techstack](public/static//ReadMe//ReadMePhoto.png)
 
 
-### Instalacja
+### Instalacja / Installation
 
 1. Sklonuj repozytorium:
    ```bash
@@ -37,6 +39,19 @@ Zeliwne is a web application project where the frontend is built using the Next.
    ```bash
    npm run dev
    ```
+1. Clone the repository:
+```bash
+git clone https://github.com/takimi12/Final-Zelwine
+```
+2. Install dependencies:
+```bash
+npm install
+```
+3. Run the app in development mode:
+```bash
+npm run dev
+```
+
 
 ---
 
@@ -70,13 +85,41 @@ Zeliwne is a web application project where the frontend is built using the Next.
 - Funkcje:
   - Zachowanie spójnego stylu kodowania w projekcie.
 
----
+
+### dev: `next dev`
+- Runs the application in development mode.
+- Features:
+- Development server.
+- Automatic page refresh after code changes.
+- Ideal for active project development.
+
+### build: `next build`
+- Compiles the application to a production version.
+- Features:
+- Code optimization (e.g. size reduction, minification).
+- Generating static HTML files and other resources.
+- Preparing for deployment to a production server.
+
+### start: `next start`
+- Runs the application in production mode using a previously compiled version.
+- Used after deploying the application to a production server.
+
+### lint: `next lint`
+- Checks the code using the ESLint tool to detect and fix potential errors.
+- Features:
+- Analysis of coding standards compliance.
+
+### format: `prettier --write .`
+- Formats code using the Prettier tool.
+- Features:
+- Maintains a consistent coding style across your project.
+
+
 
 ## Link do wersji live
 
 Link do aplikacji zostanie podany po poprawieniu endpointów WordPressa i plików `.t`.
 
----
 
 ## Architektura projektu
 
@@ -90,9 +133,20 @@ Link do aplikacji zostanie podany po poprawieniu endpointów WordPressa i plikó
 ### Rozszerzalność
 - Struktura CMS WordPress została zaprojektowana tak, aby w przyszłości można było łatwo przekształcić aplikację w sklep internetowy.
 
----
+## Project Architecture
 
-## Kontakt do autora
+### Backend
+- The backend was written based on WooCommerce.
+- The content displayed on the page comes from WordPress API endpoints.
+
+### Frontend
+- The Next.js application architecture reflects the flow created by the backend author, which ensures intuitiveness and speed of use in terms of data entry.
+
+### Extensibility
+- The WordPress CMS structure was designed so that in the future you can easily transform the application into an online store.
+
+
+## Kontakt do autora / Author Contact
 
 - GitHub: [takimi12](https://github.com/takimi12)
 - LinkedIn: [Tomasz Olech](https://www.linkedin.com/in/tomasz-olech-136b9a13a/)
