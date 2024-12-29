@@ -9,7 +9,8 @@ Zeliwne jest to projekt aplikacji internetowej, gdzie frontend został wykonany 
 Zeliwne is a web application project where the frontend is built using the Next.js framework, and the backend, along with the database, is powered by WordPress. The client can use the WordPress admin panel to modify and make any changes to the text and graphics. The graphical structure of the project, developed after consultations with the client, was designed in Figma. Ultimately, the project was deployed on Vercel.
 
 
-### [Technologie uzyte w projekcie](public/ReadMe//ReadMePhoto.png)
+![Technologie uzyte w projekcie](public/ReadMe/ReadMePhoto.png)
+
 
 
 
@@ -19,7 +20,7 @@ Zeliwne is a web application project where the frontend is built using the Next.
 - **Git**: Wersja >2
 - **Edytor kodu**: np. Visual Studio Code
 
-### [Techstack](public/ReadMe//TechStack.webp)
+![Techstack](public/ReadMe/TechStack.webp)
 
 
 ### Instalacja
