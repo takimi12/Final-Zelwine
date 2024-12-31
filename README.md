@@ -1,5 +1,10 @@
 
 # Zeliwne
+## Ekrany aplikacji/ Screens for Appliacation
+
+![Responsive layout](public/static//ReadMe//responsive.png)
+![Hero](public/static//ReadMe//hero.png)
+
 
 ## Opis projektu / Project Description
 

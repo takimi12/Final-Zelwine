@@ -21,6 +21,7 @@ const LeftSection: React.FC<LeftSectionProps> = ({ images }) => {
 
   return (
     <div className={styles.leftSection}>
+    
       <Swiper
         spaceBetween={10}
         slidesPerView={1}
@@ -33,7 +34,7 @@ const LeftSection: React.FC<LeftSectionProps> = ({ images }) => {
       >
         {images.map((image, index) => (
           <SwiperSlide key={index} className={styles.swiper}>
-            <Image src={image.src} alt='Popraw' width={200} height={200} />
+            <Image src={image.src} alt='Popraw' width={200} height={300} />
           </SwiperSlide>
         ))}
         <div className={styles.pageNumber}>
