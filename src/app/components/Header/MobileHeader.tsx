@@ -10,7 +10,6 @@ import ArrowSmall from '../../../../public/static/Header/ArrowSmall';
 import ArrowBack from '../../../../public/static/Header/BackArrows';
 import { usePathname } from 'next/navigation';
 
-
 import { Category, Props } from '../../types/mobileHeader';
 
 const MobileHeader: React.FC<Props> = ({ categories }) => {

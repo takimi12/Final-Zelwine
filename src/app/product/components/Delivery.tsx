@@ -1,7 +1,7 @@
 import styles from './Delivery.module.scss';
 import Image from 'next/image';
 import Close from '../../../../public/static/ProductPage/close.svg';
-import { DeliveryProps } from '../../types/delivery'; 
+import { DeliveryProps } from '../../types/delivery';
 
 export default function Delivery({ responseModal, closeModal }: DeliveryProps) {
   const deliveryPack = responseModal?.acf?.delivery_pack;

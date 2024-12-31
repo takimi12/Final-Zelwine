@@ -37,12 +37,8 @@ export const TechnicalDataGroup: React.FC<TechnicalDataGroupProps> = ({
         <ul className={styles.groupData}>
           {technicalDataGroup.values.map((item, itemIndex) => (
             <li key={itemIndex}>
-              <span className={styles.leftSpan}>
-                {item.label}
-              </span>
-              <span className={styles.rightSpan}>
-                {item.value}
-              </span>
+              <span className={styles.leftSpan}>{item.label}</span>
+              <span className={styles.rightSpan}>{item.value}</span>
             </li>
           ))}
         </ul>
@@ -50,5 +46,3 @@ export const TechnicalDataGroup: React.FC<TechnicalDataGroupProps> = ({
     </div>
   );
 };
-
-

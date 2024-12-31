@@ -1,4 +1,4 @@
-import { apiAuthorized } from "./api";
+import { apiAuthorized } from './api';
 
 export const getDataContactPage = async () => {
   try {

@@ -1,7 +1,11 @@
 import styles from '../DesktopSection.module.scss';
 import { Attribute } from '../../../types/desktopSection';
 
-export const ProductAttributes = ({ attributes }: { attributes: Attribute[] }) => (
+export const ProductAttributes = ({
+  attributes,
+}: {
+  attributes: Attribute[];
+}) => (
   <div className={styles.height}>
     {attributes.map((attribute) => (
       <div key={attribute.id}>

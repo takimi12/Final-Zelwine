@@ -9,11 +9,11 @@ import Image from 'next/image';
 import SwiperNav from '../../series/SwiperNav';
 import styles from './Inspiration.module.scss';
 import Plus from '../../../../../public/static/Homepage/Inspiration/Plus';
-import {Prev} from '../../swiper/Prev';
-import {Next} from '../../swiper/Next';
+import { Prev } from '../../swiper/Prev';
+import { Next } from '../../swiper/Next';
 import Arrow from '../../../../../public/static/Homepage/Inspiration/Arrow';
 import Link from 'next/link';
-import { SelectedImage,ConfigType } from '../../../types/inspiration';
+import { SelectedImage, ConfigType } from '../../../types/inspiration';
 
 const SectionSwiper = ({ data }: { data: SelectedImage[] }) => {
   const [showPopup, setShowPopup] = useState(false);

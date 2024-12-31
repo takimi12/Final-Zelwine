@@ -1,4 +1,4 @@
-import { ContactData, ContactItem } from '../types/kontakt'; 
+import { ContactData, ContactItem } from '../types/kontakt';
 import Image from 'next/image';
 import Form from './components/Form';
 import styles from './Kontakt.module.scss';

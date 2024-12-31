@@ -9,18 +9,16 @@ interface PopupSectionProps {
   isVisible: boolean;
 }
 
-export const PopupSection: React.FC<PopupSectionProps> = ({ title, onClick, }) => (
-  <div
-    className={styles.parentInner}
-    onClick={onClick}
-  >
+export const PopupSection: React.FC<PopupSectionProps> = ({
+  title,
+  onClick,
+}) => (
+  <div className={styles.parentInner} onClick={onClick}>
     <div>
       <h3 className={styles.popUpheading}>{title}</h3>
     </div>
     <div>
-      <Image className={styles.boxImage} src={Horizontal} alt="hoverimage" />
+      <Image className={styles.boxImage} src={Horizontal} alt='hoverimage' />
     </div>
   </div>
 );
-
-

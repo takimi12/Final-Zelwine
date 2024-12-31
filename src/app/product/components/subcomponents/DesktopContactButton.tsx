@@ -10,4 +10,3 @@ export const ContactButton = () => (
     </Link>
   </div>
 );
-

@@ -8,9 +8,19 @@ interface PaginationProps {
   onNext: () => void;
 }
 
-export const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages, onPageChange, onPrev, onNext }) => (
+export const Pagination: React.FC<PaginationProps> = ({
+  currentPage,
+  totalPages,
+  onPageChange,
+  onPrev,
+  onNext,
+}) => (
   <div className={styles.pagination}>
-    <button onClick={onPrev} className={styles.prev} disabled={currentPage === 1}>
+    <button
+      onClick={onPrev}
+      className={styles.prev}
+      disabled={currentPage === 1}
+    >
       {'<'}
     </button>
     {Array.from({ length: totalPages }, (_, index) => (
@@ -22,9 +32,12 @@ export const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages,
         {index + 1}
       </button>
     ))}
-    <button onClick={onNext} className={styles.next} disabled={currentPage === totalPages}>
+    <button
+      onClick={onNext}
+      className={styles.next}
+      disabled={currentPage === totalPages}
+    >
       {'>'}
     </button>
   </div>
 );
-

@@ -8,15 +8,16 @@ import BreadcrumbsMobile from '../../../components/breadcrumbs/breadcrumbMobile'
 import Series from '../../../components/series/Series';
 import Background from '../../../../../public/static/Products/HeaderSection.png';
 
-import { CategoryData, Product, MappedCategory, Params } from '../../../types/subkategorie'; 
+import {
+  CategoryData,
+  Product,
+  MappedCategory,
+  Params,
+} from '../../../types/subkategorie';
 
-export default async function Subkategories({
-  params,
-}: Params) {
+export default async function Subkategories({ params }: Params) {
   const fetchData = await getDataSubcategories();
   const dataSeries: CategoryData[] = await getDataProducts();
-
-
 
   const filtereddataSeries = dataSeries.filter((category: CategoryData) => {
     return (

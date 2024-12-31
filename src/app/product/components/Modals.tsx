@@ -5,8 +5,8 @@ import ConnectionType from './ConnectionType';
 import Guarantee from './Guarantee';
 import Delivery from './Delivery';
 import TechnicalData from './DataTechnical';
-import {PopupSection} from './subcomponents/ModalSectionComponents';
-import {PopupModal} from './subcomponents/ModalPopupComponents';
+import { PopupSection } from './subcomponents/ModalSectionComponents';
+import { PopupModal } from './subcomponents/ModalPopupComponents';
 import styles from './Modal.module.scss';
 import { ResponseModal } from '../../types/modals';
 
@@ -26,15 +26,31 @@ export default function Modal({
   const renderComponent = () => {
     switch (activeComponent) {
       case 'wykonczenia':
-        return <Wykonczenia responseModal={responseModal} closeModal={closeModal} />;
+        return (
+          <Wykonczenia responseModal={responseModal} closeModal={closeModal} />
+        );
       case 'technicalData':
-        return <TechnicalData responseModal={responseModal} closeModal={closeModal} />;
+        return (
+          <TechnicalData
+            responseModal={responseModal}
+            closeModal={closeModal}
+          />
+        );
       case 'connectionType':
-        return <ConnectionType responseModal={responseModal} closeModal={closeModal} />;
+        return (
+          <ConnectionType
+            responseModal={responseModal}
+            closeModal={closeModal}
+          />
+        );
       case 'guarantee':
-        return <Guarantee responseModal={responseModal} closeModal={closeModal} />;
+        return (
+          <Guarantee responseModal={responseModal} closeModal={closeModal} />
+        );
       case 'delivery':
-        return <Delivery responseModal={responseModal} closeModal={closeModal} />;
+        return (
+          <Delivery responseModal={responseModal} closeModal={closeModal} />
+        );
       default:
         return null;
     }
@@ -46,41 +62,45 @@ export default function Modal({
         <div className={styles.parentBox}>
           {acf.wykonczenia && acf.wykonczenia.length > 0 && (
             <PopupSection
-              title="Wykończenia"
+              title='Wykończenia'
               onClick={() => setActiveComponent('wykonczenia')}
               isVisible={acf.wykonczenia.length > 0}
             />
           )}
 
           <PopupSection
-            title="Rodzaje podłączeń"
+            title='Rodzaje podłączeń'
             onClick={() => setActiveComponent('connectionType')}
             isVisible={true}
           />
 
           {acf.technical_data && acf.technical_data.length > 0 && (
             <PopupSection
-              title="Dane techniczne"
+              title='Dane techniczne'
               onClick={() => setActiveComponent('technicalData')}
               isVisible={acf.technical_data.length > 0}
             />
           )}
 
           <PopupSection
-            title="Gwarancja"
+            title='Gwarancja'
             onClick={() => setActiveComponent('guarantee')}
             isVisible={true}
           />
 
           <PopupSection
-            title="Dostawa"
+            title='Dostawa'
             onClick={() => setActiveComponent('delivery')}
             isVisible={true}
           />
         </div>
       </div>
 
-      <PopupModal activeComponent={activeComponent} closeModal={closeModal} renderComponent={renderComponent} />
+      <PopupModal
+        activeComponent={activeComponent}
+        closeModal={closeModal}
+        renderComponent={renderComponent}
+      />
     </section>
   );
 }

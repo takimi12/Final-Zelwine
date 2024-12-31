@@ -1,4 +1,4 @@
-import { getDataRenovation} from '../api/Renowacja';
+import { getDataRenovation } from '../api/Renowacja';
 import { AdsTop } from './components/AdsTop';
 import AdsBottom from './components/AdsBottom';
 import Hero from './components/Hero';

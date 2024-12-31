@@ -7,7 +7,7 @@ import Breadcrumbs from '../../components/breadcrumbs/breadcrumbs';
 import BreadcrumbsMobile from '../../components/breadcrumbs/breadcrumbMobile';
 import { getDataSeries } from '@/app/api/Series';
 
-import { Category, Params } from '../../types/kategorie'; 
+import { Category, Params } from '../../types/kategorie';
 
 export default async function Subkategories({ params }: Params) {
   const fetchData: Category[] = await getDataProducts();

@@ -10,7 +10,6 @@ import Link from 'next/link';
 import SwiperNav from './SwiperNav';
 import Image from 'next/image';
 
-
 import { SeriesProps, SeriesItem, CategoryData } from '../../types/series';
 
 function Series({ series, series1, filtereddataSeries }: SeriesProps) {

@@ -1,5 +1,5 @@
-import axios from "axios";
-import { apiAuthorized } from "./api";
+import axios from 'axios';
+import { apiAuthorized } from './api';
 
 export const getDataSubcategories = async () => {
   try {
@@ -8,7 +8,9 @@ export const getDataSubcategories = async () => {
     const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
 
     if (!username || !password || !baseUrl) {
-      throw new Error("Missing environment variables for API credentials or base URL");
+      throw new Error(
+        'Missing environment variables for API credentials or base URL',
+      );
     }
 
     const credentials = `${username}:${password}`;
@@ -16,11 +18,11 @@ export const getDataSubcategories = async () => {
 
     const response = await apiAuthorized.get(`${baseUrl}/wc/v3/products`, {
       params: {
-        per_page: 100
+        per_page: 100,
       },
       headers: {
-        Authorization: `Basic ${encodedCredentials}`
-      }
+        Authorization: `Basic ${encodedCredentials}`,
+      },
     });
 
     return response.data;

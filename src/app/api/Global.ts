@@ -1,4 +1,4 @@
-import { apiAuthorized } from "./api";
+import { apiAuthorized } from './api';
 
 export const getGlobalsDataOption = async () => {
   try {
@@ -8,4 +8,3 @@ export const getGlobalsDataOption = async () => {
     throw new Error('Something went wrong');
   }
 };
-

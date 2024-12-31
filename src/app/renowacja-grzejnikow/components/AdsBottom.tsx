@@ -8,7 +8,7 @@ import { Pagination } from 'swiper/modules';
 import Image from 'next/image';
 import styles from './AdsBottom.module.scss';
 
-import { ACFData, Benefit } from '../../types/adsBottom'; 
+import { ACFData, Benefit } from '../../types/adsBottom';
 
 const AdsBottom: React.FC<{ acf: ACFData }> = ({ acf }) => {
   const breakpoints = {

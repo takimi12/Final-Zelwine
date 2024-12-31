@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 import DefaultHeader from './DesktopHeader';
 import MobileHeader from './MobileHeader';
-import {Category} from "../../types/header"
+import { Category } from '../../types/header';
 
 const Header = ({ categories }: { categories: Category[] }) => {
   const [isMobile, setIsMobile] = useState(false);
@@ -12,7 +12,7 @@ const Header = ({ categories }: { categories: Category[] }) => {
       setIsMobile(window.innerWidth < 901);
     };
 
-    handleResize(); 
+    handleResize();
     window.addEventListener('resize', handleResize);
 
     return () => {

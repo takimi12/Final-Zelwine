@@ -8,7 +8,7 @@ interface InputFieldProps {
   value: string;
   onChange: (event: ChangeEvent<HTMLInputElement>) => void;
   onBlur: (event: FocusEvent<HTMLInputElement>) => void;
-  onFocus?: (event: FocusEvent<HTMLInputElement>) => void;  // Zmieniamy na opcjonalne
+  onFocus?: (event: FocusEvent<HTMLInputElement>) => void; // Zmieniamy na opcjonalne
   error?: string;
   inputClassName?: string;
   labelClassName?: string;
@@ -23,7 +23,7 @@ export const InputField: React.FC<InputFieldProps> = ({
   value,
   onChange,
   onBlur,
-  onFocus,  // onFocus będzie opcjonalne
+  onFocus, // onFocus będzie opcjonalne
   error,
   inputClassName = '',
   labelClassName = '',
@@ -49,7 +49,7 @@ export const InputField: React.FC<InputFieldProps> = ({
         value={value}
         onChange={onChange}
         onBlur={onBlur}
-        onFocus={onFocus}  // Przekazujemy onFocus jeśli jest dostępny
+        onFocus={onFocus} // Przekazujemy onFocus jeśli jest dostępny
         className={
           error
             ? `${conditionalInputClassName} ${inputClassName}`

@@ -2,9 +2,9 @@
 
 import { useState } from 'react';
 import { OpinieProps } from '../../types/pagination';
-import {OpinieHeader} from './subcomponents/OpinieHeader';
-import {OpinieList} from './subcomponents/OpinieList';
-import {Pagination } from './subcomponents/Pagination';
+import { OpinieHeader } from './subcomponents/OpinieHeader';
+import { OpinieList } from './subcomponents/OpinieList';
+import { Pagination } from './subcomponents/Pagination';
 import styles from './Opinie.module.scss';
 
 const postsPerPage = 2;

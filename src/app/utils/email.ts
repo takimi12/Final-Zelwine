@@ -5,7 +5,7 @@ const sendEmail = (
   surname: string,
   message: string,
   email: string,
-  telephone: string
+  telephone: string,
 ) => {
   return emailjs.send(
     process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID as string,
@@ -17,7 +17,7 @@ const sendEmail = (
       user_email: email,
       user_phone: telephone,
     },
-    process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY as string
+    process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY as string,
   );
 };
 

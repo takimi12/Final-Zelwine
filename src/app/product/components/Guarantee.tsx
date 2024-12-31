@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './Guarantee.module.scss';
 import Image from 'next/image';
 import Close from '../../../../public/static/ProductPage/close.svg';
-import { GuaranteeProps } from '../../types/guarantee'; 
+import { GuaranteeProps } from '../../types/guarantee';
 
 export default function Guarantee({
   responseModal,

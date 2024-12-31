@@ -4,5 +4,5 @@ export const PlusJakartaSans = Plus_Jakarta_Sans({
   weight: '400',
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-primary', 
+  variable: '--font-primary',
 });

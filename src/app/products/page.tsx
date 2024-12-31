@@ -5,12 +5,11 @@ import styles from './Produkty.module.scss';
 import Link from 'next/link';
 import Image from 'next/image';
 
-import { Category } from '../types/products'; 
+import { Category } from '../types/products';
 
-let a = 123
+let a = 123;
 export default async function Products() {
   const fetchData: Category[] = await getDataProducts();
-
 
   const filteredCategories = fetchData.filter(
     (category) => category.parent === 0 && category.name !== 'Bez kategorii',

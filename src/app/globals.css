@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
 @import url('./reset.css');
 
 :root {
@@ -131,7 +129,7 @@ h6 {
     font-size: 15px;
   }
 }
-a{
+a {
   text-decoration: none;
 }
 

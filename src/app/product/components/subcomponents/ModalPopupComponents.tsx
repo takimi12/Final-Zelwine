@@ -7,7 +7,11 @@ interface PopupModalProps {
   renderComponent: () => JSX.Element | null;
 }
 
-export const PopupModal: React.FC<PopupModalProps> = ({ activeComponent, closeModal, renderComponent }) => (
+export const PopupModal: React.FC<PopupModalProps> = ({
+  activeComponent,
+  closeModal,
+  renderComponent,
+}) => (
   <div className={`${styles.popUp} ${activeComponent ? styles.active : ''}`}>
     <div
       className={`${styles.left} ${activeComponent ? styles.activeLeft : ''}`}
@@ -18,4 +22,3 @@ export const PopupModal: React.FC<PopupModalProps> = ({ activeComponent, closeMo
     </div>
   </div>
 );
-

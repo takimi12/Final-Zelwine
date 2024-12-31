@@ -60,7 +60,7 @@ export async function Footer({ categories }: { categories: Category[] }) {
                     <>
                       {child.children.map((subchild) => (
                         <Link
-                          key={subchild.product_id} 
+                          key={subchild.product_id}
                           href={`/products/${child.product_id}/${subchild.product_id}`}
                         >
                           {subchild.title}

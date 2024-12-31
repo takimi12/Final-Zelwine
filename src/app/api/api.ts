@@ -13,5 +13,3 @@ export const apiAuthorized = axios.create({
     'Content-Type': 'application/json',
   },
 });
-
-

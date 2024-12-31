@@ -9,7 +9,7 @@ import SecondLogo from '../../../../public/static/Header/SecondLogo.jsx';
 import FirstLogo from '../../../../public/static/Header/Logo.jsx';
 import Kaloryfer from '../../../../public/static/Header/Radiator.jsx';
 import Image from 'next/image';
-import { Category, HeaderProps } from '../../types/dekstopHeader';  
+import { Category, HeaderProps } from '../../types/dekstopHeader';
 
 const DesktopHeader: React.FC<HeaderProps> = ({ categories }) => {
   const [scrolled, setScrolled] = useState(false);
@@ -188,7 +188,6 @@ const DesktopHeader: React.FC<HeaderProps> = ({ categories }) => {
                     <Link
                       href={`/products/${child.product_id}`}
                       onClick={handleLinkClick}
-
                     >
                       {child.title}
                     </Link>

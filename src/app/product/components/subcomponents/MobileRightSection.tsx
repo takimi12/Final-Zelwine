@@ -15,7 +15,11 @@ interface RightSectionProps {
   id: string | number;
 }
 
-const RightSection: React.FC<RightSectionProps> = ({ metaData, attributes, id }) => {
+const RightSection: React.FC<RightSectionProps> = ({
+  metaData,
+  attributes,
+  id,
+}) => {
   const getMetaValue = (metaData: MetaData[], key: string): string => {
     const metaItem = metaData.find((meta) => meta.key === key);
     return metaItem ? metaItem.value : '';

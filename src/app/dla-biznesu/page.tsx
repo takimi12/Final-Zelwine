@@ -1,4 +1,4 @@
-import { Data } from '../types/biznes';  
+import { Data } from '../types/biznes';
 import Image from 'next/image';
 import styles from './Biznes.module.scss';
 import { getDataBusinessPage } from '../api/Biznes';

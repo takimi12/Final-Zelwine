@@ -1,15 +1,14 @@
 import React from 'react';
 import styles from './DesktopSection.module.scss';
-import {ProductImages} from './subcomponents/DesktopProductImage';
-import {ProductTitle} from './subcomponents/DesktopProductTitle';
-import {ProductAttributes} from './subcomponents/DesktopProductAtributes';
-import {ContactButton} from './subcomponents/DesktopContactButton';
-import {DeliveryInfo} from './subcomponents/DesktopDeliveryinfo';
+import { ProductImages } from './subcomponents/DesktopProductImage';
+import { ProductTitle } from './subcomponents/DesktopProductTitle';
+import { ProductAttributes } from './subcomponents/DesktopProductAtributes';
+import { ContactButton } from './subcomponents/DesktopContactButton';
+import { DeliveryInfo } from './subcomponents/DesktopDeliveryinfo';
 import { getAllProducts } from '@/app/api/Produkt';
 import { getDataHomepage } from '@/app/api/Homepage';
 import { ProductPageSingleProps } from '../../types/desktopSection';
 import { MetaData } from '../../types/desktopSection';
-
 
 export default async function ProductPageSingle({
   res,
@@ -22,7 +21,9 @@ export default async function ProductPageSingle({
     return metaItem ? metaItem.value : '';
   };
   return (
-    <section className={`${styles.productSection} ${styles.productSectionDesktop}`}>
+    <section
+      className={`${styles.productSection} ${styles.productSectionDesktop}`}
+    >
       {response && (
         <>
           <ProductImages images={response.images} />

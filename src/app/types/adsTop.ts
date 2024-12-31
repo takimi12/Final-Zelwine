@@ -1,4 +1,3 @@
-
 export interface ImageSize {}
 
 export interface ImageData {

@@ -2,7 +2,6 @@ import React from 'react';
 import styles from './Featured.module.scss';
 import Link from 'next/link';
 
-
 import { FeaturedProps } from '../../../types/featured';
 
 const Featured: React.FC<FeaturedProps> = ({ data }) => {

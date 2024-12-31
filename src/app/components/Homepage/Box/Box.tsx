@@ -65,7 +65,7 @@ const Boxes = ({ data }: BoxesProps) => {
                   />
                 </div>
                 <h6 className={styles.h6}>{feature.title}</h6>
-                <p className="body">{feature.description}</p>
+                <p className='body'>{feature.description}</p>
               </div>
             </div>
           </SwiperSlide>

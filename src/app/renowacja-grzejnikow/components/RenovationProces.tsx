@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import styles from './RenovationProces.module.scss';
 
-import { RenovationProcesProps } from '../../types/renovationProces'; 
+import { RenovationProcesProps } from '../../types/renovationProces';
 
 const RenovationProces = ({ proces }: RenovationProcesProps) => {
   return (

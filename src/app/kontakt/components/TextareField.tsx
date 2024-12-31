@@ -7,14 +7,13 @@ interface TextAreaFieldProps {
   value: string;
   onChange: (event: ChangeEvent<HTMLTextAreaElement>) => void;
   onBlur: (event: FocusEvent<HTMLTextAreaElement>) => void;
-  onFocus?: (event: FocusEvent<HTMLTextAreaElement>) => void;  
+  onFocus?: (event: FocusEvent<HTMLTextAreaElement>) => void;
   error?: string;
   textareaClassName?: string;
   labelClassName?: string;
   conditionalTextareaClassName?: string;
   conditionalLabelClassName?: string;
 }
-
 
 export const TextAreaField: React.FC<TextAreaFieldProps> = ({
   id,

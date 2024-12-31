@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import styles from './Hero.module.scss';
 import Link from 'next/link';
-import { ACFData } from '../../types/hero'; 
+import { ACFData } from '../../types/hero';
 
 const Hero: React.FC<{ acf: ACFData }> = ({ acf }) => {
   const { hero } = acf;

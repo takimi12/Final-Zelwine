@@ -1,4 +1,4 @@
-import {getDataHomepage } from '@/app/api/Homepage';
+import { getDataHomepage } from '@/app/api/Homepage';
 import Hero from './Hero/Hero';
 import Most from './MostPopular/MostPopular';
 import Inspiration from './Inspiration/Inspiration';

@@ -7,7 +7,11 @@ interface ButtonModalProps {
   label: string;
 }
 
-export const ButtonModal: React.FC<ButtonModalProps> = ({ onClick, isActive, label }) => {
+export const ButtonModal: React.FC<ButtonModalProps> = ({
+  onClick,
+  isActive,
+  label,
+}) => {
   return (
     <button
       className={`${styles.buttonModal} ${isActive ? styles.activeButton : ''}`}
@@ -17,4 +21,3 @@ export const ButtonModal: React.FC<ButtonModalProps> = ({ onClick, isActive, lab
     </button>
   );
 };
-

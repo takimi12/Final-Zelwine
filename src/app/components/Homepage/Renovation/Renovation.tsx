@@ -4,7 +4,6 @@ import Image from 'next/image';
 import styles from './Renovation.module.scss';
 import Link from 'next/link';
 
-
 import { RenovationData } from '../../../types/renovation';
 
 const RenovationSection: React.FC<{ data: RenovationData }> = ({ data }) => {
@@ -62,11 +61,7 @@ const RenovationSection: React.FC<{ data: RenovationData }> = ({ data }) => {
           </div>
         </div>
         <div className={styles.renovationSectionImage}>
-          <Image
-            src={mappedData.image.url}
-            alt={mappedData.image.alt}
-            fill
-          />
+          <Image src={mappedData.image.url} alt={mappedData.image.alt} fill />
         </div>
       </div>
     </section>

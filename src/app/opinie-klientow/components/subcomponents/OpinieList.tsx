@@ -24,7 +24,9 @@ export const OpinieList: React.FC<OpinieListProps> = ({ opinions }) => (
           <p className={`${styles.middle} body`}>{opinion.paragraph}</p>
           <p className='body-small'>
             {opinion.signature}
-            <span className={`body-small ${styles.eyespan}`}>{opinion.country}</span>
+            <span className={`body-small ${styles.eyespan}`}>
+              {opinion.country}
+            </span>
           </p>
         </div>
         <div className={styles.wrapperOpinionRight}>
@@ -34,4 +36,3 @@ export const OpinieList: React.FC<OpinieListProps> = ({ opinions }) => (
     ))}
   </div>
 );
-

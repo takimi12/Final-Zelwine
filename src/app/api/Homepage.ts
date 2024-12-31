@@ -1,6 +1,4 @@
-import { apiAuthorized } from "./api";
-
-
+import { apiAuthorized } from './api';
 
 export const getDataHomepage = async () => {
   try {
@@ -10,6 +8,3 @@ export const getDataHomepage = async () => {
     throw new Error('Something went wrong');
   }
 };
-
-
-

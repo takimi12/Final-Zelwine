@@ -21,7 +21,6 @@ const LeftSection: React.FC<LeftSectionProps> = ({ images }) => {
 
   return (
     <div className={styles.leftSection}>
-    
       <Swiper
         spaceBetween={10}
         slidesPerView={1}
