@@ -8,3 +8,4 @@ export const getGlobalsDataOption = async () => {
     throw new Error('Something went wrong');
   }
 };
+

@@ -102,6 +102,9 @@
 .contentCta {
   display: flex;
   justify-content: center;
+  a{
+    color: #fff;
+  }
   .textWrapper {
     display: flex;
     flex-direction: column;

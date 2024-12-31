@@ -37,6 +37,12 @@
     .anchorParent:hover a:after {
       background: #000;
     }
+    .button {
+      color: #000;
+    }
+    .button:hover{
+      color: #fff;
+    }
   }
 
   &.header-transparent {
@@ -58,11 +64,13 @@
         padding: 12px;
         &:hover {
           background: #244b56;
-          border: solid;
+          border: transparent solid;
           color: #fff;
           transition: 0.4s;
-        }
+         }
       }
+      
+  
     }
     ul {
       display: flex;
@@ -110,7 +118,7 @@
     padding: 40px;
     border-right: solid 1px #d2d2d2;
     padding-right: 100px;
-    .secondLevelSubwrapper {
+    .secondLevelSubwrapper  a{
       color: #000;
     }
   }

@@ -35,6 +35,9 @@
         .list {
           display: grid;
           gap: 16px;
+          a{
+            color:var(--black-300)
+          }
         }
 
         .topHeading {
@@ -50,6 +53,9 @@
     padding-top: 100px;
     padding-bottom: 32px;
 
+    a{
+      color: var(--black-300);
+    }
     @media screen and (max-width: 768px) {
       flex-direction: column-reverse;
       align-items: center;

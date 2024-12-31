@@ -4,6 +4,7 @@
   align-items: center;
   padding-top: 100px;
   padding: 100px 40px;
+
   @media screen and (max-width: 900px) {
     padding-right: 16px;
     padding-left: 16px;
@@ -15,6 +16,9 @@
     align-items: center;
     justify-content: center;
     margin-bottom: 92px;
+    .topImage{
+      object-fit: contain;
+    }
     .EyebrowHeader {
       color: var(--Brown-500);
     }
@@ -111,6 +115,7 @@
     border: solid 1px var(--gray-500);
     cursor: pointer;
     transition: background-color 0.3s;
+    color:#000;
 
     &:hover:not(:disabled) {
       background-color: var(--Turquoise-500);

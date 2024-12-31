@@ -78,6 +78,8 @@
   .hoverEffectDivInner {
     opacity: 0;
     transition: 0.3s;
+    position: absolute;
+    top: -100px;
   }
 
   .hoverEffectDiv:hover .hoverEffectDivInner {

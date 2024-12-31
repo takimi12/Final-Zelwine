@@ -1,41 +1,25 @@
-
-// export const getHeaderData = async () => {
-//   const {data} = await apiAuthorized.get("navigation")
-
-//   return data;
-// };
-
-
-// export const getProductsAds = async (params: string) => {
-//   try {
-//     const response = await axios.get(
-//       `https://grzejniki.ergotree.pl/wp-json/wp/v2/product/${params}`
-//     );
-//     return response.data;
-//   } catch (error) {
-//     throw new Error('Something went wrong');
-//   }
-// };
+import axios from 'axios';
+import { New_Tegomin } from 'next/font/google';
 
 export const getHeaderData = async () => {
-  const response = await fetch(
-    'http://grzejniki.ergotree.pl/wp-json/custom/v1/navigation',
-    {
-      method: 'GET',
+  const username = process.env.NEXT_PUBLIC_API_USERNAME;
+  const password = process.env.NEXT_PUBLIC_API_PASSWORD;
+
+  const apiUrl = process.env.NEXT_PUBLIC_API_NAVIGATION;
+
+  try {
+    const response = await axios.get(apiUrl!, {
       headers: {
         'Content-Type': 'application/json',
-        Authorization:
-          'Basic ' +
-          btoa(
-            'ck_9f79ec15e7fa0c63c24b397280863cac6487c380:cs_ebf833bec357c2ff7984afcb0a6ebc76784da3a6',
-          ),
+        Authorization: 'Basic ' + btoa(`${username}:${password}`),
       },
-    },
-  );
+    });
 
-  if (!response.ok) {
-    throw new Error('Something went wrong');
+    return response.data;
+  } catch (error) {
+    if (axios.isAxiosError(error)) {
+      throw new Error(`API error: ${error.message}`);
+    }
+    throw error;
   }
-
-  return response.json();
 };

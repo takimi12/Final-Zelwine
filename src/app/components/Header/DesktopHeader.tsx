@@ -160,7 +160,7 @@ const DesktopHeader: React.FC<HeaderProps> = ({ categories }) => {
           {kontaktCategory && (
             <div className={` ${styles.kontakt} `}>
               <Link href={`/kontakt`} aria-label='strona glowna'>
-                <button>Skontaktuj się z nami</button>
+                <button className={styles.button}>Skontaktuj się z nami</button>
               </Link>
             </div>
           )}
@@ -188,6 +188,7 @@ const DesktopHeader: React.FC<HeaderProps> = ({ categories }) => {
                     <Link
                       href={`/products/${child.product_id}`}
                       onClick={handleLinkClick}
+
                     >
                       {child.title}
                     </Link>

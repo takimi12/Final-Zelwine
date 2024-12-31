@@ -149,6 +149,9 @@
     justify-content: center;
     align-items: center;
     gap: 10px;
+    .customFileInputText{
+      color: #000;
+    }
   }
   .inputHidden {
     display: none;

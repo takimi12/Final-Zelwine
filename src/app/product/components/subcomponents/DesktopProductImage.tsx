@@ -12,7 +12,8 @@ export const ProductImages = ({ images }: { images: ImageType[] }) => (
             src={image.src}
             alt={image.alt}
             width={200}
-            height={200}
+            height={500}
+            objectFit='cover'
           />
         ) : null,
       )}
