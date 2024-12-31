@@ -1,10 +1,10 @@
+import { apiAuthorized } from "./api";
+
 export const getDataRenovation = async () => {
-  const response = await fetch(
-    'https://grzejniki.ergotree.pl/wp-json/wp/v2/pages/109',
-  );
-  if (!response.ok) {
+  try {
+    const response = await apiAuthorized.get('/wp/v2/pages/109');
+    return response.data;
+  } catch (error) {
     throw new Error('Something went wrong');
   }
-
-  return response.json();
 };

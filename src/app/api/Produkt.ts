@@ -1,22 +1,31 @@
-export const getAllProducts = async (params: string) => {
-  const response = await fetch(
-    `https://grzejniki.ergotree.pl/wp-json/wc/v2/products/${params}`,
-    {
-      method: 'GET',
+import axios from "axios";
+import { apiAuthorized } from "./api";
+
+export const getAllProducts = async (params:string) => {
+  try {
+    const username = process.env.NEXT_PUBLIC_API_USERNAME;
+    const password = process.env.NEXT_PUBLIC_API_PASSWORD;
+    const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
+
+    if (!username || !password || !baseUrl) {
+      throw new Error("Missing environment variables for API credentials or base URL");
+    }
+
+    const credentials = `${username}:${password}`;
+    const encodedCredentials = btoa(credentials);
+
+    const response = await apiAuthorized.get(`${baseUrl}/wc/v2/products/${params}`, {
       headers: {
-        'Content-Type': 'application/json',
-        Authorization:
-          'Basic ' +
-          btoa(
-            'ck_9f79ec15e7fa0c63c24b397280863cac6487c380:cs_ebf833bec357c2ff7984afcb0a6ebc76784da3a6',
-          ),
-      },
-    },
-  );
+        Authorization: `Basic ${encodedCredentials}`,
+        "Content-Type": "application/json"
+      }
+    });
 
-  if (!response.ok) {
-    throw new Error('Something went wrong');
+    return response.data;
+  } catch (error) {
+    if (axios.isAxiosError(error)) {
+      throw new Error(`API error: ${error.message}`);
+    }
+    throw error;
   }
-
-  return response.json();
 };

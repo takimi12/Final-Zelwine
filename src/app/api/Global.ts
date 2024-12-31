@@ -1,14 +1,10 @@
-export const getGlobalsDataOption = async () => {
-  const response = await fetch(
-    `https://grzejniki.ergotree.pl/wp-json/options/all`,
-    {
-      method: 'GET',
-    },
-  );
+import { apiAuthorized } from "./api";
 
-  if (!response.ok) {
+export const getGlobalsDataOption = async () => {
+  try {
+    const response = await apiAuthorized.get('/options/all');
+    return response.data;
+  } catch (error) {
     throw new Error('Something went wrong');
   }
-
-  return response.json();
 };

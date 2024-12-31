@@ -11,6 +11,7 @@ let a = 123
 export default async function Products() {
   const fetchData: Category[] = await getDataProducts();
 
+
   const filteredCategories = fetchData.filter(
     (category) => category.parent === 0 && category.name !== 'Bez kategorii',
   );

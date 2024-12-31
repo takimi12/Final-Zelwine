@@ -14,6 +14,8 @@ export default async function ProductPageSingle({
 }: {
   params: { name: string };
 }) {
+
+  
   const data = await getDataHomepage ();
   const { acf } = data;
   const res = params.name;

@@ -14,3 +14,11 @@ export const getProductsAds = async (params: string) => {
 
   return response.json();
 };
+
+
+// export const getHeaderData = async () => {
+//   const {data} = await apiAuthorized.get("navigation")
+
+//   return data;
+// };
+

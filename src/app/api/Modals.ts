@@ -1,14 +1,10 @@
-export const getInfoBox = async (params: string) => {
-  const response = await fetch(
-    `https://grzejniki.ergotree.pl/wp-json/wp/v2/product/${params}`,
-    {
-      method: 'GET',
-    },
-  );
+import { apiAuthorized } from "./api";
 
-  if (!response.ok) {
+export const getInfoBox = async (params: string) => {
+  try {
+    const response = await apiAuthorized.get(`/wp/v2/product/${params}`);
+    return response.data;
+  } catch (error) {
     throw new Error('Something went wrong');
   }
-
-  return response.json();
 };

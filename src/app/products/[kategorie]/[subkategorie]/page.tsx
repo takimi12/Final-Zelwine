@@ -16,6 +16,8 @@ export default async function Subkategories({
   const fetchData = await getDataSubcategories();
   const dataSeries: CategoryData[] = await getDataProducts();
 
+
+
   const filtereddataSeries = dataSeries.filter((category: CategoryData) => {
     return (
       category.parent == 16 || category.parent == 17 || category.parent == 34

@@ -1,10 +1,10 @@
+import { apiAuthorized } from "./api";
+
 export const getDataOpinionPage = async () => {
-  const response = await fetch(
-    'https://grzejniki.ergotree.pl/wp-json/wp/v2/pages/159',
-  );
-  if (!response.ok) {
+  try {
+    const response = await apiAuthorized.get('/wp/v2/pages/159');
+    return response.data;
+  } catch (error) {
     throw new Error('Something went wrong');
   }
-
-  return response.json();
 };
