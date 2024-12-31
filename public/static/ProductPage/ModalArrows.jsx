@@ -1,5 +1,5 @@
 import * as React from 'react';
-export const ModalArrow = (props) => (
+export const ModalArrows = (props) => (
   <svg
     viewBox='0 0 15 15'
     fill='none'

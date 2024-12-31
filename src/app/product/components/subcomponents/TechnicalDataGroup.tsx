@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from '../DataTechnical.module.scss';
-import { ModalArrow } from '../../../../../public/static/ProductPage/ModalArrow';
+import { ModalArrows } from '../../../../../public/static/ProductPage/ModalArrows';
 
 interface TechnicalDataGroupProps {
   technicalDataGroup: {
@@ -29,7 +29,7 @@ export const TechnicalDataGroup: React.FC<TechnicalDataGroupProps> = ({
           <span
             className={`${styles.arrow} ${openSection === technicalDataGroup.title ? styles.rotated : ''}`}
           >
-            <ModalArrow />
+            <ModalArrows />
           </span>
         </h6>
       </div>
