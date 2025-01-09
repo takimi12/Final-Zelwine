@@ -1,20 +1,10 @@
 import axios from 'axios';
-import { New_Tegomin } from 'next/font/google';
+import { authorizedClient } from './api';
 
 export const getHeaderData = async () => {
-  const username = process.env.NEXT_PUBLIC_API_USERNAME;
-  const password = process.env.NEXT_PUBLIC_API_PASSWORD;
-
-  const apiUrl = process.env.NEXT_PUBLIC_API_NAVIGATION;
-
   try {
-    const response = await axios.get(apiUrl!, {
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: 'Basic ' + btoa(`${username}:${password}`),
-      },
-    });
-
+    const apiUrl = process.env.NEXT_PUBLIC_API_NAVIGATION;
+    const response = await authorizedClient.get(apiUrl!);
     return response.data;
   } catch (error) {
     if (axios.isAxiosError(error)) {
