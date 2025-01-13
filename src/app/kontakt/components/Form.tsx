@@ -1,13 +1,12 @@
 'use client';
 import React, { useState, useRef } from 'react';
-import { useForm, Controller } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import styles from './Form.module.scss';
 import ThankYou from './ThankYouModal';
 import sendEmail from '@/app/utils/email';
-import { InputField } from './Input';
-import { TextAreaField } from './TextareField';
+import ControllerWrapper from './FormControllerComponent';
 import { Button } from './Button';
 import { PhotoUploadButton } from './PhotoUpLoadButton';
 
@@ -86,106 +85,41 @@ const MyForm: React.FC<{ contact: number }> = ({ contact }) => {
         )}
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className={styles.formGroup}>
-            <Controller
-              name='name'
+            <ControllerWrapper
+              name="name"
               control={control}
-              render={({ field }) => (
-                <InputField
-                  id='name' // Make sure to pass `id` here
-                  label='Imię:'
-                  value={field.value}
-                  onChange={field.onChange}
-                  onBlur={field.onBlur}
-                  error={errors.name?.message}
-                  inputClassName={styles.customInput}
-                  labelClassName={styles.inputLabel}
-                  conditionalInputClassName={errors.name ? styles.error : ''}
-                  conditionalLabelClassName={errors.name ? styles.error : ''}
-                />
-              )}
+              label="Imię:"
+              errors={errors}
             />
-            <Controller
-              name='surname'
+            <ControllerWrapper
+              name="surname"
               control={control}
-              render={({ field }) => (
-                <InputField
-                  id='surname' // Ensure `id` is passed
-                  label='Nazwisko:'
-                  value={field.value}
-                  onChange={field.onChange}
-                  onBlur={field.onBlur}
-                  error={errors.surname?.message}
-                  inputClassName={styles.customInput}
-                  labelClassName={styles.inputLabel}
-                  conditionalInputClassName={errors.surname ? styles.error : ''}
-                  conditionalLabelClassName={errors.surname ? styles.error : ''}
-                />
-              )}
+              label="Nazwisko:"
+              errors={errors}
             />
           </div>
           <div className={styles.formGroup}>
-            <Controller
-              name='email'
+            <ControllerWrapper
+              name="email"
               control={control}
-              render={({ field }) => (
-                <InputField
-                  id='email' // Pass `id` here as well
-                  label='Email:'
-                  type='email'
-                  value={field.value}
-                  onChange={field.onChange}
-                  onBlur={field.onBlur}
-                  error={errors.email?.message}
-                  inputClassName={styles.customInput}
-                  labelClassName={styles.inputLabel}
-                  conditionalInputClassName={errors.email ? styles.error : ''}
-                  conditionalLabelClassName={errors.email ? styles.error : ''}
-                />
-              )}
+              label="Email:"
+              type="email"
+              errors={errors}
             />
-            <Controller
-              name='telephone'
+            <ControllerWrapper
+              name="telephone"
               control={control}
-              render={({ field }) => (
-                <InputField
-                  id='telephone' // Make sure `id` is passed for this field too
-                  label='Telefon:'
-                  type='tel'
-                  value={field.value}
-                  onChange={field.onChange}
-                  onBlur={field.onBlur}
-                  error={errors.telephone?.message}
-                  inputClassName={styles.customInput}
-                  labelClassName={styles.inputLabel}
-                  conditionalInputClassName={
-                    errors.telephone ? styles.error : ''
-                  }
-                  conditionalLabelClassName={
-                    errors.telephone ? styles.error : ''
-                  }
-                />
-              )}
+              label="Telefon:"
+              type="tel"
+              errors={errors}
             />
           </div>
-          <Controller
-            name='message'
+          <ControllerWrapper
+            name="message"
             control={control}
-            render={({ field }) => (
-              <TextAreaField
-                id='message'
-                label='Wiadomość:'
-                value={field.value}
-                onChange={field.onChange}
-                onBlur={field.onBlur}
-                error={errors.message?.message}
-                textareaClassName={styles.textarea}
-                labelClassName={styles.textareaLabel}
-                conditionalTextareaClassName={
-                  errors.message ? styles.error : ''
-                }
-                conditionalLabelClassName={errors.message ? styles.error : ''}
-              />
-            )}
+            label="Wiadomość:"
+            errors={errors}
+            isTextarea={true}
           />
           <PhotoUploadButton
             onFileChange={handleFileChange}
@@ -193,7 +127,7 @@ const MyForm: React.FC<{ contact: number }> = ({ contact }) => {
             contact={contact}
           />
           <div className={styles.photoButton}>
-            <Button type='submit' isLoading={isLoading}>
+            <Button type="submit" isLoading={isLoading}>
               Wyślij
             </Button>
           </div>

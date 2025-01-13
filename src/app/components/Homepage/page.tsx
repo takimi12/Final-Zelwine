@@ -13,7 +13,6 @@ export default async function HomeLayout() {
   const data = await getDataHomepage();
   const series = await getDataSeries();
 
-  const prop = 1;
   const { acf } = data;
 
   return (

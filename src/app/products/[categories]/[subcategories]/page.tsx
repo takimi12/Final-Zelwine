@@ -27,7 +27,7 @@ export default async function Subkategories({ params }: Params) {
 
   const filteredCategories = fetchData.filter((product: Product) => {
     const isIronRadiators = product.categories.some(
-      (category) => category.id == parseInt(params.subkategorie),
+      (category) => category.id == parseInt(params.subcategories),
     );
     return isIronRadiators;
   });
@@ -35,7 +35,7 @@ export default async function Subkategories({ params }: Params) {
   const breadcrumbs2 = fetchData
     .filter((product: Product) =>
       product.categories.some(
-        (category) => category.id == parseInt(params.subkategorie),
+        (category) => category.id == parseInt(params.subcategories),
       ),
     )
     .map((category: Product) => category.categories[0].name)
@@ -44,7 +44,7 @@ export default async function Subkategories({ params }: Params) {
   const breadcrumbs1 = fetchData
     .filter((product: Product) =>
       product.categories.some(
-        (category) => category.id == parseInt(params.subkategorie),
+        (category) => category.id == parseInt(params.subcategories),
       ),
     )
     .map((category: Product) => category.categories[1].name)
@@ -79,7 +79,7 @@ export default async function Subkategories({ params }: Params) {
             name=''
             breadcrumbs1={breadcrumbs1}
             breadcrumbs2={breadcrumbs2}
-            kategoria={params.kategorie}
+            kategoria={params.categories}
             whiteArrow={whiteArrow}
           />
           <h3>{breadcrumbs2}</h3>
@@ -87,7 +87,7 @@ export default async function Subkategories({ params }: Params) {
         <div className={styles.breadcrumbMobile}>
           <BreadcrumbsMobile
             breadcrumbs1={breadcrumbs1}
-            breadscrumb2={params.kategorie}
+            breadscrumb2={params.categories}
           />
         </div>
       </section>

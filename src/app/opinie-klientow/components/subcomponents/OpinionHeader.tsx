@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import styles from '../Opinie.module.scss';
+import styles from '../Opinion.module.scss';
 
 interface OpinieHeaderProps {
   header: string;

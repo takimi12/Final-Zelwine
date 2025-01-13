@@ -38,11 +38,11 @@ const MobileHeader: React.FC<Props> = ({ categories }) => {
     document.documentElement.style.overflow = 'auto';
   };
 
-  const handleProduktyClick = () => {
+  const handleProductsClick = () => {
     setIsThirdLevel(true);
   };
 
-  const handleProduktyClose = () => {
+  const handleProductsClose = () => {
     setIsThirdLevel(false);
   };
 
@@ -148,7 +148,7 @@ const MobileHeader: React.FC<Props> = ({ categories }) => {
                     <div
                       className={styles.categoryMenu}
                       key={category.title}
-                      onClick={handleProduktyClick}
+                      onClick={handleProductsClick}
                     >
                       <h3
                         className={styles.heading3}
@@ -184,8 +184,8 @@ const MobileHeader: React.FC<Props> = ({ categories }) => {
           </div>
           <div className={styles.bottom}>
             <div className={styles.back1}>
-              <ArrowBack onClick={handleProduktyClose} />
-              <p onClick={handleProduktyClose} className='p17'>
+              <ArrowBack onClick={handleProductsClose} />
+              <p onClick={handleProductsClose} className='p17'>
                 Powrót
               </p>
             </div>

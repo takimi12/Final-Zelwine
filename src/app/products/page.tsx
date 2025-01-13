@@ -7,7 +7,7 @@ import Image from 'next/image';
 
 import { Category } from '../types/products';
 
-let a = 123;
+
 export default async function Products() {
   const fetchData: Category[] = await getDataProducts();
 

@@ -13,18 +13,18 @@ export default async function Subkategories({ params }: Params) {
   const fetchData: Category[] = await getDataProducts();
 
   const filteredCategories = fetchData.filter(
-    (category) => category.parent == parseInt(params.kategorie),
+    (category) => category.parent == parseInt(params.categories),
   );
   const excludedIds = [16, 17, 34];
   const otherfilteredCategories = fetchData.filter((category) => {
     return (
-      category.id == parseInt(params.kategorie) &&
+      category.id == parseInt(params.categories) &&
       !excludedIds.includes(category.id)
     );
   });
 
   const names = fetchData.find(
-    (category) => category.id == parseInt(params.kategorie),
+    (category) => category.id == parseInt(params.categories),
   )?.name;
 
   const series1 = await getDataSeries();
@@ -57,7 +57,7 @@ export default async function Subkategories({ params }: Params) {
               {filteredCategories.map((category) => (
                 <Link
                   className={styles.anchor}
-                  href={`/products/${params.kategorie}/${category.id}`}
+                  href={`/products/${params.categories}/${category.id}`}
                   key={category.id}
                 >
                   <div className={styles.productsWrapper}>
@@ -82,7 +82,7 @@ export default async function Subkategories({ params }: Params) {
               {otherfilteredCategories.map((category) => (
                 <Link
                   className={styles.anchor}
-                  href={`/products/${params.kategorie}/${category.id}`}
+                  href={`/products/${params.categories}/${category.id}`}
                   key={category.id}
                 >
                   <div className={styles.productsWrapper}>

@@ -1,15 +1,15 @@
 'use client';
 
 import { useState } from 'react';
-import { OpinieProps } from '../../types/pagination';
-import { OpinieHeader } from './subcomponents/OpinieHeader';
-import { OpinieList } from './subcomponents/OpinieList';
+import { OpinionProps } from '../../types/pagination';
+import { OpinieHeader } from './subcomponents/OpinionHeader';
+import { OpinieList } from './subcomponents/OpinionList';
 import { Pagination } from './subcomponents/Pagination';
-import styles from './Opinie.module.scss';
+import styles from './Opinion.module.scss';
 
 const postsPerPage = 2;
 
-const Opinie: React.FC<OpinieProps> = ({ data }) => {
+const Opinion: React.FC<OpinionProps> = ({ data }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const totalPages = Math.ceil(data.acf.opinions.length / postsPerPage);
 
@@ -54,4 +54,4 @@ const Opinie: React.FC<OpinieProps> = ({ data }) => {
   );
 };
 
-export default Opinie;
+export default Opinion;

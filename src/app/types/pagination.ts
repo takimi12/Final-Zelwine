@@ -24,6 +24,6 @@ export interface ClientData {
   acf: OpinionsData;
 }
 
-export interface OpinieProps {
+export interface OpinionProps {
   data: ClientData;
 }

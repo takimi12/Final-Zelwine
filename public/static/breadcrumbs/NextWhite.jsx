@@ -1,5 +1,5 @@
 import * as React from 'react';
-const SVGComponent = (props) => (
+const NextWhite= (props) => (
   <svg
     width={4}
     height={7}
@@ -14,4 +14,4 @@ const SVGComponent = (props) => (
     />
   </svg>
 );
-export default SVGComponent;
+export default NextWhite;

@@ -4,7 +4,12 @@ import { authorizedClient } from './api';
 export const getHeaderData = async () => {
   try {
     const apiUrl = process.env.NEXT_PUBLIC_API_NAVIGATION;
-    const response = await authorizedClient.get(apiUrl!);
+    
+    if (!apiUrl) {
+      throw new Error('NEXT_PUBLIC_API_NAVIGATION environment variable is not defined');
+    }
+
+    const response = await authorizedClient.get(apiUrl);
     return response.data;
   } catch (error) {
     if (axios.isAxiosError(error)) {

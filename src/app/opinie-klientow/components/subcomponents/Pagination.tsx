@@ -1,4 +1,4 @@
-import styles from '../Opinie.module.scss';
+import styles from '../Opinion.module.scss';
 
 interface PaginationProps {
   currentPage: number;

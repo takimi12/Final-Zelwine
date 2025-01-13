@@ -38,5 +38,5 @@ export interface MappedCategory {
 }
 
 export interface Params {
-  params: { kategorie: string; subkategorie: string };
+  params: { categories: string; subcategories: string };
 }

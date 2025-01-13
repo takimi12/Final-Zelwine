@@ -31,6 +31,6 @@ export interface Category {
 
 export interface Params {
   params: {
-    kategorie: string;
+    categories: string;
   };
 }
