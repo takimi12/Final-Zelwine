@@ -7,7 +7,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import { Pagination } from 'swiper/modules';
 import styles from './Box.module.scss';
-
+import { breakpoints1 } from '@/app/constants/breakpoints';
 interface Feature {
   icon: {
     url: string;
@@ -29,17 +29,7 @@ const Boxes = ({ data }: BoxesProps) => {
     },
   };
 
-  const breakpoints = {
-    300: {
-      slidesPerView: 1,
-    },
-    550: {
-      slidesPerView: 2,
-    },
-    1200: {
-      slidesPerView: 3,
-    },
-  };
+ 
 
   return (
     <section className={styles.futureSection}>
@@ -50,7 +40,7 @@ const Boxes = ({ data }: BoxesProps) => {
         spaceBetween={20}
         slidesOffsetBefore={40}
         wrapperClass={styles.wrapperClass}
-        breakpoints={breakpoints}
+        breakpoints={breakpoints1}
       >
         {data.map((feature, index) => (
           <SwiperSlide key={index} className={styles.swiperSlide}>

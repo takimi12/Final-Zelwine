@@ -11,6 +11,7 @@ import SwiperNav from './SwiperNav';
 import Image from 'next/image';
 
 import { SeriesProps, SeriesItem, CategoryData } from '../../types/series';
+import { breakpoints2 } from '@/app/constants/breakpoints';
 
 function Series({ series, series1, filtereddataSeries }: SeriesProps) {
   const [isAtBeginning, setIsAtBeginning] = useState(true);
@@ -27,17 +28,7 @@ function Series({ series, series1, filtereddataSeries }: SeriesProps) {
     setIsAtEnd(false);
   };
 
-  const breakpoints = {
-    400: {
-      slidesPerView: 1,
-    },
-    800: {
-      slidesPerView: 2,
-    },
-    1200: {
-      slidesPerView: 3,
-    },
-  };
+
 
   let filteredCategories: SeriesItem[] = [];
   if (Array.isArray(series)) {
@@ -66,7 +57,7 @@ function Series({ series, series1, filtereddataSeries }: SeriesProps) {
               onReachBeginning={handleReachBeginning}
               slidesPerView='auto'
               slidesOffsetBefore={40}
-              breakpoints={breakpoints}
+              breakpoints={breakpoints2}
             >
               <div className={styles.topParent}>
                 <h4 className={styles.h4}>Kategorie produktów</h4>
@@ -103,7 +94,7 @@ function Series({ series, series1, filtereddataSeries }: SeriesProps) {
               onReachBeginning={handleReachBeginning}
               slidesPerView='auto'
               slidesOffsetBefore={40}
-              breakpoints={breakpoints}
+              breakpoints={breakpoints2}
             >
               <div className={styles.topParent}>
                 <p>Pozostałe Kategorie</p>
@@ -140,7 +131,7 @@ function Series({ series, series1, filtereddataSeries }: SeriesProps) {
                 onReachBeginning={handleReachBeginning}
                 slidesPerView='auto'
                 slidesOffsetBefore={40}
-                breakpoints={breakpoints}
+                breakpoints={breakpoints2}
               >
                 <div className={styles.topParent}>
                   <p>Pozostałe Serie</p>

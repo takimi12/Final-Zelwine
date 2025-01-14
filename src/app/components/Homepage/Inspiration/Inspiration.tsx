@@ -14,6 +14,7 @@ import { Next } from '../../swiper/Next';
 import Arrow from '../../../../../public/static/Homepage/Inspiration/Arrow';
 import Link from 'next/link';
 import { SelectedImage, ConfigType } from '../../../types/inspiration';
+import { breakpoints2 } from '@/app/constants/breakpoints';
 
 const SectionSwiper = ({ data }: { data: SelectedImage[] }) => {
   const [showPopup, setShowPopup] = useState(false);
@@ -90,17 +91,7 @@ const SectionSwiper = ({ data }: { data: SelectedImage[] }) => {
     setIsConfigExpanded(!isConfigExpanded);
   };
 
-  const breakpoints = {
-    400: {
-      slidesPerView: 1,
-    },
-    800: {
-      slidesPerView: 2,
-    },
-    1200: {
-      slidesPerView: 3,
-    },
-  };
+
 
   return (
     <>
@@ -113,7 +104,7 @@ const SectionSwiper = ({ data }: { data: SelectedImage[] }) => {
           wrapperClass={styles.wrapperClass}
           onReachEnd={handleReachEnd}
           onReachBeginning={handleReachBeginning}
-          breakpoints={breakpoints}
+          breakpoints={breakpoints2}
         >
           <div className={styles.swiperTop}>
             <h4 className={styles.h4}>Inspiracje</h4>

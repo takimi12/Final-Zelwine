@@ -9,6 +9,7 @@ import SwiperNav from '../../series/SwiperNav';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { ProductData } from '../../../types/mostPopular';
+import { breakpoints2 } from '@/app/constants/breakpoints';
 
 interface MostPopularProps {
   data: ProductData[];
@@ -28,17 +29,7 @@ function MostPopular({ data }: MostPopularProps) {
     setIsAtEnd(false);
   };
 
-  const breakpoints = {
-    400: {
-      slidesPerView: 1,
-    },
-    800: {
-      slidesPerView: 2,
-    },
-    1200: {
-      slidesPerView: 3,
-    },
-  };
+
 
   return (
     <section className={styles.mostPopular}>
@@ -51,7 +42,7 @@ function MostPopular({ data }: MostPopularProps) {
           spaceBetween={20}
           slidesPerView='auto'
           slidesOffsetBefore={40}
-          breakpoints={breakpoints}
+          breakpoints={breakpoints2}
         >
           <div className={styles.swiperTop}>
             <h4 className={styles.h4}>Najczęściej wybierane</h4>

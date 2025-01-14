@@ -9,22 +9,10 @@ import Image from 'next/image';
 import styles from './AdsTop.module.scss';
 
 import { ACFData, Step } from '../../types/adsTop';
+import { breakpoints4 } from '@/app/constants/breakpoints';
 
 export const AdsTop: React.FC<{ acf: ACFData }> = ({ acf }) => {
-  const breakpoints = {
-    1: {
-      slidesPerView: 1,
-    },
-    700: {
-      slidesPerView: 2,
-    },
-    992: {
-      slidesPerView: 3,
-    },
-    1150: {
-      slidesPerView: 4,
-    },
-  };
+
 
   const pagination = {
     clickable: true,
@@ -46,7 +34,7 @@ export const AdsTop: React.FC<{ acf: ACFData }> = ({ acf }) => {
           pagination={pagination}
           modules={[Pagination]}
           className={styles.swiper}
-          breakpoints={breakpoints}
+          breakpoints={breakpoints4}
         >
           {acf.simple_steps.steps.map((step: Step, index: number) => (
             <SwiperSlide key={index} className={styles.slide}>

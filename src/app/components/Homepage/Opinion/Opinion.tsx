@@ -9,22 +9,10 @@ import Star from '../../../../../public/static/Homepage/Opinion/Star';
 import Link from 'next/link';
 
 import { Product } from '../../../types/opinion';
+import { breakpoints3 } from '@/app/constants/breakpoints';
 
 const Clients = ({ data }: { data: Product[] }) => {
-  const breakpoints = {
-    200: {
-      slidesPerView: 1,
-    },
-    400: {
-      slidesPerView: 1,
-    },
-    800: {
-      slidesPerView: 2,
-    },
-    1200: {
-      slidesPerView: 3,
-    },
-  };
+
 
   return (
     <section className={styles.clients}>
@@ -50,7 +38,7 @@ const Clients = ({ data }: { data: Product[] }) => {
           slidesPerView={3}
           slidesOffsetBefore={40}
           wrapperClass={styles.wrapperClass}
-          breakpoints={breakpoints}
+          breakpoints={breakpoints3}
         >
           {data.map((opinion: Product, index: number) => (
             <SwiperSlide key={index} className={styles.swiperSlide}>
