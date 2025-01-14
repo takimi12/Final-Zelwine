@@ -1,0 +1,119 @@
+.background {
+  width: 100%;
+  height: 180px;
+  position: relative;
+}
+
+.forBusiness {
+  @media screen and (max-width: 768px) {
+    padding: 0px 16px;
+  }
+  &TitleText {
+    max-width: 440px;
+    text-align: center;
+    width: 100%;
+    margin: auto;
+
+    .mainHeading {
+      padding-top: 64px;
+      padding-bottom: 20px;
+    }
+
+    .mainParagraph {
+      padding-bottom: 120px;
+    }
+  }
+}
+
+.businesContentWrapper {
+  margin-bottom: 40px;
+  padding: 0px 40px;
+  @media screen and (max-width: 900px) {
+    padding: 0px 16px;
+  }
+}
+
+.contentWrapper {
+  display: flex;
+  margin-bottom: 20px;
+
+  @media screen and (max-width: 900px) {
+    flex-direction: column;
+  }
+
+  .imageContent {
+    width: 50%;
+    height: 502px;
+    position: relative;
+    @media screen and (max-width: 900px) {
+      width: 100%;
+    }
+
+    .image {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .textContent {
+    width: 50%;
+    @media screen and (max-width: 900px) {
+      width: 100%;
+    }
+
+    .textContentInner {
+      max-width: 440px;
+      margin-left: 135px;
+      @media screen and (max-width: 900px) {
+        padding: 0;
+        max-width: 100%;
+      }
+
+      .textContentHeading {
+        padding-top: 115px;
+        padding-bottom: 20px;
+        @media screen and (max-width: 900px) {
+          padding: 24px 0px;
+        }
+      }
+      .textContentParagraph {
+        @media screen and (max-width: 900px) {
+          padding-bottom: 88px;
+        }
+        @media screen and (max-width: 768px) {
+          padding-bottom: 40px;
+        }
+      }
+    }
+  }
+}
+
+.contentWrapper:nth-child(even) {
+  flex-direction: row-reverse;
+  @media screen and (max-width: 900px) {
+    flex-direction: column;
+  }
+}
+
+.contentBusiness {
+  padding: 0px 40px;
+}
+
+.contentCta {
+  display: flex;
+  justify-content: center;
+  a {
+    color: #fff;
+  }
+  .textWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    margin: 100px 0px;
+  }
+  .smallText {
+    max-width: 80%;
+    text-align: center;
+  }
+}

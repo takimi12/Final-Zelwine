@@ -1,0 +1,43 @@
+.contact {
+  display: flex;
+  gap: 20%;
+  padding: 0px 40px;
+  margin-top: 150px;
+  @media screen and (max-width: 1199px) {
+    gap: 15%;
+  }
+  @media screen and (max-width: 991px) {
+    flex-direction: column;
+  }
+  @media screen and (max-width: 991px) {
+    padding: 16px;
+  }
+  .contactDetails {
+    z-index: 1;
+    min-width: 300px;
+    @media screen and (max-width: 991px) {
+      display: flex;
+      justify-content: center;
+    }
+    .contactDetailsSmall {
+      display: flex;
+      padding: 27px 0px;
+      width: 100%;
+      align-items: center;
+      gap: 15px;
+    }
+    .companyAdress {
+      max-width: 150px;
+      margin-bottom: 50px;
+    }
+    .mobileSet {
+      @media screen and (max-width: 768px) {
+        margin-left: 30px;
+      }
+    }
+  }
+  .contactSection {
+    z-index: 1;
+    width: 100%;
+  }
+}

@@ -1,0 +1,77 @@
+.sectionPopUp {
+  padding-bottom: 100px;
+  @media only screen and (max-width: 1000px) {
+    padding: 0px 30px 100px 30px;
+  }
+}
+.mainSection {
+  display: flex;
+  justify-content: center;
+}
+
+.parentBox {
+  max-width: 70%;
+  width: 100%;
+  @media only screen and (max-width: 1000px) {
+    max-width: 100%;
+  }
+}
+
+.parentInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: solid;
+  padding-bottom: 25px;
+  margin-top: 20px;
+  cursor: pointer;
+  .popUpheading {
+    @media screen and (max-width: 768px) {
+      font-size: 18px;
+    }
+  }
+}
+
+.parentInner:hover .boxImage {
+  transition: 0.4s;
+  transform: translateX(10px);
+}
+
+.boxImage {
+  transition: 0.4s;
+}
+
+.popUp {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: 100%;
+  background: white;
+  transition: 0.4s;
+  overflow: hidden;
+  z-index: 999999;
+}
+
+.popUp.active {
+  right: -15%;
+  @media only screen and (max-width: 700px) {
+    right: 0;
+  }
+}
+
+.left {
+  position: fixed;
+  inset: 0rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 0rem;
+  z-index: 99999;
+  right: 100%;
+  @media only screen and (max-width: 700px) {
+    display: none;
+  }
+}
+
+.left.activeLeft {
+  right: 0;
+}

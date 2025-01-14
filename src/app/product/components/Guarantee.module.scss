@@ -1,0 +1,78 @@
+.productSection {
+  height: 100%;
+}
+.mainwrapper {
+  display: flex;
+  height: 100%;
+
+  .wykonczenia {
+    max-width: 85%;
+    width: 100%;
+    margin-top: 30px;
+    padding: 0px 80px;
+    @media only screen and (max-width: 900px) {
+      padding: 0px 40px;
+    }
+    @media only screen and (max-width: 800px) {
+      max-width: 100%;
+      padding: 0px 30px;
+    }
+    .guaranteeWrapper {
+      display: flex;
+      @media only screen and (max-width: 800px) {
+        flex-direction: column-reverse;
+        align-items: center;
+      }
+      .guaranteeContent {
+        max-width: 70%;
+        width: 100%;
+        @media only screen and (max-width: 800px) {
+          max-width: 100%;
+          text-align: center;
+        }
+        .bottom {
+          @media only screen and (max-width: 800px) {
+            display: flex;
+            justify-content: center;
+          }
+        }
+      }
+      .guaranteeIcon {
+        max-width: 30%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+      }
+      .bottom {
+        .guaranteeDescription {
+          font-size: 14px;
+          max-width: 85%;
+        }
+      }
+    }
+
+    .top {
+      margin-top: 50px;
+      margin-bottom: 75px;
+      display: flex;
+      justify-content: space-between;
+      @media only screen and (max-width: 800px) {
+        gap: 55%;
+        justify-content: flex-start;
+      }
+      @media only screen and (max-width: 600px) {
+        gap: 55%;
+      }
+      @media only screen and (max-width: 500px) {
+        gap: 45%;
+      }
+      @media only screen and (max-width: 400px) {
+        gap: 35%;
+      }
+      @media only screen and (max-width: 350px) {
+        gap: 25%;
+      }
+    }
+  }
+}
