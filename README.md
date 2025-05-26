@@ -23,6 +23,8 @@ Zeliwne is a web application project where the frontend is built using the Next.
 
 The application allows users to use forms that enable sending images of radiators directly to the administrator. For this purpose, the EmailJS service was used, which handles email submissions with attachments in a simple and efficient manner.
 
+### TechStack
+
 ![Technologie uzyte w projekcie](public/static//ReadMe//Group4.png)
 
 ## Wymagania wstępne / Prerequisites
@@ -141,10 +143,6 @@ npm run dev
 - Features:
   - Maintains a consistent coding style across your project.
 
-## Link do wersji live / Live version link
-
-Link do aplikacji zostanie podany po poprawieniu endpointów WordPressa i plików `.t`.  
-The link to the application will be provided after correcting the WordPress endpoints and `.t` files.
 
 ## Architektura projektu / Project Architecture
 
@@ -173,6 +171,13 @@ The link to the application will be provided after correcting the WordPress endp
 ### Extensibility
 
 - The WordPress CMS structure was designed so that in the future you can easily transform the application into an online store.
+
+## Plany na przyszłość
+
+Aplikacja została wykonanana na zlecenie klienta, który chciał odświeżyć swoją starą stronę internetową. W kolejnym etapie, planowane jest przerobienie aplikacji na sklep internetowy.
+
+## Future Plans
+The application was developed for a client who wanted to refresh their old website. In the next stage, the plan is to transform the application into an online store.
 
 ## Kontakt do autora / Author Contact
 
