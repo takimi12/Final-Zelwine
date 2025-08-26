@@ -1,0 +1,322 @@
+.swiperSectionInspiration {
+  overflow: hidden;
+  margin-bottom: 156px;
+  padding: 40px;
+  background-color: var(--light-gray-200);
+  @media screen and (max-width: 768px) {
+    padding: 0px 16px 156px 16px;
+  }
+  .swiper {
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+
+    .swiperTop {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      order: 1;
+
+      margin-bottom: 40px;
+      .h4 {
+        color: var(--black-500);
+      }
+      @media screen and (max-width: 768px) {
+        margin-top: 40px;
+      }
+    }
+
+    .wrapperClass {
+      display: flex;
+      order: 2;
+      position: relative;
+      margin-left: -40px;
+      @media screen and (max-width: 768px) {
+        margin-left: -40px;
+      }
+    }
+    .arrowWrapper {
+      position: absolute;
+      width: 100%;
+      top: 50%;
+      display: flex;
+      justify-content: space-between;
+      z-index: 111;
+      .arrowParent {
+        background: #ddd;
+        padding: 15px;
+        margin: 10px;
+        cursor: pointer;
+      }
+    }
+    .slide {
+      display: flex;
+      justify-content: center;
+      width: 386px !important;
+      margin-right: 181px;
+      padding: 0;
+      height: 618px;
+    }
+
+    .popup .slide {
+      height: 100%;
+    }
+  }
+
+  .hoverEffectDiv {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    cursor: pointer;
+  }
+
+  .hoverEffectDivInner {
+    opacity: 0;
+    transition: 0.3s;
+    position: absolute;
+    top: -100px;
+  }
+
+  .hoverEffectDiv:hover .hoverEffectDivInner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #244b55;
+    opacity: 0.7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: 0.3s;
+    gap: 20px;
+
+    .Look {
+      color: #fff;
+      font-size: 30px;
+    }
+  }
+
+  .popupOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+
+  .popup {
+    position: relative;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: auto;
+    position: relative;
+    top: 18px;
+    width: 80%;
+    display: flex;
+    max-height: 600px;
+    .popupContent {
+      display: flex;
+
+      @media screen and (max-width: 900px) {
+        flex-direction: column;
+        max-height: 530px;
+        overflow: hidden;
+        .buttoninnerWrapper {
+          position: absolute;
+          width: 100%;
+          top: 6%;
+          left: -16px;
+          .closeButton1 {
+            position: absolute;
+
+            right: 0px;
+            background-color: #ddd;
+            border: none;
+            cursor: pointer;
+            height: 50px;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            padding: 5px;
+            color: #000;
+            z-index: 8;
+            width: 50px;
+          }
+        }
+      }
+      .mobileSwitcher {
+        position: absolute;
+        bottom: 50px;
+        left: 36%;
+        svg {
+          transition: 0.5s;
+        }
+        .rotate {
+          transform: rotate(180deg);
+          transition: 0.5s;
+        }
+      }
+      .swipeContent {
+        padding: 16px;
+
+        .bottomInfosecttionText {
+          margin-bottom: 20px;
+
+          .photoWithText {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 10px;
+            .photo {
+              max-width: 50px;
+            }
+          }
+        }
+      }
+    }
+    .wrapperClass1 {
+      margin-left: -40px;
+      @media screen and (max-width: 900px) {
+        margin-left: -40px;
+      }
+    }
+    .scroll {
+      transform: translateY(-320px);
+      max-width: 100%;
+      min-height: 420px;
+      transition: all 0.3s ease 0s;
+    }
+    .swiper {
+      padding: 0;
+      max-width: 75%;
+      margin: 0;
+      overflow: hidden;
+
+      @media screen and (max-width: 900px) {
+        max-width: 100%;
+        min-height: 420px;
+        transition: all 0.3s ease 0s;
+      }
+    }
+
+    .slide1 {
+      width: 100% !important;
+      height: 100%;
+      display: flex;
+      justify-content: start;
+      margin: 0;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .info {
+      padding: 38px;
+      position: relative;
+      overflow-y: scroll;
+      max-width: 25%;
+      width: 100%;
+      @media screen and (max-width: 900px) {
+        max-width: 100%;
+      }
+      .topInfoSection {
+        position: relative;
+      }
+
+      .bottomInfoSection {
+        padding-top: 67px;
+        padding-bottom: 80px;
+        .bottomInfoSectionText {
+          margin-bottom: 20px;
+        }
+        .firstParagraph {
+          margin-bottom: 24px;
+        }
+      }
+
+      .photoWithText {
+        display: flex;
+
+        .photo {
+          margin-right: 10px;
+          max-width: 50px;
+          max-height: 50px;
+          img {
+            width: 50px;
+            height: 50px;
+          }
+        }
+      }
+
+      .buttonwraper {
+        position: absolute;
+        top: 0px;
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+      }
+    }
+    .mobileParentScroll {
+      transform: translateY(-330px);
+      transition: all 0.3s ease 0s;
+      .mobile {
+        display: flex;
+        justify-content: space-between;
+        padding: 16px;
+      }
+
+      .switcher {
+        position: absolute;
+        top: 0;
+        top: 100px;
+        left: 38%;
+      }
+    }
+
+    .mobileParent {
+      position: relative;
+      transition: all 0.3s ease 0s;
+
+      .mobile {
+        display: flex;
+        justify-content: space-between;
+        padding: 16px;
+      }
+
+      .switcher {
+        position: absolute;
+        top: 0;
+        top: 100px;
+        left: 38%;
+      }
+    }
+
+    .closeButton {
+      position: absolute;
+      top: -20px;
+      right: 0px;
+      border: none;
+      cursor: pointer;
+      height: 20px;
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      padding: 5px;
+      z-index: 8;
+    }
+  }
+}

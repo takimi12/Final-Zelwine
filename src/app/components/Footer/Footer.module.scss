@@ -1,0 +1,85 @@
+.footer {
+  padding: 0 40px;
+  padding-top: 68px;
+  background-color: var(--light-gray-200);
+  @media screen and (max-width: 768px) {
+    padding: 0px 16px;
+    padding-top: 45px;
+  }
+
+  .up {
+    display: flex;
+    width: 100%;
+
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+      gap: 48px;
+    }
+
+    .column {
+      display: flex;
+      min-width: 80%;
+
+      @media screen and (max-width: 768px) {
+        min-width: 100%;
+        flex-wrap: wrap;
+        gap: 40px 0px;
+      }
+
+      .footerColumn {
+        width: 25%;
+        @media screen and (max-width: 768px) {
+          min-width: 50%;
+        }
+
+        .list {
+          display: grid;
+          gap: 16px;
+          a {
+            color: var(--black-300);
+          }
+        }
+
+        .topHeading {
+          margin-bottom: 30px;
+        }
+      }
+    }
+  }
+
+  .bottomFooter {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 100px;
+    padding-bottom: 32px;
+
+    a {
+      color: var(--black-300);
+    }
+    @media screen and (max-width: 768px) {
+      flex-direction: column-reverse;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .paper {
+      display: flex;
+      gap: 55px;
+      @media screen and (max-width: 400px) {
+        gap: 32px;
+      }
+    }
+  }
+}
+
+.bodySmall {
+  text-transform: uppercase;
+  color: var(--black-400);
+  font-weight: 900;
+}
+
+.categoryItem {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
